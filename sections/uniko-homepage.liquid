@@ -101,7 +101,7 @@
       <div class="category-head">
         <h2 id="category-title" data-i18n="category_title">{{ section.settings.category_heading }}</h2>
       </div>
-      <div class="category-track-wrap">
+      <div class="category-track-wrap" data-category-carousel>
         <div class="category-track" tabindex="0" role="list" aria-label="Product categories">
           {% if section.blocks.size > 0 %}
           {% for block in section.blocks %}
@@ -131,8 +131,10 @@
                       {% endif %}
                     </div>
                     <div class="category-card-caption">
-                      <span>{{ block.settings.label | default: card_product.title }}</span>
-                      <p class="category-card-price">{{ card_product.price | money }}</p>
+                      <span>{{ card_product.title }}</span>
+                      {% if card_product.price > 0 %}
+                        <p class="category-card-price">{{ card_product.price | money }}</p>
+                      {% endif %}
                     </div>
                   </a>
                 {% endif %}
@@ -161,7 +163,9 @@
                     {% assign cat_product = block.settings.product %}
                     <div class="category-card-caption">
                       <span>{{ block.settings.label }}</span>
-                      <p class="category-card-price">{{ cat_product.price | money }}</p>
+                      {% if cat_product.price > 0 %}
+                        <p class="category-card-price">{{ cat_product.price | money }}</p>
+                      {% endif %}
                     </div>
                   {% else %}
                     <span>{{ block.settings.label }}</span>
@@ -181,9 +185,13 @@
               {% endif %}
             </div>
             <div class="category-card-caption">
-              <span data-i18n="cat_face">Face</span>
               {% if default_product != blank %}
-                <p class="category-card-price">{{ default_product.price | money }}</p>
+                <span>{{ default_product.title }}</span>
+                {% if default_product.price > 0 %}
+                  <p class="category-card-price">{{ default_product.price | money }}</p>
+                {% endif %}
+              {% else %}
+                <span>Aloe vera shampoo</span>
               {% endif %}
             </div>
           </a>
@@ -225,6 +233,11 @@
           </a>
           {% endif %}
         </div>
+        <button type="button" class="carousel-btn carousel-btn--next category-carousel-next" data-category-next aria-label="Next categories">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9.5 5.5 15 11l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </section>
 
@@ -645,6 +658,23 @@
         track.scrollBy({ left: scrollStep(), behavior: "smooth" });
       });
     });
+
+    document.querySelectorAll("[data-category-carousel]").forEach((wrap) => {
+      const track = wrap.querySelector(".category-track");
+      const next = wrap.querySelector("[data-category-next]");
+      if (!track || !next) return;
+
+      const scrollStep = () => {
+        const card = track.querySelector(".category-card");
+        if (!card) return 298;
+        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 18;
+        return card.getBoundingClientRect().width + gap;
+      };
+
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: scrollStep(), behavior: "smooth" });
+      });
+    });
   </script>
 {% schema %}
 {
@@ -668,12 +698,6 @@
           "type": "product",
           "id": "product",
           "label": "Product"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Card label (optional)",
-          "info": "Leave blank to use the product title"
         }
       ]
     },

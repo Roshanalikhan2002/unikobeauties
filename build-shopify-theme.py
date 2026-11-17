@@ -77,8 +77,10 @@ CATEGORY_TRACK_LIQUID = """
                       {% endif %}
                     </div>
                     <div class="category-card-caption">
-                      <span>{{ block.settings.label | default: card_product.title }}</span>
-                      <p class="category-card-price">{{ card_product.price | money }}</p>
+                      <span>{{ card_product.title }}</span>
+                      {% if card_product.price > 0 %}
+                        <p class="category-card-price">{{ card_product.price | money }}</p>
+                      {% endif %}
                     </div>
                   </a>
                 {% endif %}
@@ -107,7 +109,9 @@ CATEGORY_TRACK_LIQUID = """
                     {% assign cat_product = block.settings.product %}
                     <div class="category-card-caption">
                       <span>{{ block.settings.label }}</span>
-                      <p class="category-card-price">{{ cat_product.price | money }}</p>
+                      {% if cat_product.price > 0 %}
+                        <p class="category-card-price">{{ cat_product.price | money }}</p>
+                      {% endif %}
                     </div>
                   {% else %}
                     <span>{{ block.settings.label }}</span>
@@ -127,9 +131,13 @@ CATEGORY_TRACK_LIQUID = """
               {% endif %}
             </div>
             <div class="category-card-caption">
-              <span data-i18n="cat_face">Face</span>
               {% if default_product != blank %}
-                <p class="category-card-price">{{ default_product.price | money }}</p>
+                <span>{{ default_product.title }}</span>
+                {% if default_product.price > 0 %}
+                  <p class="category-card-price">{{ default_product.price | money }}</p>
+                {% endif %}
+              {% else %}
+                <span>Aloe vera shampoo</span>
               {% endif %}
             </div>
           </a>
@@ -195,12 +203,6 @@ HOMEPAGE_SCHEMA = """{% schema %}
           "type": "product",
           "id": "product",
           "label": "Product"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "Card label (optional)",
-          "info": "Leave blank to use the product title"
         }
       ]
     },

@@ -275,6 +275,8 @@
 
     .category-track-wrap {
       position: relative;
+      overflow: hidden;
+      padding-right: 52px;
     }
 
     .category-track {
@@ -284,19 +286,22 @@
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
       scroll-padding-left: 40px;
+      scroll-padding-right: 40px;
       padding: 0 40px 8px;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: #c7bfb5 transparent;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .category-track::-webkit-scrollbar {
-      height: 6px;
+      display: none;
     }
 
-    .category-track::-webkit-scrollbar-thumb {
-      background: #c7bfb5;
-      border-radius: 999px;
+    .category-carousel-next {
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      transform: translateY(-50%);
     }
 
     .category-card {
@@ -1272,9 +1277,14 @@
         font-size: 34px;
       }
 
+      .category-track-wrap {
+        padding-right: 44px;
+      }
+
       .category-track {
         gap: 8px;
         scroll-padding-left: 18px;
+        scroll-padding-right: 18px;
         padding: 0 18px 6px;
       }
 
