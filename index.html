@@ -361,6 +361,24 @@
       object-fit: contain;
       padding: 10px 14px 18px;
       box-sizing: border-box;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: scale(1);
+      transform-origin: center center;
+    }
+
+    .category-card--product:hover .category-card-img,
+    .category-card--product:focus-within .category-card-img {
+      transform: scale(1.09);
+    }
+
+    .category-card--product .category-card-media::after {
+      background: transparent;
+      transition: background 0.4s ease;
+    }
+
+    .category-card--product:hover .category-card-media::after,
+    .category-card--product:focus-within .category-card-media::after {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, rgba(240, 236, 230, 0.55) 100%);
     }
 
     .category-card-caption {
@@ -389,6 +407,51 @@
       letter-spacing: 0.04em;
       color: #fff;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-card--product .category-card-caption {
+      left: 16px;
+      right: 16px;
+      bottom: 18px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+
+    .category-card--product:hover .category-card-caption,
+    .category-card--product:focus-within .category-card-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .category-card--product .category-card-caption span {
+      display: inline-block;
+      width: fit-content;
+      max-width: 100%;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      color: #fff;
+      text-shadow: none;
+      background: rgba(18, 87, 47, 0.92);
+      padding: 8px 14px 9px;
+      border-radius: 2px;
+      text-transform: capitalize;
+    }
+
+    .category-card--product .category-card-price {
+      display: inline-block;
+      margin: 8px 0 0;
+      padding: 5px 11px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.96);
+      color: #12572f;
+      text-shadow: none;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .category-card-media::after {
