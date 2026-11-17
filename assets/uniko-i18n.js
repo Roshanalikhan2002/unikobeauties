@@ -48,6 +48,42 @@
       pdp_key3_title: "Vegetable oils",
       pdp_key3_desc:
         "Plant-derived oils help leave hair feeling soft and cared for after every rinse.",
+      pdp_faq_title: "Frequently asked questions",
+      pdp_faq_q1: "Can I use this on hair and body?",
+      pdp_faq_a1:
+        "Yes. This 500 ml formula is designed for both hair and body in one gentle wash.",
+      pdp_faq_q2: "Is it sulfate, silicone and paraben free?",
+      pdp_faq_a2:
+        "Yes. It is made without sulfates, silicones or parabens for a cleaner everyday routine.",
+      pdp_faq_q3: "How often should I shampoo?",
+      pdp_faq_a3:
+        "Use 1 to 2 washes per session, from scalp to tips, then rinse. Repeat only if needed.",
+      pdp_faq_q4: "Is it suitable for sensitive skin?",
+      pdp_faq_a4:
+        "The aloe-led formula is crafted to cleanse gently while helping maintain comfort for different skin types.",
+      pdp_compare_title: "How we compare",
+      pdp_cmp_feature: "Feature",
+      pdp_cmp_conv: "Conventional shampoo",
+      pdp_cmp_other: 'Typical "natural" claim',
+      pdp_cmp_row1: "Sulfate free",
+      pdp_cmp_row2: "Silicone free",
+      pdp_cmp_row3: "Paraben free",
+      pdp_cmp_row4: "Hair + body (500 ml)",
+      pdp_cmp_row5: "Certified organic ingredients",
+      pdp_cmp_row6: "Vegan & cruelty-free",
+      pdp_cmp_sometimes: "Sometimes",
+      pdp_cmp_varies: "Varies",
+      pdp_reviews_title: "Customer reviews",
+      pdp_reviews_meta: "5.0 · 42 reviews",
+      pdp_rev1_title: "Gentle on my curls",
+      pdp_rev1_body:
+        "Cleans without stripping. My scalp feels calm and my locks stay soft after every wash.",
+      pdp_rev2_title: "One bottle for shower",
+      pdp_rev2_body:
+        "Love using the same aloe shampoo on hair and body — simple and smells fresh, not heavy.",
+      pdp_rev3_title: "No harsh foam",
+      pdp_rev3_body:
+        "Sulfate-free lather is light but my hair feels clean. Great for my sensitive skin too.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -157,6 +193,42 @@
       pdp_key3_title: "Huiles végétales",
       pdp_key3_desc:
         "Des huiles d'origine végétale pour des cheveux doux et soignés après chaque rinçage.",
+      pdp_faq_title: "Questions fréquentes",
+      pdp_faq_q1: "Puis-je l'utiliser sur les cheveux et le corps ?",
+      pdp_faq_a1:
+        "Oui. Ce format 500 ml convient aux cheveux et au corps dans un seul lavage doux.",
+      pdp_faq_q2: "Sans sulfates, silicones et parabènes ?",
+      pdp_faq_a2:
+        "Oui. Formulé sans sulfates, silicones ni parabènes pour une routine plus saine.",
+      pdp_faq_q3: "À quelle fréquence shampouiner ?",
+      pdp_faq_a3:
+        "1 à 2 applications par lavage, du cuir chevelu aux pointes, puis rincer. Renouveler si besoin.",
+      pdp_faq_q4: "Convient-il aux peaux sensibles ?",
+      pdp_faq_a4:
+        "La formule à l'aloe nettoie en douceur tout en préservant le confort de différents types de peau.",
+      pdp_compare_title: "Notre comparaison",
+      pdp_cmp_feature: "Critère",
+      pdp_cmp_conv: "Shampoing classique",
+      pdp_cmp_other: "« Naturel » courant",
+      pdp_cmp_row1: "Sans sulfates",
+      pdp_cmp_row2: "Sans silicones",
+      pdp_cmp_row3: "Sans parabènes",
+      pdp_cmp_row4: "Cheveux + corps (500 ml)",
+      pdp_cmp_row5: "Ingrédients certifiés bio",
+      pdp_cmp_row6: "Vegan & sans cruauté",
+      pdp_cmp_sometimes: "Parfois",
+      pdp_cmp_varies: "Variable",
+      pdp_reviews_title: "Avis clients",
+      pdp_reviews_meta: "5,0 · 42 avis",
+      pdp_rev1_title: "Doux pour mes locks",
+      pdp_rev1_body:
+        "Nettoie sans agresser. Mon cuir chevelu est apaisé et mes locks restent souples.",
+      pdp_rev2_title: "Un flacon pour la douche",
+      pdp_rev2_body:
+        "J'adore le même shampoing aloe pour cheveux et corps — simple et frais, sans être lourd.",
+      pdp_rev3_title: "Pas de mousse agressive",
+      pdp_rev3_body:
+        "La mousse sans sulfate est légère mais les cheveux sont propres. Idéal pour ma peau sensible.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:

@@ -122,42 +122,37 @@
         <button type="button" class="uniko-pdp-keys-nav uniko-pdp-keys-nav--prev" data-pdp-ing-prev aria-label="Previous ingredients">‹</button>
         <div class="uniko-pdp-keys-track" tabindex="0" role="list">
           <article class="uniko-pdp-key-card" role="listitem">
-            <img
-              class="uniko-pdp-key-img"
-              src="{{ 'uniko-ingredients-01-aloe-vera.jpg' | asset_img_url: 'width: 400' }}"
-              alt=""
-              loading="lazy"
-              width="200"
-              height="200"
-            >
+            <div class="uniko-pdp-key-icon" aria-hidden="true">
+              <svg class="uniko-pdp-key-svg" width="56" height="56" viewBox="0 0 48 48" fill="none">
+                <path d="M24 4C14 18 10 28 12 38c2 8 8 10 12 10s10-2 12-10c2-10-2-20-12-34Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 20v18M24 28c-4 2-8 2-10 0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
             <div class="uniko-pdp-key-body">
               <h3 class="uniko-pdp-key-name" data-i18n="pdp_key1_title">Aloe Vera</h3>
               <p class="uniko-pdp-key-text" data-i18n="pdp_key1_desc">Helps cleanse gently while supporting moisture and comfort for skin and hair.</p>
             </div>
           </article>
           <article class="uniko-pdp-key-card" role="listitem">
-            <img
-              class="uniko-pdp-key-img"
-              src="{{ 'uniko-ingredients-02-basil.jpg' | asset_img_url: 'width: 400' }}"
-              alt=""
-              loading="lazy"
-              width="200"
-              height="200"
-            >
+            <div class="uniko-pdp-key-icon" aria-hidden="true">
+              <svg class="uniko-pdp-key-svg" width="56" height="56" viewBox="0 0 48 48" fill="none">
+                <path d="M10 38c6-14 18-22 28-26M8 30c8-4 16-14 22-24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M18 38c3-6 8-10 14-12M30 40c2-5 6-8 10-10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                <circle cx="36" cy="14" r="3" fill="currentColor" opacity="0.35"/>
+              </svg>
+            </div>
             <div class="uniko-pdp-key-body">
               <h3 class="uniko-pdp-key-name" data-i18n="pdp_key2_title">Basil</h3>
               <p class="uniko-pdp-key-text" data-i18n="pdp_key2_desc">A fresh botanical note in our natural scented water, for a clean, uplifting wash.</p>
             </div>
           </article>
           <article class="uniko-pdp-key-card" role="listitem">
-            <img
-              class="uniko-pdp-key-img"
-              src="{{ 'uniko-ingredients-03-vegetable-oils.jpg' | asset_img_url: 'width: 400' }}"
-              alt=""
-              loading="lazy"
-              width="200"
-              height="200"
-            >
+            <div class="uniko-pdp-key-icon" aria-hidden="true">
+              <svg class="uniko-pdp-key-svg" width="56" height="56" viewBox="0 0 48 48" fill="none">
+                <path d="M24 8c-8 10-11 20-8 28 2.5 6 7 9 12 8 6-1 10-6 10-14 0-12-10-22-14-22Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 18v8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+              </svg>
+            </div>
             <div class="uniko-pdp-key-body">
               <h3 class="uniko-pdp-key-name" data-i18n="pdp_key3_title">Vegetable oils</h3>
               <p class="uniko-pdp-key-text" data-i18n="pdp_key3_desc">Plant-derived oils help leave hair feeling soft and cared for after every rinse.</p>
@@ -168,6 +163,181 @@
       </div>
     </div>
   </div>
+
+  <div class="uniko-pdp-faq">
+    <div class="uniko-pdp-block-inner">
+      <h2 class="uniko-pdp-block-title" data-i18n="pdp_faq_title">Frequently asked questions</h2>
+      <div class="uniko-pdp-faq-list">
+        <details class="uniko-pdp-faq-item">
+          <summary data-i18n="pdp_faq_q1">Can I use this on hair and body?</summary>
+          <p data-i18n="pdp_faq_a1">Yes. This 500 ml formula is designed for both hair and body in one gentle wash.</p>
+        </details>
+        <details class="uniko-pdp-faq-item">
+          <summary data-i18n="pdp_faq_q2">Is it sulfate, silicone and paraben free?</summary>
+          <p data-i18n="pdp_faq_a2">Yes. It is made without sulfates, silicones or parabens for a cleaner everyday routine.</p>
+        </details>
+        <details class="uniko-pdp-faq-item">
+          <summary data-i18n="pdp_faq_q3">How often should I shampoo?</summary>
+          <p data-i18n="pdp_faq_a3">Use 1 to 2 washes per session, from scalp to tips, then rinse. Repeat only if needed.</p>
+        </details>
+        <details class="uniko-pdp-faq-item">
+          <summary data-i18n="pdp_faq_q4">Is it suitable for sensitive skin?</summary>
+          <p data-i18n="pdp_faq_a4">The aloe-led formula is crafted to cleanse gently while helping maintain comfort for different skin types.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="uniko-pdp-compare">
+    <div class="uniko-pdp-block-inner">
+      <h2 class="uniko-pdp-block-title" data-i18n="pdp_compare_title">How we compare</h2>
+      <div class="uniko-pdp-compare-scroll">
+        <table class="uniko-pdp-compare-table">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="pdp_cmp_feature">Feature</th>
+              <th scope="col" class="is-highlight">{{ product.title }}</th>
+              <th scope="col" data-i18n="pdp_cmp_conv">Conventional shampoo</th>
+              <th scope="col" data-i18n="pdp_cmp_other">Typical “natural” claim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row1">Sulfate free</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes" aria-label="Yes">✓</span></td>
+              <td><span class="uniko-pdp-no" aria-label="No">—</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_sometimes">Sometimes</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row2">Silicone free</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes">✓</span></td>
+              <td><span class="uniko-pdp-no">—</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_sometimes">Sometimes</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row3">Paraben free</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes">✓</span></td>
+              <td><span class="uniko-pdp-no">—</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_sometimes">Sometimes</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row4">Hair + body (500 ml)</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes">✓</span></td>
+              <td><span class="uniko-pdp-no">—</span></td>
+              <td><span class="uniko-pdp-no">—</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row5">Certified organic ingredients</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes">✓</span></td>
+              <td><span class="uniko-pdp-no">—</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_varies">Varies</span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="pdp_cmp_row6">Vegan & cruelty-free</th>
+              <td class="is-highlight"><span class="uniko-pdp-yes">✓</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_varies">Varies</span></td>
+              <td><span class="uniko-pdp-maybe" data-i18n="pdp_cmp_varies">Varies</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <section class="reviews-section uniko-pdp-reviews" id="pdp-avis" aria-labelledby="pdp-reviews-title">
+    <div class="uniko-pdp-block-inner">
+      <div class="reviews-head">
+        <h2 id="pdp-reviews-title" data-i18n="pdp_reviews_title">Customer reviews</h2>
+        <div class="reviews-meta" aria-label="Average rating 5 out of 5">
+          <span class="review-stars" aria-hidden="true">★★★★★</span>
+          <span data-i18n="pdp_reviews_meta">5.0 · 42 reviews</span>
+        </div>
+      </div>
+      <div class="review-cards-carousel" data-pdp-review-carousel>
+        <button type="button" class="carousel-btn carousel-btn--prev" data-carousel-prev aria-label="Previous reviews">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14.5 5.5 9 11l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="review-cards-track" tabindex="0" role="list">
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Amira K.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-i18n="verified_buyer">Verified buyer</span>
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-10-12">12/10/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title" data-i18n="pdp_rev1_title">Gentle on my curls</h3>
+            <p class="review-card-body" data-i18n="pdp_rev1_body">Cleans without stripping. My scalp feels calm and my locks stay soft after every wash.</p>
+            <div class="review-card-product">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 80 | image_tag: class: 'review-product-thumb', alt: '' }}
+              {% else %}
+                <div class="review-product-thumb" aria-hidden="true"></div>
+              {% endif %}
+              <p class="review-product-name">{{ product.title }}</p>
+            </div>
+          </article>
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">James T.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-i18n="verified_review">Verified review</span>
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-09-08">08/09/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title" data-i18n="pdp_rev2_title">One bottle for shower</h3>
+            <p class="review-card-body" data-i18n="pdp_rev2_body">Love using the same aloe shampoo on hair and body — simple and smells fresh, not heavy.</p>
+            <div class="review-card-product">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 80 | image_tag: class: 'review-product-thumb', alt: '' }}
+              {% else %}
+                <div class="review-product-thumb" aria-hidden="true"></div>
+              {% endif %}
+              <p class="review-product-name">{{ product.title }}</p>
+            </div>
+          </article>
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Sarah L.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span data-i18n="verified_buyer">Verified buyer</span>
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-08-01">01/08/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title" data-i18n="pdp_rev3_title">No harsh foam</h3>
+            <p class="review-card-body" data-i18n="pdp_rev3_body">Sulfate-free lather is light but my hair feels clean. Great for my sensitive skin too.</p>
+            <div class="review-card-product">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 80 | image_tag: class: 'review-product-thumb', alt: '' }}
+              {% else %}
+                <div class="review-product-thumb" aria-hidden="true"></div>
+              {% endif %}
+              <p class="review-product-name">{{ product.title }}</p>
+            </div>
+          </article>
+        </div>
+        <button type="button" class="carousel-btn carousel-btn--next" data-carousel-next aria-label="Next reviews">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9.5 5.5 15 11l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <div class="uniko-pdp-sticky" id="uniko-pdp-sticky" hidden>
     <div class="uniko-pdp-sticky-inner">
@@ -393,19 +563,24 @@
     flex: 0 0 min(100%, 340px);
     scroll-snap-align: start;
     display: grid;
-    grid-template-columns: 120px 1fr;
-    min-height: 140px;
+    grid-template-columns: 104px 1fr;
+    min-height: 132px;
     background: #fff;
     overflow: hidden;
     align-items: stretch;
   }
-  .uniko-pdp-key-img {
+  .uniko-pdp-key-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ebe4dc;
+    min-height: 132px;
+    color: #b08968;
+  }
+  .uniko-pdp-key-svg {
     display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 140px;
-    object-fit: cover;
-    object-position: center;
+    width: 56px;
+    height: 56px;
   }
   .uniko-pdp-key-body {
     padding: 16px 14px 16px 12px;
@@ -446,6 +621,105 @@
   .uniko-pdp-keys-nav:disabled {
     opacity: 0.35;
     cursor: default;
+  }
+  .uniko-pdp-block-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+  .uniko-pdp-block-title {
+    margin: 0 0 22px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(26px, 3.2vw, 34px);
+    font-weight: 600;
+    color: #2c2622;
+  }
+  .uniko-pdp-faq {
+    background: #fff;
+    padding: 40px 0 44px;
+    border-top: 1px solid #efe9e3;
+  }
+  .uniko-pdp-faq-list { border-top: 1px solid #e5dfd9; }
+  .uniko-pdp-faq-item { border-bottom: 1px solid #e5dfd9; }
+  .uniko-pdp-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c2622;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .uniko-pdp-faq-item summary::-webkit-details-marker { display: none; }
+  .uniko-pdp-faq-item summary::after { content: "+"; font-size: 18px; font-weight: 400; color: #8a8178; }
+  .uniko-pdp-faq-item[open] summary::after { content: "−"; }
+  .uniko-pdp-faq-item p {
+    margin: 0 0 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5a534c;
+  }
+  .uniko-pdp-compare {
+    background: #faf8f5;
+    padding: 44px 0 48px;
+  }
+  .uniko-pdp-compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .uniko-pdp-compare-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e8e2dc;
+  }
+  .uniko-pdp-compare-table th,
+  .uniko-pdp-compare-table td {
+    padding: 14px 12px;
+    border: 1px solid #efe9e3;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .uniko-pdp-compare-table thead th {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #2c2622;
+    background: #f7f3ef;
+  }
+  .uniko-pdp-compare-table tbody th {
+    text-align: left;
+    font-weight: 600;
+    color: #4a4540;
+    background: #fff;
+  }
+  .uniko-pdp-compare-table .is-highlight {
+    background: #f9f5f1;
+    font-weight: 700;
+  }
+  .uniko-pdp-yes { color: #12572f; font-weight: 800; font-size: 16px; }
+  .uniko-pdp-no { color: #b5aea6; }
+  .uniko-pdp-maybe { color: #8a8178; font-size: 12px; font-weight: 600; }
+  .uniko-pdp-reviews {
+    padding: 48px 0 72px;
+    background: #fff;
+    margin: 0;
+  }
+  .uniko-pdp-reviews .reviews-head { text-align: left; padding: 0; }
+  .uniko-pdp-reviews .review-cards-carousel {
+    max-width: none;
+    margin-top: 22px;
+    padding: 0 44px;
+  }
+  .uniko-pdp-reviews .review-product-thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: #f9f5f1;
+    border-radius: 4px;
   }
   .uniko-pdp-sticky-title { margin: 0; font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 42vw; }
   .uniko-pdp-sticky-price { margin: 0; font-size: 13px; font-weight: 600; }
@@ -492,6 +766,10 @@
       min-width: 0;
     }
     .uniko-pdp-keys-nav { display: none; }
+    .uniko-pdp-block-inner { padding: 0 28px; }
+    .uniko-pdp-faq { padding: 52px 0 56px; }
+    .uniko-pdp-compare { padding: 52px 0 56px; }
+    .uniko-pdp-reviews { padding: 56px 0 88px; }
     .uniko-pdp-cert-row {
       flex-wrap: nowrap;
       justify-content: space-between;
@@ -566,6 +844,25 @@
       window.addEventListener("resize", syncIngNav);
       syncIngNav();
     }
+
+    root.querySelectorAll("[data-pdp-review-carousel]").forEach((carousel) => {
+      const track = carousel.querySelector(".review-cards-track");
+      const prev = carousel.querySelector("[data-carousel-prev]");
+      const next = carousel.querySelector("[data-carousel-next]");
+      if (!track || !next) return;
+      const scrollStep = () => {
+        const card = track.querySelector(".review-card");
+        if (!card) return 358;
+        const gap = parseFloat(getComputedStyle(track).gap) || 18;
+        return card.getBoundingClientRect().width + gap;
+      };
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: scrollStep(), behavior: "smooth" });
+      });
+      prev?.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollStep(), behavior: "smooth" });
+      });
+    });
   })();
 </script>
 
