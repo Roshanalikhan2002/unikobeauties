@@ -63,17 +63,26 @@
       <a href="#destockage" data-i18n="nav_clearance">Clearance</a>
       <a href="#a-propos" data-i18n="nav_about">About</a>
     </nav>
+  </header>
+  </div>
 
-    <nav class="mobile-drawer" id="mobile-nav" aria-label="Mobile navigation">
+  <button type="button" class="mobile-menu-overlay" id="mobile-overlay" aria-label="Close menu" tabindex="-1"></button>
+  <aside class="mobile-side-drawer" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-drawer-shimmer" aria-hidden="true"></div>
+    <div class="mobile-drawer-head">
+      <span class="mobile-drawer-brand">UNIKO</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-menu-close" aria-label="Close menu">×</button>
+    </div>
+    <nav class="mobile-drawer-nav">
       <a href="#boutique" data-i18n="nav_shop">Shop</a>
       <a href="#soins" data-i18n="nav_skincare">Skincare</a>
       <a href="#maquillage" data-i18n="nav_makeup">Makeup</a>
       <a href="#destockage" data-i18n="nav_clearance">Clearance</a>
       <a href="#a-propos" data-i18n="nav_about">About</a>
-      <a href="#recompenses">Rewards</a>
+      <a href="#recompenses" data-i18n="rewards">Rewards</a>
     </nav>
-  </header>
-  </div>
+    <p class="mobile-drawer-note" data-i18n="drawer_note">100% natural beauty</p>
+  </aside>
 
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">
@@ -485,20 +494,33 @@
     const header = document.getElementById("site-header");
     const toggle = document.getElementById("menu-toggle");
     const drawer = document.getElementById("mobile-nav");
+    const overlay = document.getElementById("mobile-overlay");
+    const menuClose = document.getElementById("mobile-menu-close");
 
-    toggle.addEventListener("click", () => {
-      const open = header.classList.toggle("is-open");
+    const setMobileMenuOpen = (open) => {
+      header.classList.toggle("is-open", open);
+      document.body.classList.toggle("menu-open", open);
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      requestAnimationFrame(syncTopOffset);
+      if (!open) requestAnimationFrame(syncTopOffset);
+    };
+
+    toggle.addEventListener("click", () => {
+      setMobileMenuOpen(!document.body.classList.contains("menu-open"));
     });
 
+    overlay?.addEventListener("click", () => setMobileMenuOpen(false));
+    menuClose?.addEventListener("click", () => setMobileMenuOpen(false));
+
     drawer.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        header.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
-      });
+      link.addEventListener("click", () => setMobileMenuOpen(false));
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.classList.contains("menu-open")) {
+        setMobileMenuOpen(false);
+      }
     });
 
     const impactSection = document.getElementById("durabilite");

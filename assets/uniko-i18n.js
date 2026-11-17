@@ -73,6 +73,7 @@
       menu_close: "Close menu",
       hero_alt:
         "Uniko Beauties \u2014 natural beauty and organic makeup",
+      drawer_note: "100% natural beauty",
     },
     fr: {
       promo: "Livraison gratuite pour les commandes de plus de\u00a095\u00a0\u20ac",
@@ -148,6 +149,7 @@
       menu_close: "Fermer le menu",
       hero_alt:
         "Uniko Beauties \u2014 beaut\u00e9 naturelle et maquillage bio",
+      drawer_note: "Beaut\u00e9 100 % naturelle",
     },
   };
 
