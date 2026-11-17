@@ -130,10 +130,22 @@
                         }}
                       {% endif %}
                     </div>
-                    <div class="category-card-caption">
-                      <span>{{ card_product.title }}</span>
+                    <div class="category-card-details">
+                      <p class="category-card-product-title">{{ card_product.title }}</p>
+                      <div class="category-card-rating" role="img" aria-label="Rating {{ block.settings.rating | default: '5.0' }} out of 5 stars">
+                        <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                        <span class="category-card-rating-value">{{ block.settings.rating | default: '5.0' }}</span>
+                        {% if block.settings.review_count != blank %}
+                          <span class="category-card-rating-count">({{ block.settings.review_count }})</span>
+                        {% endif %}
+                      </div>
                       {% if card_product.price > 0 %}
-                        <p class="category-card-price">{{ card_product.price | money }}</p>
+                        <p class="category-card-price-row">
+                          <span class="category-card-price-now">{{ card_product.price | money }}</span>
+                          {% if card_product.compare_at_price > card_product.price %}
+                            <s class="category-card-price-was">{{ card_product.compare_at_price | money }}</s>
+                          {% endif %}
+                        </p>
                       {% endif %}
                     </div>
                   </a>
@@ -184,14 +196,27 @@
                 <img class="category-card-img" src="{{ 'uniko-aloe-vera-shampoo-studio.jpg' | asset_img_url: 'master' }}" alt="Aloe Vera Shampoo" width="560" height="700" loading="lazy" decoding="async">
               {% endif %}
             </div>
-            <div class="category-card-caption">
+            <div class="category-card-details">
               {% if default_product != blank %}
-                <span>{{ default_product.title }}</span>
+                <p class="category-card-product-title">{{ default_product.title }}</p>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
                 {% if default_product.price > 0 %}
-                  <p class="category-card-price">{{ default_product.price | money }}</p>
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ default_product.price | money }}</span>
+                    {% if default_product.compare_at_price > default_product.price %}
+                      <s class="category-card-price-was">{{ default_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
                 {% endif %}
               {% else %}
-                <span>Aloe vera shampoo</span>
+                <p class="category-card-product-title">Aloe vera shampoo</p>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
               {% endif %}
             </div>
           </a>
@@ -698,6 +723,18 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Star rating",
+          "default": "5.0"
+        },
+        {
+          "type": "text",
+          "id": "review_count",
+          "label": "Review count (optional)",
+          "info": "Example: 128"
         }
       ]
     },

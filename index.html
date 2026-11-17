@@ -353,32 +353,101 @@
       display: block;
     }
 
+    .category-card--product {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e8e2db;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(31, 28, 25, 0.05);
+    }
+
     .category-card--product .category-card-media {
-      background-color: #fff;
+      background-color: #f3f0eb;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .category-card--product .category-card-media::after {
+      display: none;
     }
 
     .category-card--product .category-card-img {
       object-fit: contain;
-      padding: 10px 14px 18px;
+      padding: 12px 14px 16px;
       box-sizing: border-box;
-      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       transform: scale(1);
       transform-origin: center center;
     }
 
     .category-card--product:hover .category-card-img,
     .category-card--product:focus-within .category-card-img {
-      transform: scale(1.09);
+      transform: scale(1.06);
     }
 
-    .category-card--product .category-card-media::after {
-      background: transparent;
-      transition: background 0.4s ease;
+    .category-card-details {
+      padding: 14px 16px 18px;
+      background: #fff;
+      border-radius: 0 0 16px 16px;
     }
 
-    .category-card--product:hover .category-card-media::after,
-    .category-card--product:focus-within .category-card-media::after {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, rgba(240, 236, 230, 0.55) 100%);
+    .category-card-product-title {
+      margin: 0 0 8px;
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #1f1c19;
+    }
+
+    .category-card-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0 0 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #6a635c;
+    }
+
+    .category-card-stars {
+      color: #c9972e;
+      font-size: 15px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .category-card-rating-value {
+      font-weight: 700;
+      color: #1f1c19;
+    }
+
+    .category-card-rating-count {
+      color: #8a837c;
+      font-size: 12px;
+    }
+
+    .category-card-price-row {
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .category-card-price-now {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 800;
+      color: #1f1c19;
+      letter-spacing: 0.02em;
+    }
+
+    .category-card-price-was {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: #9a928a;
     }
 
     .category-card-caption {
@@ -407,51 +476,6 @@
       letter-spacing: 0.04em;
       color: #fff;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .category-card--product .category-card-caption {
-      left: 16px;
-      right: 16px;
-      bottom: 18px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-      pointer-events: none;
-    }
-
-    .category-card--product:hover .category-card-caption,
-    .category-card--product:focus-within .category-card-caption {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .category-card--product .category-card-caption span {
-      display: inline-block;
-      width: fit-content;
-      max-width: 100%;
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: 0.03em;
-      color: #fff;
-      text-shadow: none;
-      background: rgba(18, 87, 47, 0.92);
-      padding: 8px 14px 9px;
-      border-radius: 2px;
-      text-transform: capitalize;
-    }
-
-    .category-card--product .category-card-price {
-      display: inline-block;
-      margin: 8px 0 0;
-      padding: 5px 11px;
-      border-radius: 2px;
-      background: rgba(255, 255, 255, 0.96);
-      color: #12572f;
-      text-shadow: none;
-      font-size: 14px;
-      font-weight: 700;
     }
 
     .category-card-media::after {
@@ -1547,8 +1571,12 @@
             <div class="category-card-media">
               <img class="category-card-img" src="images/aloe-vera-shampoo-studio.jpg" alt="Aloe Vera Shampoo" width="560" height="700" loading="lazy" decoding="async">
             </div>
-            <div class="category-card-caption">
-              <span>Aloe vera shampoo</span>
+            <div class="category-card-details">
+              <p class="category-card-product-title">Aloe vera shampoo</p>
+              <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                <span class="category-card-rating-value">5.0</span>
+              </div>
             </div>
           </a>
           <a class="category-card" href="#yeux" role="listitem" style="--card-image: url('images/review-videos/03.jpg')">
