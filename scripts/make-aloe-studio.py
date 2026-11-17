@@ -1,11 +1,14 @@
-"""Real photo → white studio shot with soft drop shadow (no AI repaint)."""
+"""Regenerate studio shot from original photo — no color/brightness editing."""
+from __future__ import annotations
+
+import io
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageFilter
 from rembg import new_session, remove
 
-SESSION = new_session("u2net")
+SESSION = new_session("isnet-general-use")
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "aloe vera shampoo" / "WhatsApp Image 2026-11-18 at 2.48.20 AM.jpeg"
@@ -14,35 +17,37 @@ OUT_COPY = ROOT / "images" / "aloe-vera-shampoo-studio.jpg"
 
 W, H = 1600, 2000
 MARGIN = 0.09
-SHADOW_OFFSET_Y = 28
-JPEG_QUALITY = 96
+SHADOW_OFFSET_Y = 24
+JPEG_QUALITY = 97
 
 
-def _enhance_product(rgba: Image.Image) -> Image.Image:
-    """Lift exposure on product only — keeps white bg untouched."""
-    r, g, b, a = rgba.split()
-    rgb = Image.merge("RGB", (r, g, b))
-    rgb = ImageEnhance.Brightness(rgb).enhance(1.16)
-    rgb = ImageEnhance.Contrast(rgb).enhance(1.12)
-    rgb = ImageEnhance.Color(rgb).enhance(1.08)
-    rgb = rgb.filter(ImageFilter.UnsharpMask(radius=1.4, percent=125, threshold=3))
-    r, g, b = rgb.split()
-    return Image.merge("RGBA", (r, g, b, a))
+def defringe(rgba: Image.Image) -> Image.Image:
+    """Remove dark matting halo on edges (geometry only, not exposure)."""
+    arr = np.array(rgba, dtype=np.float32)
+    rgb, a = arr[..., :3], arr[..., 3] / 255.0
+    edge = (a > 0.05) & (a < 0.92)
+    a3 = a[..., None]
+    # Un-premultiply fringed pixels toward foreground
+    safe = np.maximum(a3, 0.15)
+    unmul = np.clip(rgb / safe, 0, 255)
+    rgb = np.where(edge[..., None], unmul, rgb)
+    arr[..., :3] = rgb
+    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGBA")
 
 
 def main() -> None:
-    source = Image.open(SRC).convert("RGB")
-    source = ImageEnhance.Brightness(source).enhance(1.08)
-    source = ImageEnhance.Contrast(source).enhance(1.06)
-    import io
-
-    buf = io.BytesIO()
-    source.save(buf, format="JPEG", quality=98)
-    cut = remove(buf.getvalue(), session=SESSION)
+    raw = SRC.read_bytes()
+    cut = remove(
+        raw,
+        session=SESSION,
+        alpha_matting=True,
+        alpha_matting_foreground_threshold=250,
+        alpha_matting_background_threshold=8,
+        alpha_matting_erode_size=10,
+    )
     product = Image.open(io.BytesIO(cut)).convert("RGBA")
-    product = _enhance_product(product)
+    product = defringe(product)
 
-    # Trim transparent padding
     bbox = product.getbbox()
     if bbox:
         product = product.crop(bbox)
@@ -59,19 +64,15 @@ def main() -> None:
     alpha = product.split()[3]
     shadow = Image.new("L", (nw, nh), 0)
     shadow.paste(alpha)
-    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=max(12, int(nw * 0.028))))
-    shadow_rgb = Image.new("RGBA", (nw, nh), (0, 0, 0, 0))
-    shadow_arr = np.array(shadow, dtype=np.float32)
-    shadow_arr = shadow_arr * 0.38
-    shadow_rgb.putalpha(Image.fromarray(shadow_arr.astype(np.uint8)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=max(14, int(nw * 0.03))))
+    shadow_rgba = Image.new("RGBA", (nw, nh), (0, 0, 0, 0))
+    sa = np.array(shadow, dtype=np.float32) * 0.34
+    shadow_rgba.putalpha(Image.fromarray(sa.astype(np.uint8)))
 
     px = (W - nw) // 2
-    py = (H - nh) // 2 + SHADOW_OFFSET_Y
-    canvas.alpha_composite(shadow_rgb, (px, py + 18))
-
-    px2 = (W - nw) // 2
-    py2 = (H - nh) // 2
-    canvas.alpha_composite(product, (px2, py2))
+    py_center = (H - nh) // 2
+    canvas.alpha_composite(shadow_rgba, (px, py_center + SHADOW_OFFSET_Y))
+    canvas.alpha_composite(product, (px, py_center))
 
     rgb = canvas.convert("RGB")
     OUT.parent.mkdir(parents=True, exist_ok=True)
