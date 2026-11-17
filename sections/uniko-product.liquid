@@ -2,26 +2,28 @@
 <section class="uniko-pdp" id="product" data-uniko-pdp>
   <div class="uniko-pdp-wrap">
     <div class="uniko-pdp-gallery-col">
-      <div class="uniko-pdp-gallery">
-        <div class="uniko-pdp-thumbs" aria-label="Product thumbnails">
-          {% assign gallery = "uniko-aloe-product-01-gallery.jpg,uniko-aloe-product-02-gallery.jpg,uniko-aloe-product-03-gallery.jpg,uniko-aloe-product-04-detail.jpg" | split: "," %}
-          {% for file in gallery %}
-            <button type="button" class="uniko-pdp-thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb data-src="{{ file | strip | asset_img_url: 'master' }}" aria-label="View image {{ forloop.index }}">
-              <img src="{{ file | strip | asset_img_url: 'width: 160' }}" alt="" loading="lazy" width="80" height="100">
-            </button>
-          {% endfor %}
-        </div>
-        <div class="uniko-pdp-main">
-          <img
-            id="uniko-pdp-main-img"
-            class="uniko-pdp-main-img"
-            src="{{ 'uniko-aloe-product-01-gallery.jpg' | asset_img_url: 'master' }}"
-            alt="{{ product.title | escape }}"
-            width="900"
-            height="1125"
-            loading="eager"
-          >
-        </div>
+      <div class="uniko-pdp-main">
+        {% if product.featured_media %}
+          {{ product.featured_media
+            | image_url: width: 1600
+            | image_tag:
+              class: 'uniko-pdp-main-img',
+              loading: 'eager',
+              alt: product.title,
+              widths: '600, 900, 1200, 1600',
+              sizes: '(min-width: 901px) 54vw, 100vw'
+          }}
+        {% elsif product.images.first %}
+          {{ product.images.first
+            | image_url: width: 1600
+            | image_tag:
+              class: 'uniko-pdp-main-img',
+              loading: 'eager',
+              alt: product.title,
+              widths: '600, 900, 1200, 1600',
+              sizes: '(min-width: 901px) 54vw, 100vw'
+          }}
+        {% endif %}
       </div>
     </div>
 
@@ -78,20 +80,18 @@
       <div class="uniko-pdp-accordions">
         <details class="uniko-pdp-acc" open>
           <summary data-i18n="pdp_acc_certs">Certifications</summary>
-          <div class="uniko-pdp-cert-panel">
-            <div class="uniko-pdp-cert-grid">
-              <div class="trust-badge">
-                <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'width: 280' }}" alt="Certified Organic Australia" loading="lazy" width="120" height="104">
-              </div>
-              <div class="trust-badge">
-                <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'width: 280' }}" alt="Animal test-free" loading="lazy" width="120" height="104">
-              </div>
-              <div class="trust-badge">
-                <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'width: 280' }}" alt="Vegan" loading="lazy" width="120" height="104">
-              </div>
-              <div class="trust-badge">
-                <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'width: 280' }}" alt="Halal" loading="lazy" width="120" height="104">
-              </div>
+          <div class="uniko-pdp-cert-row" role="list" aria-label="Certifications">
+            <div class="uniko-pdp-cert-badge" role="listitem">
+              <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'width: 320' }}" alt="Certified Organic Australia" loading="lazy" width="88" height="88">
+            </div>
+            <div class="uniko-pdp-cert-badge" role="listitem">
+              <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'width: 320' }}" alt="Animal test-free, PETA" loading="lazy" width="88" height="88">
+            </div>
+            <div class="uniko-pdp-cert-badge" role="listitem">
+              <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'width: 320' }}" alt="Certified Vegan" loading="lazy" width="88" height="88">
+            </div>
+            <div class="uniko-pdp-cert-badge" role="listitem">
+              <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'width: 320' }}" alt="Halal accredited" loading="lazy" width="88" height="88">
             </div>
           </div>
         </details>
@@ -143,32 +143,16 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .uniko-pdp-gallery-col { min-width: 0; }
-  .uniko-pdp-gallery {
-    display: grid;
-    grid-template-columns: 72px 1fr;
-    gap: 12px;
-    align-items: stretch;
+  .uniko-pdp-gallery-col {
+    min-width: 0;
+    margin-left: -18px;
+    margin-right: -18px;
   }
-  .uniko-pdp-thumbs {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .uniko-pdp-thumb {
-    border: 1px solid #e5dfd9;
-    border-radius: 4px;
-    padding: 4px;
-    background: #fff;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .uniko-pdp-thumb.is-active { border-color: #1f1c19; }
-  .uniko-pdp-thumb img { display: block; width: 100%; height: auto; object-fit: contain; }
   .uniko-pdp-main {
-    background: #fff;
-    border-radius: 4px;
-    min-height: 320px;
+    background: #f3ebe3;
+    border: 0;
+    border-radius: 0;
+    min-height: clamp(280px, 48vw, 620px);
     padding: 0;
     display: flex;
     align-items: center;
@@ -179,10 +163,13 @@
   .uniko-pdp-main-img {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: min(78vh, 900px);
+    height: 100%;
+    min-height: clamp(280px, 48vw, 620px);
+    max-height: min(82vh, 960px);
     object-fit: contain;
     object-position: center;
+    border: 0;
+    margin: 0;
   }
   .uniko-pdp-back { font-size: 14px; font-weight: 600; color: #6a625a; text-decoration: none; }
   .uniko-pdp-eyebrow {
@@ -271,26 +258,27 @@
   .uniko-pdp-acc summary::after { content: "▾"; font-size: 14px; }
   .uniko-pdp-acc[open] summary::after { content: "▴"; }
   .uniko-pdp-acc-body { padding: 0 0 20px; font-size: 14px; line-height: 1.6; color: #4a4540; }
-  .uniko-pdp-cert-panel {
-    background: #12572f;
-    border-radius: 6px;
-    padding: 22px 14px 18px;
-    margin: 0 0 20px;
-  }
-  .uniko-pdp-cert-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 16px;
-    justify-items: center;
+  .uniko-pdp-cert-row {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-start;
+    gap: 14px 22px;
+    padding: 4px 0 22px;
   }
-  .uniko-pdp-cert-panel .trust-badge { display: flex; align-items: center; justify-content: center; }
-  .uniko-pdp-cert-panel .trust-badge img {
+  .uniko-pdp-cert-badge {
+    flex: 0 1 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .uniko-pdp-cert-badge img {
     display: block;
     width: auto;
-    height: 88px;
-    max-width: 120px;
+    height: 72px;
+    max-width: 84px;
     object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(48%) sepia(22%) saturate(820%) hue-rotate(353deg) brightness(94%) contrast(88%);
   }
   .uniko-pdp-sticky {
     position: fixed;
@@ -336,8 +324,25 @@
       padding: 36px 28px 100px;
       align-items: start;
     }
-    .uniko-pdp-gallery-col { position: sticky; top: 20px; }
-    .uniko-pdp-cert-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .uniko-pdp-gallery-col {
+      position: sticky;
+      top: calc(var(--site-top, 0px) + 16px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .uniko-pdp-cert-row {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .uniko-pdp-cert-badge {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .uniko-pdp-cert-badge img {
+      height: 80px;
+      max-width: 100%;
+    }
   }
 {% endstylesheet %}
 
@@ -345,15 +350,6 @@
   (function () {
     const root = document.querySelector("[data-uniko-pdp]");
     if (!root) return;
-    const mainImg = root.querySelector("#uniko-pdp-main-img");
-    root.querySelectorAll("[data-pdp-thumb]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        root.querySelectorAll("[data-pdp-thumb]").forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        const src = btn.getAttribute("data-src");
-        if (mainImg && src) mainImg.src = src;
-      });
-    });
     const qtyInput = root.querySelector(".uniko-pdp-qty-input");
     root.querySelector("[data-qty-minus]")?.addEventListener("click", () => {
       if (!qtyInput) return;
