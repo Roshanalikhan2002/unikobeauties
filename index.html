@@ -1190,14 +1190,19 @@
       .desktop-search { display: none; }
 
       .header-top {
-        grid-template-columns: auto auto 1fr auto auto;
+        grid-template-columns: auto 1fr auto;
         min-height: 64px;
         padding: 0 14px;
         gap: 8px;
       }
 
-      .menu-toggle,
-      .mobile-search { display: inline-flex; }
+      .menu-toggle { display: inline-flex; }
+
+      .logo { justify-self: center; }
+
+      .header-tools .header-account { display: none; }
+
+      .header-tools .mobile-search { display: inline-flex; }
 
       .logo-name { font-size: 26px; letter-spacing: 0.18em; }
       .logo-sub { font-size: 11px; letter-spacing: 0.34em; margin-top: 2px; }
@@ -1523,13 +1528,6 @@
         <span data-i18n="rewards">Rewards</span>
       </a>
 
-      <button class="icon-btn mobile-search" type="button" aria-label="Search">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </button>
-
       <a class="logo" href="#accueil" aria-label="Uniko Beauties, home">
         <span class="logo-name">UNIKO</span>
         <span class="logo-sub">BEAUTIES</span>
@@ -1541,13 +1539,19 @@
           <span aria-hidden="true">·</span>
           <button type="button" class="lang-set" data-set-lang="fr" hreflang="fr" lang="fr" title="Français">FR</button>
         </nav>
+        <button class="icon-btn mobile-search" type="button" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
         <button class="icon-btn desktop-search" type="button" aria-label="Search">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
             <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </button>
-        <a class="icon-btn" href="#compte" aria-label="Account">
+        <a class="icon-btn header-account" href="#compte" aria-label="Account">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/>
             <path d="M5.2 19.2c1.4-3 3.8-4.4 6.8-4.4s5.4 1.4 6.8 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>

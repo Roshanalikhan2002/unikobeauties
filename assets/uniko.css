@@ -1176,14 +1176,19 @@
       .desktop-search { display: none; }
 
       .header-top {
-        grid-template-columns: auto auto 1fr auto auto;
+        grid-template-columns: auto 1fr auto;
         min-height: 64px;
         padding: 0 14px;
         gap: 8px;
       }
 
-      .menu-toggle,
-      .mobile-search { display: inline-flex; }
+      .menu-toggle { display: inline-flex; }
+
+      .logo { justify-self: center; }
+
+      .header-tools .header-account { display: none; }
+
+      .header-tools .mobile-search { display: inline-flex; }
 
       .logo-name { font-size: 26px; letter-spacing: 0.18em; }
       .logo-sub { font-size: 11px; letter-spacing: 0.34em; margin-top: 2px; }
