@@ -56,7 +56,7 @@ CATEGORY_TRACK_LIQUID = """
                 {% assign card_product = block.settings.product %}
                 {% if card_product != blank %}
                   <div class="category-product-item" role="listitem" {{ block.shopify_attributes }}>
-                    <a class="category-card category-card--product" href="{{ card_product.url }}">
+                    <a class="category-product-visual" href="{{ card_product.url }}" aria-label="{{ card_product.title | escape }}">
                       <div class="category-card-media">
                         {% if card_product.featured_media %}
                           {% assign card_img_alt = card_product.featured_media.alt | default: card_product.title | escape %}
@@ -90,6 +90,7 @@ CATEGORY_TRACK_LIQUID = """
                           {% endif %}
                         </p>
                       {% endif %}
+                      <a class="category-card-shop-btn" href="{{ card_product.url }}" data-i18n="shop_now">Shop now</a>
                     </div>
                   </div>
                 {% endif %}
@@ -131,7 +132,7 @@ CATEGORY_TRACK_LIQUID = """
           {% else %}
           {% assign default_product = all_products['aloe-vera-shampoo'] %}
           <div class="category-product-item" role="listitem">
-            <a class="category-card category-card--product" href="{% if default_product != blank %}{{ default_product.url }}{% else %}/products/aloe-vera-shampoo{% endif %}">
+            <a class="category-product-visual" href="{% if default_product != blank %}{{ default_product.url }}{% else %}/products/aloe-vera-shampoo{% endif %}" aria-label="{% if default_product != blank %}{{ default_product.title | escape }}{% else %}Aloe vera shampoo{% endif %}">
               <div class="category-card-media">
                 {% if default_product != blank and default_product.featured_media %}
                   {% assign card_img_alt = default_product.featured_media.alt | default: default_product.title | escape %}
@@ -156,12 +157,14 @@ CATEGORY_TRACK_LIQUID = """
                     {% endif %}
                   </p>
                 {% endif %}
+                <a class="category-card-shop-btn" href="{{ default_product.url }}" data-i18n="shop_now">Shop now</a>
               {% else %}
                 <a class="category-card-product-title" href="/products/aloe-vera-shampoo">Aloe vera shampoo</a>
                 <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
                   <span class="category-card-stars" aria-hidden="true">★★★★★</span>
                   <span class="category-card-rating-value">5.0</span>
                 </div>
+                <a class="category-card-shop-btn" href="/products/aloe-vera-shampoo" data-i18n="shop_now">Shop now</a>
               {% endif %}
             </div>
           </div>
