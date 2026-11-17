@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "uniko_homepage": {
+      "type": "uniko-homepage",
+      "settings": {}
+    }
+  },
+  "order": ["uniko_homepage"]
+}

@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uniko Beauties | Maquillage et soins biologiques</title>
+  <meta name="description" content="Uniko Beauties : maquillage primé, soins cliniquement prouvés et essentiels certifiés biologiques.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #0d3d24;
+      --ink: #1d1a17;
+      --muted: #5e584f;
+      --line: #ece7e1;
+      --bronze: #b08968;
+      --hero: #3c332c;
+      --hero-deep: #2a241f;
+      --tab: #8d7d6e;
+      --white: #ffffff;
+      --header: 118px;
+      --site-top: 166px;
+      --card-bg: #e6dfd7;
+      --impact-bg: #c9b5a8;
+      --impact-ink: #313437;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Montserrat", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      min-height: 100vh;
+      padding-top: var(--site-top);
+    }
+
+    #avis {
+      scroll-margin-top: calc(var(--site-top) + 16px);
+    }
+
+    .site-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: var(--white);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    img { max-width: 100%; display: block; }
+
+    .promo-bar {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 11px 16px;
+      line-height: 1.4;
+    }
+
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-top {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 74px;
+      padding: 8px 28px 0;
+      gap: 16px;
+    }
+
+    .rewards {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--bronze);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      justify-self: start;
+    }
+
+    .rewards svg { flex-shrink: 0; }
+
+    .logo {
+      text-align: center;
+      color: var(--bronze);
+      line-height: 0.9;
+    }
+
+    .logo-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      font-size: 34px;
+      letter-spacing: 0.22em;
+      display: block;
+      padding-left: 0.22em;
+    }
+
+    .logo-sub {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.42em;
+      display: block;
+      margin-top: 4px;
+      padding-left: 0.42em;
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .icon-btn {
+      background: none;
+      border: 0;
+      padding: 4px;
+      cursor: pointer;
+      color: #2b2b2b;
+      display: inline-flex;
+      position: relative;
+    }
+
+    .icon-btn:hover { color: var(--bronze); }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #111;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      display: grid;
+      place-items: center;
+      padding: 0 4px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      padding: 6px 24px 16px;
+    }
+
+    .nav a {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: #2c2c2c;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+    }
+
+    .nav a:hover { color: var(--bronze); }
+
+    .badge {
+      background: #111;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 3px 6px;
+      border-radius: 2px;
+      line-height: 1;
+    }
+
+    .menu-toggle,
+    .mobile-search { display: none; }
+
+    .mobile-drawer {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: var(--hero-deep);
+    }
+
+    .hero-banner-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: clamp(380px, 52vw, 680px);
+      max-height: 82vh;
+      object-fit: cover;
+      object-position: center 32%;
+    }
+
+    .category-section {
+      padding: 56px 0 64px;
+      background: var(--white);
+    }
+
+    .category-head {
+      padding: 0 40px 28px;
+    }
+
+    .category-head h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(34px, 4vw, 46px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #2c2622;
+    }
+
+    .category-track-wrap {
+      position: relative;
+    }
+
+    .category-track {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 40px;
+      padding: 0 40px 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #c7bfb5 transparent;
+    }
+
+    .category-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .category-track::-webkit-scrollbar-thumb {
+      background: #c7bfb5;
+      border-radius: 999px;
+    }
+
+    .category-card {
+      --card-image: none;
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      position: relative;
+      display: block;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    .category-card-media {
+      aspect-ratio: 4 / 5;
+      background-color: var(--card-bg);
+      background-image: var(--card-image);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .category-card-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, 0.35) 100%);
+    }
+
+    .category-card span {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 1;
+      color: #2a241f;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .category-card[style*="--card-image"] span {
+      color: var(--white);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .category-card:hover .category-card-media::after {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.45) 100%);
+    }
+
+    .trust-section {
+      background: #12572f;
+      color: var(--white);
+      padding: 50px 0 58px;
+    }
+
+    .trust-title {
+      margin: 0 auto 34px;
+      max-width: 920px;
+      padding: 0 24px;
+      text-align: center;
+      font-size: clamp(17px, 2.1vw, 22px);
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+
+    .trust-track {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 3vw, 36px);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 24px;
+      padding: 4px 24px 10px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+    }
+
+    .trust-track::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .trust-track::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+    }
+
+  .trust-badge {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 108px;
+    }
+
+    .trust-badge img {
+      display: block;
+      width: auto;
+      height: 104px;
+      max-width: 116px;
+      object-fit: contain;
+    }
+
+    @media (min-width: 1100px) {
+      .trust-track {
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding-inline: 40px;
+      }
+
+      .trust-badge img {
+        height: 112px;
+        max-width: 124px;
+      }
+    }
+
+    .impact-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--impact-bg);
+    }
+
+    .impact-media {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      aspect-ratio: 5 / 4;
+      background: #8f8a82;
+    }
+
+    .impact-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transform: scale(var(--impact-scale, 1.06));
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .impact-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 42px 22px 48px;
+      color: var(--impact-ink);
+    }
+
+    .impact-copy-inner {
+      width: min(100%, 520px);
+    }
+
+    .impact-eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .impact-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(30px, 4.2vw, 42px);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .impact-text {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #3a3d40;
+      margin-bottom: 28px;
+    }
+
+    .btn-impact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 26px;
+      border-radius: 2px;
+      background: var(--green);
+      color: var(--white);
+      border: 1.5px solid var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .btn-impact:hover {
+      background: #0a3320;
+      border-color: #0a3320;
+    }
+
+    .reviews-section {
+      padding: 56px 0 10px;
+      background: var(--white);
+    }
+
+    .reviews-head {
+      text-align: center;
+      padding: 0 24px 10px;
+    }
+
+    .reviews-head h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(34px, 4vw, 44px);
+      font-weight: 600;
+      color: #2c2622;
+    }
+
+    .reviews-meta {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #5d4c3f;
+    }
+
+    .review-stars {
+      display: inline-flex;
+      gap: 2px;
+      color: #9a6f4e;
+    }
+
+    .review-cards-carousel {
+      position: relative;
+      max-width: 1180px;
+      margin: 26px auto 0;
+      padding: 0 54px;
+    }
+
+    .review-cards-track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+
+    .review-cards-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      flex: 0 0 min(88vw, 340px);
+      scroll-snap-align: start;
+      border: 1px solid #e8e2dc;
+      border-radius: 4px;
+      padding: 22px 22px 16px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+
+    .review-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .review-card-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2c2622;
+    }
+
+    .review-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #3d6ea8;
+    }
+
+    .review-verified svg {
+      flex-shrink: 0;
+    }
+
+    .review-card-date {
+      font-size: 13px;
+      color: #8a8178;
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .review-card-stars {
+      color: #9a6f4e;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #2c2622;
+    }
+
+    .review-card-body {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #4a4540;
+      flex: 1;
+    }
+
+    .review-card-more {
+      color: #3d6ea8;
+      font-weight: 500;
+    }
+
+    .review-card-product {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid #f0ebe6;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-product-thumb {
+      width: 46px;
+      height: 46px;
+      border-radius: 2px;
+      background: var(--card-bg);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .review-product-name {
+      font-size: 13px;
+      line-height: 1.35;
+      color: #6f6760;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid #e5dfd9;
+      background: var(--white);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: #5a534c;
+      z-index: 2;
+    }
+
+    .carousel-btn:hover {
+      border-color: #cfc6bd;
+      color: var(--ink);
+    }
+
+    .carousel-btn--prev { left: 6px; }
+    .carousel-btn--next { right: 6px; }
+
+  @media (min-width: 901px) {
+      .review-card {
+        flex: 0 0 calc((100% - 36px) / 3);
+      }
+    }
+
+    .reviews-videos-block {
+      margin-top: 52px;
+      padding: 0 0 44px;
+    }
+
+    .reviews-videos {
+      padding: 18px 0 50px;
+    }
+
+    .reviews-videos-tag {
+      text-align: center;
+      font-size: clamp(21px, 3vw, 28px);
+      font-weight: 500;
+      color: #2f2a26;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+
+    .review-video-track {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 20px;
+      padding: 26px 20px 34px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .review-video-card {
+      flex: 0 0 min(68vw, 230px);
+      scroll-snap-align: center;
+      transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.38s ease;
+      border-radius: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .review-video-link {
+      display: block;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+      background: #ddd4cb;
+    }
+
+    .review-video-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .review-video-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.22) 100%);
+      pointer-events: none;
+    }
+
+    .video-play {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 1;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: #2b2b2b;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    }
+
+    @media (min-width: 901px) {
+      .review-video-card {
+        flex-basis: 248px;
+      }
+
+      .review-video-track {
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        padding-inline: 40px;
+      }
+
+      .review-video-card:hover,
+      .review-video-card:focus-within {
+        transform: scale(1.1);
+        z-index: 4;
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
+      }
+    }
+
+    .site-footer {
+      background: #31363d;
+      color: #e7dcd3;
+      padding: 58px 0 28px;
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      text-align: left;
+    }
+
+    .footer-brand .logo-name {
+      font-size: 30px;
+      color: var(--bronze);
+    }
+
+    .footer-brand .logo-sub {
+      font-size: 11px;
+      color: var(--bronze);
+    }
+
+    .footer-tagline {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #d4c9c0;
+      max-width: 320px;
+    }
+
+    .footer-links-desktop {
+      display: none;
+    }
+
+    .footer-col h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: #f2ebe5;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: #e7dcd3;
+      opacity: 0.92;
+    }
+
+    .footer-col a:hover {
+      opacity: 1;
+      color: #fff;
+    }
+
+    .footer-accordion details {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 0;
+    }
+
+    .footer-accordion summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      list-style: none;
+    }
+
+    .footer-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .footer-accordion ul {
+      list-style: none;
+      padding: 12px 0 4px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 36px auto 0;
+      padding: 22px 22px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      display: grid;
+      gap: 18px;
+      font-size: 12px;
+      color: #c9beb4;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      color: #f2ebe5;
+      display: inline-flex;
+    }
+
+    .footer-social a:hover {
+      color: #fff;
+    }
+
+    .footer-payments {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .pay-pill {
+      background: #fff;
+      color: #222;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      padding: 4px 7px;
+      border-radius: 3px;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 901px) {
+      .footer-grid {
+        grid-template-columns: 1.25fr repeat(4, minmax(0, 1fr));
+        gap: 28px;
+        align-items: start;
+      }
+
+      .footer-accordion {
+        display: none;
+      }
+
+      .footer-links-desktop {
+        display: block;
+      }
+
+      .footer-bottom {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+      }
+
+      .footer-payments {
+        justify-content: flex-end;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .impact-section {
+        grid-template-columns: 1fr 1fr;
+        min-height: 560px;
+      }
+
+      .impact-media {
+        order: 2;
+        aspect-ratio: auto;
+        min-height: 100%;
+      }
+
+      .impact-copy {
+        order: 1;
+        padding: 64px 7% 64px 8%;
+        justify-content: flex-start;
+      }
+
+      .impact-copy-inner {
+        max-width: 520px;
+      }
+
+      .impact-title {
+        font-size: 40px;
+      }
+
+      .impact-text {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --header: 64px;
+        --site-top: 104px;
+      }
+
+      .promo-bar {
+        font-size: 10.5px;
+        letter-spacing: 0.08em;
+        padding: 10px 12px;
+      }
+
+      .rewards,
+      .desktop-search { display: none; }
+
+      .header-top {
+        grid-template-columns: auto auto 1fr auto auto;
+        min-height: 64px;
+        padding: 0 14px;
+        gap: 8px;
+      }
+
+      .menu-toggle,
+      .mobile-search { display: inline-flex; }
+
+      .logo-name { font-size: 26px; letter-spacing: 0.18em; }
+      .logo-sub { font-size: 11px; letter-spacing: 0.34em; margin-top: 2px; }
+
+      .nav { display: none; }
+
+      .header.is-open .mobile-drawer {
+        display: flex;
+        flex-direction: column;
+        padding: 8px 20px 18px;
+        border-top: 1px solid var(--line);
+        gap: 4px;
+      }
+
+      .mobile-drawer a {
+        font-size: 16px;
+        font-weight: 500;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .hero-banner-img {
+        min-height: 420px;
+        max-height: 68vh;
+        object-position: center 28%;
+      }
+
+      .category-section {
+        padding: 34px 0 48px;
+      }
+
+      .category-head {
+        padding: 0 18px 18px;
+      }
+
+      .category-head h2 {
+        font-size: 34px;
+      }
+
+      .category-track {
+        gap: 8px;
+        scroll-padding-left: 18px;
+        padding: 0 18px 6px;
+      }
+
+      .category-card {
+        flex-basis: min(78vw, 300px);
+      }
+
+      .category-card span {
+        font-size: 20px;
+        left: 16px;
+        bottom: 14px;
+      }
+
+      .trust-section {
+        padding: 42px 0 48px;
+      }
+
+      .trust-title {
+        margin-bottom: 26px;
+        padding-inline: 18px;
+        font-size: 16px;
+      }
+
+      .trust-track {
+        gap: 22px;
+        scroll-padding-inline: 18px;
+        padding-inline: 18px;
+      }
+
+      .trust-badge {
+        min-width: calc(42vw - 12px);
+      }
+
+      .trust-badge img {
+        height: 96px;
+        max-width: 100%;
+      }
+
+      .impact-media {
+        min-height: 300px;
+        aspect-ratio: 4 / 3.2;
+      }
+
+      .impact-copy {
+        padding: 36px 18px 44px;
+      }
+
+      .impact-title {
+        font-size: 30px;
+      }
+
+      .reviews-section {
+        padding-top: 42px;
+      }
+
+      .review-video-track {
+        justify-content: flex-start;
+        padding-inline: 18px;
+      }
+
+      .review-cards-carousel {
+        padding-inline: 18px;
+      }
+
+      .carousel-btn {
+        display: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo-name { font-size: 22px; }
+      .hero-banner-img { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-top" id="site-top">
+  <div class="promo-bar" role="region" aria-label="Livraison gratuite">
+    Livraison gratuite pour les commandes de plus de 95&nbsp;€
+  </div>
+  <header class="header" id="site-header">
+    <div class="header-top">
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ouvrir le menu">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <path d="M1 1.5h20M1 8h20M1 14.5h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <a class="rewards" href="#recompenses">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 1.2l1.35 3.55L13 5.1 10.2 7.6l.85 3.7L8 9.55 4.95 11.3l.85-3.7L2 5.1l3.65-.35L8 1.2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+        Récompenses
+      </a>
+
+      <button class="icon-btn mobile-search" type="button" aria-label="Rechercher">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <a class="logo" href="#accueil" aria-label="Uniko Beauties, accueil">
+        <span class="logo-name">UNIKO</span>
+        <span class="logo-sub">BEAUTIES</span>
+      </a>
+
+      <div class="header-tools">
+        <button class="icon-btn desktop-search" type="button" aria-label="Rechercher">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a class="icon-btn" href="#compte" aria-label="Compte">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M5.2 19.2c1.4-3 3.8-4.4 6.8-4.4s5.4 1.4 6.8 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="#panier" aria-label="Panier, 0 article">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 8.5h11l-.8 10.2a1.5 1.5 0 0 1-1.5 1.3H8.8a1.5 1.5 0 0 1-1.5-1.3L6.5 8.5z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#boutique">Boutique</a>
+      <a href="#soins">Soins</a>
+      <a href="#maquillage">Maquillage</a>
+      <a href="#destockage">Déstockage</a>
+      <a href="#a-propos">À propos</a>
+    </nav>
+
+    <nav class="mobile-drawer" id="mobile-nav" aria-label="Navigation mobile">
+      <a href="#boutique">Boutique</a>
+      <a href="#soins">Soins</a>
+      <a href="#maquillage">Maquillage</a>
+      <a href="#destockage">Déstockage</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#recompenses">Récompenses</a>
+    </nav>
+  </header>
+  </div>
+
+  <main id="accueil">
+    <section class="hero" id="accueil-hero" aria-label="Bannière d'accueil">
+      <img
+        class="hero-banner-img"
+        src="images/hero-banner.jpg"
+        alt="Uniko Beauties — beauté naturelle et maquillage bio"
+        width="1600"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </section>
+
+    <section class="category-section" id="boutique" aria-labelledby="category-title">
+      <div class="category-head">
+        <h2 id="category-title">Acheter par catégorie</h2>
+      </div>
+      <div class="category-track-wrap">
+        <!--
+          Images volontairement vides. Pour une carte :
+          <a class="category-card" style="--card-image: url('images/visage.jpg')">
+        -->
+        <div class="category-track" tabindex="0" role="list" aria-label="Catégories de produits">
+          <a class="category-card" href="#visage" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Visage</span>
+          </a>
+          <a class="category-card" href="#yeux" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Yeux</span>
+          </a>
+          <a class="category-card" href="#levres" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Lèvres</span>
+          </a>
+          <a class="category-card" href="#peau" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Peau</span>
+          </a>
+          <a class="category-card" href="#soins" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Soins</span>
+          </a>
+          <a class="category-card" href="#maquillage" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Maquillage</span>
+          </a>
+          <a class="category-card" href="#corps" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Corps</span>
+          </a>
+          <a class="category-card" href="#cheveux" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Cheveux</span>
+          </a>
+          <a class="category-card" href="#nouveautes" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Nouveautés</span>
+          </a>
+          <a class="category-card" href="#meilleures-ventes" role="listitem">
+            <div class="category-card-media" aria-hidden="true"></div>
+            <span>Meilleures ventes</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section" id="certifications" aria-labelledby="trust-title">
+      <h2 class="trust-title" id="trust-title">La marque de beauté la plus certifiée au monde</h2>
+      <div class="trust-track" tabindex="0" role="list" aria-label="Labels et certifications">
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/01-ofc-organic.png" alt="Certifié biologique Australie" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/02-peta.png" alt="Sans test sur les animaux, certifié PETA" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/03-vegan.png" alt="Certifié Vegan Society" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/04-cosmos-natural.png" alt="ACO COSMOS Natural" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/05-cosmos-organic.png" alt="ACO COSMOS Organic" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/06-halal.png" alt="Certifié Halal" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/07-organic-cosmetic.png" alt="Cosmétique biologique certifiée" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/08-reef-friendly.png" alt="Certifié respectueux des récifs" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge" role="listitem">
+          <img src="images/trust-badges/09-cleanhub.png" alt="CleanHub" width="300" height="300" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section" id="durabilite" aria-labelledby="impact-eyebrow">
+      <div class="impact-media" data-impact-media>
+        <img
+          src="images/sustainability-impact-hd.jpg"
+          alt="Portrait naturel entouré de feuillage, thème durabilité"
+          width="1600"
+          height="800"
+          loading="lazy"
+          decoding="async"
+          data-impact-zoom
+        >
+      </div>
+      <div class="impact-copy">
+        <div class="impact-copy-inner">
+          <p class="impact-eyebrow" id="impact-eyebrow">Impact durabilité</p>
+          <h2 class="impact-title">La première marque de maquillage neutre en plastique au monde</h2>
+          <p class="impact-text">Nos produits n'utilisent que les ingrédients 100 % naturels les plus purs, dont l'efficacité est prouvée. Nous ouvrons la voie à une beauté durable grâce à un emballage écologique et en luttant activement contre la crise du plastique.</p>
+          <a class="btn-impact" href="#a-propos">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="avis" aria-labelledby="reviews-title">
+      <div class="reviews-head">
+        <h2 id="reviews-title">Avis clients</h2>
+        <div class="reviews-meta" aria-label="Note moyenne 5 étoiles sur 16 140 avis">
+          <span class="review-stars" aria-hidden="true">★★★★★</span>
+          <span>16 140 avis</span>
+        </div>
+      </div>
+
+      <div class="review-cards-carousel" data-review-carousel>
+        <button type="button" class="carousel-btn carousel-btn--prev" data-carousel-prev aria-label="Avis précédents">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M14.5 5.5 9 11l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="review-cards-track" tabindex="0" role="list" aria-label="Avis clients récents">
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Angela B.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Acheteuse vérifiée
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-11-17">17/11/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title">Fini propre et lumineux</h3>
+            <p class="review-card-body">Un fini radieux et naturel qui dure toute la journée. <a class="review-card-more" href="#avis">Lire la suite</a></p>
+            <div class="review-card-product">
+              <div class="review-product-thumb" aria-hidden="true"></div>
+              <p class="review-product-name">Uniko Beauties — Fond de teint liquide</p>
+            </div>
+          </article>
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Jess</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Avis vérifié
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-09-03">03/09/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title">Seconde peau</h3>
+            <p class="review-card-body">Aucun pincement, aucune démangeaison — parfait pour ma peau sensible. <a class="review-card-more" href="#avis">Lire la suite</a></p>
+            <div class="review-card-product">
+              <div class="review-product-thumb" aria-hidden="true"></div>
+              <p class="review-product-name">Uniko Beauties — Poudre minérale libre</p>
+            </div>
+          </article>
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Belinda L.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Acheteuse vérifiée
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-07-11">11/07/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title">Parfait</h3>
+            <p class="review-card-body">Des produits fantastiques et un maquillage impeccable pour le mariage de ma fille.</p>
+            <div class="review-card-product">
+              <div class="review-product-thumb" aria-hidden="true"></div>
+              <p class="review-product-name">Uniko Beauties — Kit perfection naturelle</p>
+            </div>
+          </article>
+          <article class="review-card" role="listitem">
+            <div class="review-card-top">
+              <div>
+                <p class="review-card-name">Sophie M.</p>
+                <p class="review-verified">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Acheteuse vérifiée
+                </p>
+              </div>
+              <time class="review-card-date" datetime="2026-05-20">20/05/26</time>
+            </div>
+            <p class="review-card-stars" aria-hidden="true">★★★★★</p>
+            <h3 class="review-card-title">Ma nouvelle routine</h3>
+            <p class="review-card-body">Texture légère, fini velouté — je ne change plus de marque. <a class="review-card-more" href="#avis">Lire la suite</a></p>
+            <div class="review-card-product">
+              <div class="review-product-thumb" aria-hidden="true"></div>
+              <p class="review-product-name">Uniko Beauties — Sérum éclat botanique</p>
+            </div>
+          </article>
+        </div>
+        <button type="button" class="carousel-btn carousel-btn--next" data-carousel-next aria-label="Avis suivants">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9.5 5.5 15 11l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="reviews-videos-block" aria-labelledby="reviews-videos-heading">
+        <p class="reviews-videos-tag" id="reviews-videos-heading">#unikobeauties</p>
+        <div class="review-video-track" tabindex="0" role="list" aria-label="Vidéos d'avis clients">
+        <article class="review-video-card" role="listitem">
+          <a class="review-video-link" href="#avis-video-1" aria-label="Voir la vidéo d'avis client 1">
+            <img src="images/review-videos/01.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
+            </span>
+          </a>
+        </article>
+        <article class="review-video-card" role="listitem">
+          <a class="review-video-link" href="#avis-video-2" aria-label="Voir la vidéo d'avis client 2">
+            <img src="images/review-videos/02.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
+            </span>
+          </a>
+        </article>
+        <article class="review-video-card" role="listitem">
+          <a class="review-video-link" href="#avis-video-3" aria-label="Voir la vidéo d'avis client 3">
+            <img src="images/review-videos/03.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
+            </span>
+          </a>
+        </article>
+        <article class="review-video-card" role="listitem">
+          <a class="review-video-link" href="#avis-video-4" aria-label="Voir la vidéo d'avis client 4">
+            <img src="images/review-videos/04.jpg" alt="" width="600" height="1067" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
+            </span>
+          </a>
+        </article>
+        <article class="review-video-card" role="listitem">
+          <a class="review-video-link" href="#avis-video-5" aria-label="Voir la vidéo d'avis client 5">
+            <img src="images/review-videos/05.jpg" alt="" width="1600" height="800" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
+            </span>
+          </a>
+        </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="pied-de-page">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="#accueil" aria-label="Uniko Beauties, accueil">
+          <span class="logo-name">UNIKO</span>
+          <span class="logo-sub">BEAUTIES</span>
+        </a>
+        <p class="footer-tagline">Beauté 100 % naturelle | La marque de beauté la plus certifiée au monde</p>
+      </div>
+
+      <div class="footer-col footer-links-desktop">
+        <h3>Boutique</h3>
+        <ul>
+          <li><a href="#soins">Soins</a></li>
+          <li><a href="#visage">Visage</a></li>
+          <li><a href="#yeux">Yeux</a></li>
+          <li><a href="#levres">Lèvres</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-links-desktop">
+        <h3>Service client</h3>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#retours">Retours et remboursements</a></li>
+          <li><a href="#livraison">Livraison</a></li>
+          <li><a href="#promotions">Promotions</a></li>
+          <li><a href="#confidentialite">Confidentialité</a></li>
+          <li><a href="#conditions">Conditions d'utilisation</a></li>
+          <li><a href="#recompenses">Conditions Récompenses</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-links-desktop">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#contact">Nous contacter</a></li>
+          <li><a href="#revendeurs">Trouver un revendeur</a></li>
+          <li><a href="#grossiste">Demandes grossistes</a></li>
+          <li><a href="#presse">Demandes presse</a></li>
+          <li><a href="#affiliation">Devenir affilié</a></li>
+          <li><a href="#newsletter">Inscription newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-links-desktop">
+        <h3>À propos</h3>
+        <ul>
+          <li><a href="#a-propos">Notre histoire</a></li>
+          <li><a href="#durabilite">Notre engagement durable</a></li>
+          <li><a href="#certifications">Nos certifications</a></li>
+          <li><a href="#avis">Témoignages clients</a></li>
+          <li><a href="#ingredients">Glossaire des ingrédients</a></li>
+          <li><a href="#recompenses">Prix et distinctions</a></li>
+        </ul>
+      </div>
+
+      <nav class="footer-accordion" aria-label="Navigation pied de page">
+        <details>
+          <summary>Boutique <span aria-hidden="true">+</span></summary>
+          <ul>
+            <li><a href="#soins">Soins</a></li>
+            <li><a href="#visage">Visage</a></li>
+            <li><a href="#yeux">Yeux</a></li>
+            <li><a href="#levres">Lèvres</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Service client <span aria-hidden="true">+</span></summary>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#retours">Retours et remboursements</a></li>
+            <li><a href="#livraison">Livraison</a></li>
+            <li><a href="#promotions">Promotions</a></li>
+            <li><a href="#confidentialite">Confidentialité</a></li>
+            <li><a href="#conditions">Conditions d'utilisation</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>Contact <span aria-hidden="true">+</span></summary>
+          <ul>
+            <li><a href="#contact">Nous contacter</a></li>
+            <li><a href="#revendeurs">Trouver un revendeur</a></li>
+            <li><a href="#grossiste">Demandes grossistes</a></li>
+            <li><a href="#newsletter">Inscription newsletter</a></li>
+          </ul>
+        </details>
+        <details>
+          <summary>À propos <span aria-hidden="true">+</span></summary>
+          <ul>
+            <li><a href="#a-propos">Notre histoire</a></li>
+            <li><a href="#durabilite">Notre engagement durable</a></li>
+            <li><a href="#certifications">Nos certifications</a></li>
+            <li><a href="#avis">Témoignages clients</a></li>
+          </ul>
+        </details>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Uniko Beauties. Tous droits réservés.</p>
+      <div class="footer-social" aria-label="Réseaux sociaux">
+        <a href="#instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#facebook" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5h2.5l-.6 3H14v9h-3.8v-9H9V8.5h1.2V7c0-1 .3-1.8 1-2.4.7-.6 1.6-.9 2.7-.9H14v3h-1.5c-.5 0-.8.1-1 .3-.2.2-.3.5-.3 1v1.1z"/></svg>
+        </a>
+        <a href="#pinterest" aria-label="Pinterest">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7 2 3.4 5.5 3.4 10.1c0 3.1 1.8 5.1 2.9 6 .2.2.3 0 .3-.2l.3-1.1c0-.2 0-.5-.1-.7-.3-.8-.6-1.6-.6-2.4 0-2.3 1.8-4.4 4.8-4.4 2.6 0 4.1 1.6 4.1 3.9 0 2.9-1.3 5.3-3.2 5.3-.9 0-1.6-.8-1.4-1.7.3-1.1.8-2.2.8-3 0-.7-.4-1.3-1.2-1.3-.9 0-1.7 1-1.7 2.4 0 .9.3 1.5.3 1.5s-1.2 4.8-1.4 5.6c-.4 1.7-.1 3.8 0 5.3.1.1.3.1.4 0 1.7-2.2 2.9-4.8 3.4-6.2.2.3.6.5 1.1.7 1 .4 2.3.4 3.8-.2 2.8-1.1 4.8-4.3 4.8-8.1C20.6 5.5 17 2 12 2z"/></svg>
+        </a>
+        <a href="#tiktok" aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.6 3h2.8v12.3c0 2.1-1.7 3.9-3.8 3.9s-3.8-1.7-3.8-3.9 1.7-3.8 3.8-3.8c.4 0 .7 0 1.1.1V10c-.3-.1-.7-.1-1-.1-1.7 0-3 1.4-3 3.2s1.3 3.1 3 3.1 3-1.4 3-3.1V3z"/></svg>
+        </a>
+        <a href="#youtube" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 9.3v5.4L15.2 12 10 9.3z"/><path d="M21 8.2s-.2-1.5-.8-2.2c-.8-.8-1.7-.8-2.1-.9C15.6 4.8 12 4.8 12 4.8h0s-3.6 0-6.1.3c-.4.1-1.3.1-2.1.9-.6.7-.8 2.2-.8 2.2S2.7 9.8 2.7 11.4v1.2c0 1.6.3 3.2.3 3.2s.2 1.5.8 2.2c.8.8 1.8.8 2.3.8 1.7.2 6.9.3 6.9.3s3.6 0 6.1-.3c.4-.1 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.3-1.6.3-3.2v-1.2c0-1.6-.3-3.2-.3-3.2z"/></svg>
+        </a>
+      </div>
+      <div class="footer-payments" aria-label="Moyens de paiement acceptés">
+        <span class="pay-pill">AMEX</span>
+        <span class="pay-pill">Apple Pay</span>
+        <span class="pay-pill">Google Pay</span>
+        <span class="pay-pill">Mastercard</span>
+        <span class="pay-pill">PayPal</span>
+        <span class="pay-pill">Shop Pay</span>
+        <span class="pay-pill">Visa</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteTop = document.getElementById("site-top");
+
+    const syncTopOffset = () => {
+      document.documentElement.style.setProperty("--site-top", `${siteTop.offsetHeight}px`);
+    };
+
+    syncTopOffset();
+    window.addEventListener("resize", syncTopOffset);
+
+    const header = document.getElementById("site-header");
+    const toggle = document.getElementById("menu-toggle");
+    const drawer = document.getElementById("mobile-nav");
+
+    toggle.addEventListener("click", () => {
+      const open = header.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      requestAnimationFrame(syncTopOffset);
+    });
+
+    drawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Ouvrir le menu");
+      });
+    });
+
+    const impactSection = document.getElementById("durabilite");
+    const impactZoom = document.querySelector("[data-impact-zoom]");
+    const canAnimateZoom = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const updateImpactZoom = () => {
+      if (!impactSection || !impactZoom || !canAnimateZoom) return;
+
+      const rect = impactSection.getBoundingClientRect();
+      const view = window.innerHeight;
+      const total = view + rect.height;
+      const traveled = view - rect.top;
+      const progress = Math.min(1, Math.max(0, traveled / total));
+      const scale = 1.06 + progress * 0.16;
+
+      impactZoom.style.setProperty("--impact-scale", scale.toFixed(3));
+    };
+
+  window.addEventListener("scroll", updateImpactZoom, { passive: true });
+    window.addEventListener("resize", updateImpactZoom);
+    updateImpactZoom();
+
+    document.querySelectorAll("[data-review-carousel]").forEach((carousel) => {
+      const track = carousel.querySelector(".review-cards-track");
+      const prev = carousel.querySelector("[data-carousel-prev]");
+      const next = carousel.querySelector("[data-carousel-next]");
+
+      const scrollStep = () => {
+        const card = track.querySelector(".review-card");
+        if (!card) return 358;
+        const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 18;
+        return card.getBoundingClientRect().width + gap;
+      };
+
+      prev?.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollStep(), behavior: "smooth" });
+      });
+
+      next?.addEventListener("click", () => {
+        track.scrollBy({ left: scrollStep(), behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
