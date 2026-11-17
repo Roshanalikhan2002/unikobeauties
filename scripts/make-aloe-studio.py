@@ -2,7 +2,7 @@
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter
 from rembg import new_session, remove
 
 SESSION = new_session("u2net")
@@ -18,10 +18,29 @@ SHADOW_OFFSET_Y = 28
 JPEG_QUALITY = 96
 
 
+def _enhance_product(rgba: Image.Image) -> Image.Image:
+    """Lift exposure on product only — keeps white bg untouched."""
+    r, g, b, a = rgba.split()
+    rgb = Image.merge("RGB", (r, g, b))
+    rgb = ImageEnhance.Brightness(rgb).enhance(1.16)
+    rgb = ImageEnhance.Contrast(rgb).enhance(1.12)
+    rgb = ImageEnhance.Color(rgb).enhance(1.08)
+    rgb = rgb.filter(ImageFilter.UnsharpMask(radius=1.4, percent=125, threshold=3))
+    r, g, b = rgb.split()
+    return Image.merge("RGBA", (r, g, b, a))
+
+
 def main() -> None:
-    raw = SRC.read_bytes()
-    cut = remove(raw, session=SESSION)
-    product = Image.open(__import__("io").BytesIO(cut)).convert("RGBA")
+    source = Image.open(SRC).convert("RGB")
+    source = ImageEnhance.Brightness(source).enhance(1.08)
+    source = ImageEnhance.Contrast(source).enhance(1.06)
+    import io
+
+    buf = io.BytesIO()
+    source.save(buf, format="JPEG", quality=98)
+    cut = remove(buf.getvalue(), session=SESSION)
+    product = Image.open(io.BytesIO(cut)).convert("RGBA")
+    product = _enhance_product(product)
 
     # Trim transparent padding
     bbox = product.getbbox()
