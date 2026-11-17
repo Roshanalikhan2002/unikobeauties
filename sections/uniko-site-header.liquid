@@ -1,0 +1,123 @@
+{% comment %}Global site header{% endcomment %}
+<div class="site-top" id="site-top">
+  <div class="promo-bar" role="region" data-i18n-aria="promo_aria" data-i18n="promo">Free delivery on orders over&nbsp;€95</div>
+  <header class="header" id="site-header">
+    <div class="header-top">
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <path d="M1 1.5h20M1 8h20M1 14.5h20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <a class="rewards" href="{{ routes.root_url }}#recompenses">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 1.2l1.35 3.55L13 5.1 10.2 7.6l.85 3.7L8 9.55 4.95 11.3l.85-3.7L2 5.1l3.65-.35L8 1.2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+        <span data-i18n="rewards">Rewards</span>
+      </a>
+
+      <button class="icon-btn mobile-search" type="button" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <a class="logo" href="{{ routes.root_url }}" aria-label="Uniko Beauties, home">
+        <span class="logo-name">UNIKO</span>
+        <span class="logo-sub">BEAUTIES</span>
+      </a>
+
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Site language">
+          <button type="button" class="lang-set" data-set-lang="en" hreflang="en" lang="en" aria-current="true" title="English">EN</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" class="lang-set" data-set-lang="fr" hreflang="fr" lang="fr" title="Français">FR</button>
+        </nav>
+        <button class="icon-btn desktop-search" type="button" aria-label="Search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a class="icon-btn" href="{{ routes.account_url }}" aria-label="Account">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M5.2 19.2c1.4-3 3.8-4.4 6.8-4.4s5.4 1.4 6.8 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="{{ routes.cart_url }}" aria-label="Cart, 0 items">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 8.5h11l-.8 10.2a1.5 1.5 0 0 1-1.5 1.3H8.8a1.5 1.5 0 0 1-1.5-1.3L6.5 8.5z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="{{ routes.root_url }}#boutique" data-i18n="nav_shop">Shop</a>
+      <a href="{{ routes.root_url }}#soins" data-i18n="nav_skincare">Skincare</a>
+      <a href="{{ routes.root_url }}#maquillage" data-i18n="nav_makeup">Makeup</a>
+      <a href="{{ routes.root_url }}#destockage" data-i18n="nav_clearance">Clearance</a>
+      <a href="{{ routes.root_url }}#a-propos" data-i18n="nav_about">About</a>
+    </nav>
+  </header>
+  </div>
+  <button type="button" class="mobile-menu-overlay" id="mobile-overlay" aria-label="Close menu" tabindex="-1"></button>
+  <aside class="mobile-side-drawer" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-drawer-shimmer" aria-hidden="true"></div>
+    <div class="mobile-drawer-head">
+      <span class="mobile-drawer-brand">UNIKO</span>
+      <button type="button" class="mobile-drawer-close" id="mobile-menu-close" aria-label="Close menu">×</button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="{{ routes.root_url }}#boutique" data-i18n="nav_shop">Shop</a>
+      <a href="{{ routes.root_url }}#soins" data-i18n="nav_skincare">Skincare</a>
+      <a href="{{ routes.root_url }}#maquillage" data-i18n="nav_makeup">Makeup</a>
+      <a href="{{ routes.root_url }}#destockage" data-i18n="nav_clearance">Clearance</a>
+      <a href="{{ routes.root_url }}#a-propos" data-i18n="nav_about">About</a>
+      <a href="{{ routes.root_url }}#recompenses" data-i18n="rewards">Rewards</a>
+    </nav>
+    <p class="mobile-drawer-note" data-i18n="drawer_note">100% natural beauty</p>
+  </aside>
+<script>
+(function () {
+  const siteTop = document.getElementById("site-top");
+  if (!siteTop) return;
+  const syncTopOffset = () =>
+    document.documentElement.style.setProperty("--site-top", siteTop.offsetHeight + "px");
+  syncTopOffset();
+  window.addEventListener("resize", syncTopOffset);
+  const header = document.getElementById("site-header");
+  const toggle = document.getElementById("menu-toggle");
+  const drawer = document.getElementById("mobile-nav");
+  const overlay = document.getElementById("mobile-overlay");
+  const menuClose = document.getElementById("mobile-menu-close");
+  const setMobileMenuOpen = (open) => {
+    header?.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+    drawer?.setAttribute("aria-hidden", open ? "false" : "true");
+    toggle?.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle?.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (!open) requestAnimationFrame(syncTopOffset);
+  };
+  toggle?.addEventListener("click", () => setMobileMenuOpen(!document.body.classList.contains("menu-open")));
+  overlay?.addEventListener("click", () => setMobileMenuOpen(false));
+  menuClose?.addEventListener("click", () => setMobileMenuOpen(false));
+  drawer?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMobileMenuOpen(false)));
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) setMobileMenuOpen(false);
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Uniko site header",
+  "tag": "div",
+  "class": "uniko-site-header",
+  "settings": []
+}
+{% endschema %}

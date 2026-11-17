@@ -389,12 +389,20 @@ def main() -> None:
     product_template = """{
   "name": "Uniko product (default)",
   "sections": {
+    "header": {
+      "type": "uniko-site-header",
+      "settings": {}
+    },
     "main": {
       "type": "uniko-product",
       "settings": {}
+    },
+    "footer": {
+      "type": "uniko-site-footer",
+      "settings": {}
     }
   },
-  "order": ["main"]
+  "order": ["header", "main", "footer"]
 }
 """
     (ROOT / "templates" / "product.json").write_text(product_template, encoding="utf-8")

@@ -4,29 +4,23 @@
     <div class="uniko-pdp-gallery-col">
       <div class="uniko-pdp-gallery">
         <div class="uniko-pdp-thumbs" aria-label="Product thumbnails">
-          {% if product.media.size > 0 %}
-            {% for media in product.media %}
-              {% if media.media_type == 'image' %}
-                <button type="button" class="uniko-pdp-thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb data-src="{{ media | image_url: width: 1200 }}" aria-label="View image {{ forloop.index }}">
-                  {{ media | image_url: width: 160 | image_tag: loading: 'lazy', alt: media.alt | default: product.title }}
-                </button>
-              {% endif %}
-            {% endfor %}
-          {% else %}
-            {% assign gallery = "uniko-aloe-product-01-gallery.jpg,uniko-aloe-product-02-gallery.jpg,uniko-aloe-product-03-gallery.jpg,uniko-aloe-product-04-detail.jpg" | split: "," %}
-            {% for file in gallery %}
-              <button type="button" class="uniko-pdp-thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb data-src="{{ file | strip | asset_img_url: 'master' }}" aria-label="View image {{ forloop.index }}">
-                <img src="{{ file | strip | asset_img_url: 'width: 160' }}" alt="" loading="lazy" width="80" height="100">
-              </button>
-            {% endfor %}
-          {% endif %}
+          {% assign gallery = "uniko-aloe-product-01-gallery.jpg,uniko-aloe-product-02-gallery.jpg,uniko-aloe-product-03-gallery.jpg,uniko-aloe-product-04-detail.jpg" | split: "," %}
+          {% for file in gallery %}
+            <button type="button" class="uniko-pdp-thumb{% if forloop.first %} is-active{% endif %}" data-pdp-thumb data-src="{{ file | strip | asset_img_url: 'master' }}" aria-label="View image {{ forloop.index }}">
+              <img src="{{ file | strip | asset_img_url: 'width: 160' }}" alt="" loading="lazy" width="80" height="100">
+            </button>
+          {% endfor %}
         </div>
         <div class="uniko-pdp-main">
-          {% if product.featured_media %}
-            {{ product.featured_media | image_url: width: 1400 | image_tag: id: 'uniko-pdp-main-img', class: 'uniko-pdp-main-img', loading: 'eager', alt: product.title, widths: '600,900,1200,1400', sizes: '(min-width: 901px) 58vw, 100vw' }}
-          {% else %}
-            <img id="uniko-pdp-main-img" class="uniko-pdp-main-img" src="{{ 'uniko-aloe-product-01-gallery.jpg' | asset_img_url: 'master' }}" alt="{{ product.title | escape }}" width="900" height="1125" loading="eager">
-          {% endif %}
+          <img
+            id="uniko-pdp-main-img"
+            class="uniko-pdp-main-img"
+            src="{{ 'uniko-aloe-product-01-gallery.jpg' | asset_img_url: 'master' }}"
+            alt="{{ product.title | escape }}"
+            width="900"
+            height="1125"
+            loading="eager"
+          >
         </div>
       </div>
     </div>
@@ -48,11 +42,6 @@
         <p class="uniko-pdp-lead-fr" data-i18n="pdp_desc_fr" lang="fr">Shampoing doux à l'aloe vera pour le corps et les cheveux (500 ml). Nettoie tout en préservant l'hydratation — pour tous types de peau et de cheveux. Sans sulfates, silicones ni parabènes.</p>
       </div>
 
-      <div class="uniko-pdp-badges">
-        <span data-i18n="pdp_badge_en">✅ WITHOUT SULFATES · SILICONES · PARABENS</span>
-        <span class="uniko-pdp-badge-fr" data-i18n="pdp_badge_fr" lang="fr">✅ SANS SULFATES · SILICONES · PARABENS</span>
-      </div>
-
       <p class="uniko-pdp-size" data-i18n="pdp_size">Size: 500 ml</p>
 
       <div class="uniko-pdp-price-block">
@@ -62,7 +51,6 @@
             <p class="uniko-pdp-compare"><s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s></p>
           {% endif %}
         {% endif %}
-        <p class="uniko-pdp-price-note" data-i18n="pdp_price_note">Also: 4000 Fcfa / 9,50 € / 9.99 $ (USD) / 90 Dh (Morocco)</p>
       </div>
 
       {% form 'product', product, id: 'uniko-pdp-form', class: 'uniko-pdp-form' %}
@@ -90,11 +78,21 @@
       <div class="uniko-pdp-accordions">
         <details class="uniko-pdp-acc" open>
           <summary data-i18n="pdp_acc_certs">Certifications</summary>
-          <div class="uniko-pdp-cert-grid">
-            <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'width: 200' }}" alt="Certified Organic Australia" loading="lazy" width="120" height="120">
-            <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'width: 200' }}" alt="Animal test-free" loading="lazy" width="120" height="120">
-            <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'width: 200' }}" alt="Vegan" loading="lazy" width="120" height="120">
-            <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'width: 200' }}" alt="Halal" loading="lazy" width="120" height="120">
+          <div class="uniko-pdp-cert-panel">
+            <div class="uniko-pdp-cert-grid">
+              <div class="trust-badge">
+                <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'width: 280' }}" alt="Certified Organic Australia" loading="lazy" width="120" height="104">
+              </div>
+              <div class="trust-badge">
+                <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'width: 280' }}" alt="Animal test-free" loading="lazy" width="120" height="104">
+              </div>
+              <div class="trust-badge">
+                <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'width: 280' }}" alt="Vegan" loading="lazy" width="120" height="104">
+              </div>
+              <div class="trust-badge">
+                <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'width: 280' }}" alt="Halal" loading="lazy" width="120" height="104">
+              </div>
+            </div>
           </div>
         </details>
 
@@ -145,11 +143,12 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
+  .uniko-pdp-gallery-col { min-width: 0; }
   .uniko-pdp-gallery {
     display: grid;
     grid-template-columns: 72px 1fr;
     gap: 12px;
-    align-items: start;
+    align-items: stretch;
   }
   .uniko-pdp-thumbs {
     display: flex;
@@ -167,17 +166,21 @@
   .uniko-pdp-thumb.is-active { border-color: #1f1c19; }
   .uniko-pdp-thumb img { display: block; width: 100%; height: auto; object-fit: contain; }
   .uniko-pdp-main {
-    background: #f3ebe3;
+    background: #fff;
     border-radius: 4px;
     min-height: 320px;
-    display: grid;
-    place-items: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    width: 100%;
   }
   .uniko-pdp-main-img {
+    display: block;
     width: 100%;
-    height: 100%;
-    max-height: 78vh;
+    height: auto;
+    max-height: min(78vh, 900px);
     object-fit: contain;
     object-position: center;
   }
@@ -203,16 +206,13 @@
   .uniko-pdp-stars { color: #c9972e; letter-spacing: 1px; }
   .uniko-pdp-rating-val { font-weight: 700; }
   .uniko-pdp-lead { font-size: 15px; line-height: 1.6; color: #4a4540; margin-bottom: 16px; }
-  .uniko-pdp-lead-fr, .uniko-pdp-badge-fr { display: none; }
-  html[lang="fr"] .uniko-pdp-lead-fr,
-  html[lang="fr"] .uniko-pdp-badge-fr { display: block; }
-  html[lang="fr"] [data-i18n="pdp_desc_en"],
-  html[lang="fr"] [data-i18n="pdp_badge_en"] { display: none; }
-  .uniko-pdp-badges { font-size: 13px; font-weight: 600; margin-bottom: 12px; line-height: 1.5; }
+  .uniko-pdp-lead-fr { display: none; }
+  html[lang="fr"] .uniko-pdp-lead-fr { display: block; }
+  html[lang="fr"] [data-i18n="pdp_desc_en"] { display: none; }
   .uniko-pdp-size { font-size: 14px; font-weight: 600; margin: 0 0 16px; }
   .uniko-pdp-price { font-size: 24px; font-weight: 700; margin: 0 0 6px; }
   .uniko-pdp-compare { color: #8a837c; margin: 0 0 8px; }
-  .uniko-pdp-price-note { font-size: 13px; color: #6a635c; margin: 0 0 22px; }
+  .uniko-pdp-price-block { margin-bottom: 22px; }
   .uniko-pdp-buy { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; margin-bottom: 28px; }
   .uniko-pdp-qty {
     display: flex;
@@ -271,13 +271,27 @@
   .uniko-pdp-acc summary::after { content: "▾"; font-size: 14px; }
   .uniko-pdp-acc[open] summary::after { content: "▴"; }
   .uniko-pdp-acc-body { padding: 0 0 20px; font-size: 14px; line-height: 1.6; color: #4a4540; }
+  .uniko-pdp-cert-panel {
+    background: #12572f;
+    border-radius: 6px;
+    padding: 22px 14px 18px;
+    margin: 0 0 20px;
+  }
   .uniko-pdp-cert-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    padding-bottom: 20px;
+    gap: 12px 16px;
+    justify-items: center;
+    align-items: center;
   }
-  .uniko-pdp-cert-grid img { width: 100%; max-width: 140px; height: auto; object-fit: contain; }
+  .uniko-pdp-cert-panel .trust-badge { display: flex; align-items: center; justify-content: center; }
+  .uniko-pdp-cert-panel .trust-badge img {
+    display: block;
+    width: auto;
+    height: 88px;
+    max-width: 120px;
+    object-fit: contain;
+  }
   .uniko-pdp-sticky {
     position: fixed;
     left: 0;
