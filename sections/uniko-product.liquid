@@ -358,9 +358,16 @@
 </section>
 
 {% stylesheet %}
-  .uniko-pdp { background: #fff; }
+  .uniko-pdp {
+    background: #fff;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
   .uniko-pdp-wrap {
     max-width: 1320px;
+    width: 100%;
+    min-width: 0;
     margin: 0 auto;
     padding: 20px 18px 80px;
     display: grid;
@@ -369,8 +376,7 @@
   }
   .uniko-pdp-gallery-col {
     min-width: 0;
-    margin-left: -18px;
-    margin-right: -18px;
+    max-width: 100%;
   }
   .uniko-pdp-main {
     background: #fff;
@@ -513,6 +519,9 @@
     border-top: 1px solid #e5dfd9;
     box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
     padding: 12px 18px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   .uniko-pdp-sticky-inner {
     max-width: 1320px;
@@ -528,11 +537,18 @@
     background: #f2e7de;
     padding: 36px 0 44px;
     margin-top: 8px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    box-sizing: border-box;
   }
   .uniko-pdp-keys-inner {
     max-width: 1320px;
+    width: 100%;
+    min-width: 0;
     margin: 0 auto;
     padding: 0 18px;
+    box-sizing: border-box;
   }
   .uniko-pdp-keys-title {
     margin: 0 0 22px;
@@ -624,8 +640,11 @@
   }
   .uniko-pdp-block-inner {
     max-width: 1320px;
+    width: 100%;
+    min-width: 0;
     margin: 0 auto;
     padding: 0 18px;
+    box-sizing: border-box;
   }
   .uniko-pdp-block-title {
     margin: 0 0 22px;
@@ -666,7 +685,15 @@
     background: #faf8f5;
     padding: 44px 0 48px;
   }
-  .uniko-pdp-compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .uniko-pdp-compare .uniko-pdp-block-inner { overflow-x: clip; }
+  .uniko-pdp-compare-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
   .uniko-pdp-compare-table {
     width: 100%;
     min-width: 620px;
@@ -710,10 +737,14 @@
   }
   .uniko-pdp-reviews .reviews-head { text-align: left; padding: 0; }
   .uniko-pdp-reviews .review-cards-carousel {
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     margin-top: 22px;
-    padding: 0 44px;
+    padding: 0 18px;
+    box-sizing: border-box;
   }
+  .uniko-pdp-reviews .review-cards-track { max-width: 100%; }
+  .uniko-pdp-reviews .review-card { flex: 0 0 min(82vw, 320px); }
   .uniko-pdp-reviews .review-product-thumb {
     width: 48px;
     height: 48px;
@@ -750,9 +781,8 @@
     .uniko-pdp-gallery-col {
       position: sticky;
       top: calc(var(--site-top, 0px) + 16px);
-      margin-left: 0;
-      margin-right: 0;
     }
+    .uniko-pdp-reviews .review-cards-carousel { padding: 0 44px; }
     .uniko-pdp-keys { padding: 48px 0 56px; }
     .uniko-pdp-keys-inner { padding: 0 28px; }
     .uniko-pdp-keys-track {
