@@ -1,4 +1,5 @@
 {
+  "name": "Uniko product (default)",
   "sections": {
     "main": {
       "type": "uniko-product",

@@ -133,8 +133,8 @@ def main() -> None:
     if not product_section.is_file():
         raise SystemExit("Missing sections/uniko-product.liquid")
 
-    (ROOT / "templates" / "product.json").write_text(
-        """{
+    product_template = """{
+  "name": "Uniko product (default)",
   "sections": {
     "main": {
       "type": "uniko-product",
@@ -143,7 +143,10 @@ def main() -> None:
   },
   "order": ["main"]
 }
-""",
+"""
+    (ROOT / "templates" / "product.json").write_text(product_template, encoding="utf-8")
+    (ROOT / "templates" / "product.uniko.json").write_text(
+        product_template.replace("Uniko product (default)", "Uniko product"),
         encoding="utf-8",
     )
 

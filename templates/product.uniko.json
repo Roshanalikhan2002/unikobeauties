@@ -1,0 +1,10 @@
+{
+  "name": "Uniko product",
+  "sections": {
+    "main": {
+      "type": "uniko-product",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
