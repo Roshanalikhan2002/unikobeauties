@@ -31,6 +31,13 @@
       </a>
 
       <div class="header-tools">
+        <nav class="lang-switch" aria-label="Langue du site">
+          <a href="{{ routes.root_url }}" hreflang="fr" lang="fr" aria-current="true" title="Français">FR</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" data-translate-lang="en" hreflang="en" lang="en" title="English">EN</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" data-translate-lang="ur" hreflang="ur" lang="ur" title="Urdu">UR</a>
+        </nav>
         <button class="icon-btn desktop-search" type="button" aria-label="Rechercher">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
@@ -517,6 +524,18 @@
   window.addEventListener("scroll", updateImpactZoom, { passive: true });
     window.addEventListener("resize", updateImpactZoom);
     updateImpactZoom();
+
+    const initTranslateLinks = () => {
+      const pageUrl = encodeURIComponent(window.location.href.split("#")[0]);
+      document.querySelectorAll("[data-translate-lang]").forEach((link) => {
+        const targetLang = link.getAttribute("data-translate-lang");
+        if (!targetLang) return;
+        link.href = `https://translate.google.com/translate?sl=fr&tl=${targetLang}&u=${pageUrl}`;
+        link.rel = "noopener noreferrer";
+      });
+    };
+
+    initTranslateLinks();
 
     document.querySelectorAll("[data-review-carousel]").forEach((carousel) => {
       const track = carousel.querySelector(".review-cards-track");

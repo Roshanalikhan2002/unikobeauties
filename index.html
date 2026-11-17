@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uniko Beauties | Maquillage et soins biologiques</title>
   <meta name="description" content="Uniko Beauties : maquillage primé, soins cliniquement prouvés et essentiels certifiés biologiques.">
+  <meta http-equiv="content-language" content="fr">
+  <meta name="language" content="French">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -125,7 +127,42 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 18px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-right: 2px;
+    }
+
+    .lang-switch a {
+      color: #6a625a;
+      padding: 8px 5px;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .lang-switch a[aria-current="true"] {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .lang-switch a:hover {
+      color: var(--bronze);
+    }
+
+    .lang-switch span {
+      color: #d4cdc5;
+      font-weight: 400;
+      user-select: none;
     }
 
     .icon-btn {
@@ -1103,6 +1140,13 @@
       </a>
 
       <div class="header-tools">
+        <nav class="lang-switch" aria-label="Langue du site">
+          <a href="#accueil" hreflang="fr" lang="fr" aria-current="true" title="Français">FR</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" data-translate-lang="en" hreflang="en" lang="en" title="English">EN</a>
+          <span aria-hidden="true">·</span>
+          <a href="#" data-translate-lang="ur" hreflang="ur" lang="ur" title="Urdu">UR</a>
+        </nav>
         <button class="icon-btn desktop-search" type="button" aria-label="Rechercher">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
@@ -1589,6 +1633,18 @@
   window.addEventListener("scroll", updateImpactZoom, { passive: true });
     window.addEventListener("resize", updateImpactZoom);
     updateImpactZoom();
+
+    const initTranslateLinks = () => {
+      const pageUrl = encodeURIComponent(window.location.href.split("#")[0]);
+      document.querySelectorAll("[data-translate-lang]").forEach((link) => {
+        const targetLang = link.getAttribute("data-translate-lang");
+        if (!targetLang) return;
+        link.href = `https://translate.google.com/translate?sl=fr&tl=${targetLang}&u=${pageUrl}`;
+        link.rel = "noopener noreferrer";
+      });
+    };
+
+    initTranslateLinks();
 
     document.querySelectorAll("[data-review-carousel]").forEach((carousel) => {
       const track = carousel.querySelector(".review-cards-track");
