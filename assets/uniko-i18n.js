@@ -23,6 +23,31 @@
       cat_new: "New",
       cat_bestsellers: "Bestsellers",
       shop_now: "Shop now",
+      pdp_back: "Back to shop",
+      pdp_subtitle: "Shampoing pour locks ● Shampoo for locks",
+      pdp_desc_en:
+        "A gentle aloe vera shampoo for body and hair (500 ml). Cleanses while helping maintain moisture and comfort for all skin and hair types. Free from sulfates, silicones and parabens.",
+      pdp_desc_fr:
+        "Shampoing doux à l'aloe vera pour le corps et les cheveux (500 ml). Nettoie tout en préservant l'hydratation — pour tous types de peau et de cheveux. Sans sulfates, silicones ni parabènes.",
+      pdp_badge_en: "✅ WITHOUT SULFATES · SILICONES · PARABENS",
+      pdp_badge_fr: "✅ SANS SULFATES · SILICONES · PARABENS",
+      pdp_size: "Size: 500 ml",
+      pdp_price_note: "Also: 4000 Fcfa / 9,50 € / 9.99 $ (USD) / 90 Dh (Morocco)",
+      pdp_atc: "Add to cart",
+      pdp_soldout: "Sold out",
+      pdp_acc_certs: "Certifications",
+      pdp_acc_how: "How to use",
+      pdp_acc_ing: "Ingredients",
+      pdp_how_en:
+        "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
+      pdp_how_fr:
+        "Secouer et appliquez 1 à 2 fois le shampoing sur l'ensemble des cheveux en partant du cuir chevelu aux pointes puis rincer. Renouveler le procédé si nécessaire.",
+      pdp_ing_label_en: "Ingredients:",
+      pdp_ing_label_fr: "Ingrédients :",
+      pdp_ing_en:
+        "Aloe vera, basil, vegetable oils, natural scented water, sodium hydroxide, water.",
+      pdp_ing_fr:
+        "Aloe vera, basilique, huiles végétales, eau de senteur naturel, hydroxyde de sodium, eau.",
       trust_title: "The world's most certified beauty brand",
       impact_eyebrow: "Sustainability impact",
       impact_title: "The world's first plastic-neutral makeup brand",
@@ -97,6 +122,31 @@
       cat_new: "Nouveaut\u00e9s",
       cat_bestsellers: "Meilleures ventes",
       shop_now: "Acheter",
+      pdp_back: "Retour à la boutique",
+      pdp_subtitle: "Shampoing pour locks ● Shampoo for locks",
+      pdp_desc_en:
+        "A gentle aloe vera shampoo for body and hair (500 ml). Cleanses while helping maintain moisture and comfort for all skin and hair types. Free from sulfates, silicones and parabens.",
+      pdp_desc_fr:
+        "Shampoing doux à l'aloe vera pour le corps et les cheveux (500 ml). Nettoie tout en préservant l'hydratation — pour tous types de peau et de cheveux. Sans sulfates, silicones ni parabènes.",
+      pdp_badge_en: "✅ WITHOUT SULFATES · SILICONES · PARABENS",
+      pdp_badge_fr: "✅ SANS SULFATES · SILICONES · PARABENS",
+      pdp_size: "Format : 500 ml",
+      pdp_price_note: "Également : 4000 Fcfa / 9,50 € / 9,99 $ (USD) / 90 Dh (Maroc)",
+      pdp_atc: "Ajouter au panier",
+      pdp_soldout: "Rupture de stock",
+      pdp_acc_certs: "Certifications",
+      pdp_acc_how: "Mode d'emploi",
+      pdp_acc_ing: "Ingrédients",
+      pdp_how_en:
+        "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
+      pdp_how_fr:
+        "Secouer et appliquez 1 à 2 fois le shampoing sur l'ensemble des cheveux en partant du cuir chevelu aux pointes puis rincer. Renouveler le procédé si nécessaire.",
+      pdp_ing_label_en: "Ingredients:",
+      pdp_ing_label_fr: "Ingrédients :",
+      pdp_ing_en:
+        "Aloe vera, basil, vegetable oils, natural scented water, sodium hydroxide, water.",
+      pdp_ing_fr:
+        "Aloe vera, basilique, huiles végétales, eau de senteur naturel, hydroxyde de sodium, eau.",
       trust_title: "La marque de beaut\u00e9 la plus certifi\u00e9e au monde",
       impact_eyebrow: "Impact durabilit\u00e9",
       impact_title: "La premi\u00e8re marque de maquillage neutre en plastique au monde",

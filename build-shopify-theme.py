@@ -370,6 +370,7 @@ def main() -> None:
 </head>
 <body class="uniko-body">
   {{ content_for_layout }}
+  <script src="{{ 'uniko-i18n.js' | asset_url }}" defer></script>
 </body>
 </html>
 """,
