@@ -339,18 +339,28 @@
       display: block;
     }
 
-    .category-card--product {
+    .category-product-item {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
-      background: #fff;
+      gap: 12px;
+    }
+
+    .category-card--product {
+      flex: 0 0 auto;
+      width: 100%;
+      background: #f3f0eb;
       border: 1px solid #e8e2db;
       border-radius: 16px;
       box-shadow: 0 2px 10px rgba(31, 28, 25, 0.05);
+      overflow: hidden;
     }
 
     .category-card--product .category-card-media {
       background-color: #f3f0eb;
-      border-radius: 16px 16px 0 0;
+      border-radius: 16px;
+      width: 100%;
     }
 
     .category-card--product .category-card-media::after {
@@ -359,37 +369,44 @@
 
     .category-card--product .category-card-img {
       object-fit: contain;
-      padding: 12px 14px 16px;
+      width: 100%;
+      height: 100%;
+      padding: 8px 10px 10px;
       box-sizing: border-box;
       transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       transform: scale(1);
       transform-origin: center center;
     }
 
-    .category-card--product:hover .category-card-img,
-    .category-card--product:focus-within .category-card-img {
-      transform: scale(1.06);
+    .category-card--product:hover .category-card-img {
+      transform: scale(1.05);
     }
 
     .category-card-details {
-      padding: 14px 16px 18px;
-      background: #fff;
-      border-radius: 0 0 16px 16px;
+      padding: 0 6px 8px;
+      background: transparent;
     }
 
     .category-card-product-title {
+      display: block;
       margin: 0 0 8px;
       font-family: var(--font-sans);
       font-size: 17px;
       font-weight: 700;
       line-height: 1.35;
       color: #1f1c19;
+      text-decoration: none;
+    }
+
+    .category-card-product-title:hover {
+      color: #12572f;
     }
 
     .category-card-rating {
       display: flex;
       align-items: center;
-      gap: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
       margin: 0 0 10px;
       font-family: var(--font-sans);
       font-size: 13px;
@@ -397,9 +414,10 @@
     }
 
     .category-card-stars {
+      flex-shrink: 0;
       color: #c9972e;
-      font-size: 15px;
-      letter-spacing: 2px;
+      font-size: 13px;
+      letter-spacing: 1px;
       line-height: 1;
     }
 

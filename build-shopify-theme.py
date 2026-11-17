@@ -55,29 +55,26 @@ CATEGORY_TRACK_LIQUID = """
               {% when 'product' %}
                 {% assign card_product = block.settings.product %}
                 {% if card_product != blank %}
-                  <a
-                    class="category-card category-card--product"
-                    href="{{ card_product.url }}"
-                    role="listitem"
-                    {{ block.shopify_attributes }}
-                  >
-                    <div class="category-card-media">
-                      {% if card_product.featured_media %}
-                        {% assign card_img_alt = card_product.featured_media.alt | default: card_product.title | escape %}
-                        {{
-                          card_product.featured_media
-                          | image_url: width: 900
-                          | image_tag:
-                            class: 'category-card-img',
-                            loading: 'lazy',
-                            widths: '280,560,900',
-                            sizes: '280px',
-                            alt: card_img_alt
-                        }}
-                      {% endif %}
-                    </div>
+                  <div class="category-product-item" role="listitem" {{ block.shopify_attributes }}>
+                    <a class="category-card category-card--product" href="{{ card_product.url }}">
+                      <div class="category-card-media">
+                        {% if card_product.featured_media %}
+                          {% assign card_img_alt = card_product.featured_media.alt | default: card_product.title | escape %}
+                          {{
+                            card_product.featured_media
+                            | image_url: width: 900
+                            | image_tag:
+                              class: 'category-card-img',
+                              loading: 'lazy',
+                              widths: '280,560,900',
+                              sizes: '280px',
+                              alt: card_img_alt
+                          }}
+                        {% endif %}
+                      </div>
+                    </a>
                     <div class="category-card-details">
-                      <p class="category-card-product-title">{{ card_product.title }}</p>
+                      <a class="category-card-product-title" href="{{ card_product.url }}">{{ card_product.title }}</a>
                       <div class="category-card-rating" role="img" aria-label="Rating {{ block.settings.rating | default: '5.0' }} out of 5 stars">
                         <span class="category-card-stars" aria-hidden="true">★★★★★</span>
                         <span class="category-card-rating-value">{{ block.settings.rating | default: '5.0' }}</span>
@@ -94,7 +91,7 @@ CATEGORY_TRACK_LIQUID = """
                         </p>
                       {% endif %}
                     </div>
-                  </a>
+                  </div>
                 {% endif %}
               {% when 'category' %}
                 <a
@@ -133,18 +130,20 @@ CATEGORY_TRACK_LIQUID = """
           {% endfor %}
           {% else %}
           {% assign default_product = all_products['aloe-vera-shampoo'] %}
-          <a class="category-card category-card--product" href="{% if default_product != blank %}{{ default_product.url }}{% else %}/products/aloe-vera-shampoo{% endif %}" role="listitem">
-            <div class="category-card-media">
-              {% if default_product != blank and default_product.featured_media %}
-                {% assign card_img_alt = default_product.featured_media.alt | default: default_product.title | escape %}
-                {{ default_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: card_img_alt }}
-              {% else %}
-                <img class="category-card-img" src="{{ 'uniko-aloe-vera-shampoo-studio.jpg' | asset_img_url: 'master' }}" alt="Aloe Vera Shampoo" width="560" height="700" loading="lazy" decoding="async">
-              {% endif %}
-            </div>
+          <div class="category-product-item" role="listitem">
+            <a class="category-card category-card--product" href="{% if default_product != blank %}{{ default_product.url }}{% else %}/products/aloe-vera-shampoo{% endif %}">
+              <div class="category-card-media">
+                {% if default_product != blank and default_product.featured_media %}
+                  {% assign card_img_alt = default_product.featured_media.alt | default: default_product.title | escape %}
+                  {{ default_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: card_img_alt }}
+                {% else %}
+                  <img class="category-card-img" src="{{ 'uniko-aloe-vera-shampoo-studio.jpg' | asset_img_url: 'master' }}" alt="Aloe Vera Shampoo" width="560" height="700" loading="lazy" decoding="async">
+                {% endif %}
+              </div>
+            </a>
             <div class="category-card-details">
               {% if default_product != blank %}
-                <p class="category-card-product-title">{{ default_product.title }}</p>
+                <a class="category-card-product-title" href="{{ default_product.url }}">{{ default_product.title }}</a>
                 <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
                   <span class="category-card-stars" aria-hidden="true">★★★★★</span>
                   <span class="category-card-rating-value">5.0</span>
@@ -158,14 +157,14 @@ CATEGORY_TRACK_LIQUID = """
                   </p>
                 {% endif %}
               {% else %}
-                <p class="category-card-product-title">Aloe vera shampoo</p>
+                <a class="category-card-product-title" href="/products/aloe-vera-shampoo">Aloe vera shampoo</a>
                 <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
                   <span class="category-card-stars" aria-hidden="true">★★★★★</span>
                   <span class="category-card-rating-value">5.0</span>
                 </div>
               {% endif %}
             </div>
-          </a>
+          </div>
           <a class="category-card" href="#yeux" role="listitem">
             <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
             <span data-i18n="cat_eyes">Eyes</span>
