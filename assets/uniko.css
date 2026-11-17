@@ -142,8 +142,25 @@
       text-underline-offset: 3px;
     }
 
-    .lang-switch a:hover {
+    .lang-switch a:hover,
+    .lang-switch .lang-set:hover {
       color: var(--bronze);
+    }
+
+    .lang-switch .lang-set {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      color: #6a625a;
+      padding: 8px 5px;
+      min-height: 40px;
+    }
+
+    .lang-switch .lang-set[aria-current="true"] {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .lang-switch span {

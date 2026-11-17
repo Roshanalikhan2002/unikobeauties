@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
   <meta name="description" content="Uniko Beauties: award-winning makeup, clinically proven skincare, and certified organic essentials.">
   <meta http-equiv="content-language" content="en">
   <meta name="language" content="English">
+  <meta name="google" content="notranslate">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -155,8 +156,25 @@
       text-underline-offset: 3px;
     }
 
-    .lang-switch a:hover {
+    .lang-switch a:hover,
+    .lang-switch .lang-set:hover {
       color: var(--bronze);
+    }
+
+    .lang-switch .lang-set {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      color: #6a625a;
+      padding: 8px 5px;
+      min-height: 40px;
+    }
+
+    .lang-switch .lang-set[aria-current="true"] {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .lang-switch span {
@@ -1109,9 +1127,7 @@
 </head>
 <body>
   <div class="site-top" id="site-top">
-  <div class="promo-bar" role="region" aria-label="Free delivery">
-    Free delivery on orders over&nbsp;€95
-  </div>
+  <div class="promo-bar" role="region" data-i18n-aria="promo_aria" data-i18n="promo">Free delivery on orders over&nbsp;€95</div>
   <header class="header" id="site-header">
     <div class="header-top">
       <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -1124,7 +1140,7 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M8 1.2l1.35 3.55L13 5.1 10.2 7.6l.85 3.7L8 9.55 4.95 11.3l.85-3.7L2 5.1l3.65-.35L8 1.2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
         </svg>
-        Rewards
+        <span data-i18n="rewards">Rewards</span>
       </a>
 
       <button class="icon-btn mobile-search" type="button" aria-label="Search">
@@ -1141,9 +1157,9 @@
 
       <div class="header-tools">
         <nav class="lang-switch" aria-label="Site language">
-          <a href="#accueil" hreflang="en" lang="en" aria-current="true" title="English">EN</a>
+          <button type="button" class="lang-set" data-set-lang="en" hreflang="en" lang="en" aria-current="true" title="English">EN</button>
           <span aria-hidden="true">·</span>
-          <a href="#" data-translate-lang="fr" hreflang="fr" lang="fr" title="Français">FR</a>
+          <button type="button" class="lang-set" data-set-lang="fr" hreflang="fr" lang="fr" title="Français">FR</button>
         </nav>
         <button class="icon-btn desktop-search" type="button" aria-label="Search">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1168,19 +1184,19 @@
     </div>
 
     <nav class="nav" aria-label="Main navigation">
-      <a href="#boutique">Shop</a>
-      <a href="#soins">Skincare</a>
-      <a href="#maquillage">Makeup</a>
-      <a href="#destockage">Clearance</a>
-      <a href="#a-propos">About</a>
+      <a href="#boutique" data-i18n="nav_shop">Shop</a>
+      <a href="#soins" data-i18n="nav_skincare">Skincare</a>
+      <a href="#maquillage" data-i18n="nav_makeup">Makeup</a>
+      <a href="#destockage" data-i18n="nav_clearance">Clearance</a>
+      <a href="#a-propos" data-i18n="nav_about">About</a>
     </nav>
 
     <nav class="mobile-drawer" id="mobile-nav" aria-label="Mobile navigation">
-      <a href="#boutique">Shop</a>
-      <a href="#soins">Skincare</a>
-      <a href="#maquillage">Makeup</a>
-      <a href="#destockage">Clearance</a>
-      <a href="#a-propos">About</a>
+      <a href="#boutique" data-i18n="nav_shop">Shop</a>
+      <a href="#soins" data-i18n="nav_skincare">Skincare</a>
+      <a href="#maquillage" data-i18n="nav_makeup">Makeup</a>
+      <a href="#destockage" data-i18n="nav_clearance">Clearance</a>
+      <a href="#a-propos" data-i18n="nav_about">About</a>
       <a href="#recompenses">Rewards</a>
     </nav>
   </header>
@@ -1191,7 +1207,7 @@
       <img
         class="hero-banner-img"
         src="images/hero-banner.jpg"
-        alt="Uniko Beauties — natural beauty and organic makeup"
+        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
         width="1600"
         height="800"
         fetchpriority="high"
@@ -1201,56 +1217,56 @@
 
     <section class="category-section" id="boutique" aria-labelledby="category-title">
       <div class="category-head">
-        <h2 id="category-title">Shop by category</h2>
+        <h2 id="category-title" data-i18n="category_title">Shop by category</h2>
       </div>
       <div class="category-track-wrap">
         <div class="category-track" tabindex="0" role="list" aria-label="Product categories">
           <a class="category-card" href="#visage" role="listitem" style="--card-image: url('images/review-videos/02.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Face</span>
+            <span data-i18n="cat_face">Face</span>
           </a>
           <a class="category-card" href="#yeux" role="listitem" style="--card-image: url('images/review-videos/03.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Eyes</span>
+            <span data-i18n="cat_eyes">Eyes</span>
           </a>
           <a class="category-card" href="#levres" role="listitem" style="--card-image: url('images/review-videos/04.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Lips</span>
+            <span data-i18n="cat_lips">Lips</span>
           </a>
           <a class="category-card" href="#peau" role="listitem" style="--card-image: url('images/sustainability-impact-hd.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Skin</span>
+            <span data-i18n="cat_skin">Skin</span>
           </a>
           <a class="category-card" href="#soins" role="listitem" style="--card-image: url('images/review-videos/05.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Skincare</span>
+            <span data-i18n="cat_skincare">Skincare</span>
           </a>
           <a class="category-card" href="#maquillage" role="listitem" style="--card-image: url('images/review-videos/02.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Makeup</span>
+            <span data-i18n="cat_makeup">Makeup</span>
           </a>
           <a class="category-card" href="#corps" role="listitem" style="--card-image: url('images/hero-banner.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Body</span>
+            <span data-i18n="cat_body">Body</span>
           </a>
           <a class="category-card" href="#cheveux" role="listitem" style="--card-image: url('images/review-videos/03.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Hair</span>
+            <span data-i18n="cat_hair">Hair</span>
           </a>
           <a class="category-card" href="#nouveautes" role="listitem" style="--card-image: url('images/review-videos/04.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>New</span>
+            <span data-i18n="cat_new">New</span>
           </a>
           <a class="category-card" href="#meilleures-ventes" role="listitem" style="--card-image: url('images/review-videos/01.jpg')">
             <div class="category-card-media" aria-hidden="true"></div>
-            <span>Bestsellers</span>
+            <span data-i18n="cat_bestsellers">Bestsellers</span>
           </a>
         </div>
       </div>
     </section>
 
     <section class="trust-section" id="certifications" aria-labelledby="trust-title">
-      <h2 class="trust-title" id="trust-title">The world's most certified beauty brand</h2>
+      <h2 class="trust-title" id="trust-title" data-i18n="trust_title">The world's most certified beauty brand</h2>
       <div class="trust-track" tabindex="0" role="list" aria-label="Certifications and badges">
         <div class="trust-badge" role="listitem">
           <img src="images/trust-badges/01-ofc-organic.png" alt="Certified Organic Australia" width="300" height="300" loading="lazy" decoding="async">
@@ -1296,20 +1312,20 @@
       </div>
       <div class="impact-copy">
         <div class="impact-copy-inner">
-          <p class="impact-eyebrow" id="impact-eyebrow">Sustainability impact</p>
-          <h2 class="impact-title">The world's first plastic-neutral makeup brand</h2>
-          <p class="impact-text">Our products use only the purest 100% natural ingredients with proven results. We lead the way in sustainable beauty with eco-friendly packaging and a real fight against the plastic crisis.</p>
-          <a class="btn-impact" href="#a-propos">Learn more</a>
+          <p class="impact-eyebrow" id="impact-eyebrow" data-i18n="impact_eyebrow">Sustainability impact</p>
+          <h2 class="impact-title" data-i18n="impact_title">The world's first plastic-neutral makeup brand</h2>
+          <p class="impact-text" data-i18n="impact_text">Our products use only the purest 100% natural ingredients with proven results. We lead the way in sustainable beauty with eco-friendly packaging and a real fight against the plastic crisis.</p>
+          <a class="btn-impact" href="#a-propos" data-i18n="learn_more">Learn more</a>
         </div>
       </div>
     </section>
 
     <section class="reviews-section" id="avis" aria-labelledby="reviews-title">
       <div class="reviews-head">
-        <h2 id="reviews-title">Customer reviews</h2>
-        <div class="reviews-meta" aria-label="Average rating 5 stars from 16,140 reviews">
+        <h2 id="reviews-title" data-i18n="reviews_title">Customer reviews</h2>
+        <div class="reviews-meta" data-i18n-aria="reviews_meta_aria" aria-label="Average rating 5 stars from 16,140 reviews">
           <span class="review-stars" aria-hidden="true">★★★★★</span>
-          <span>16,140 reviews</span>
+          <span data-i18n="reviews_meta">16,140 reviews</span>
         </div>
       </div>
 
@@ -1326,17 +1342,17 @@
                 <p class="review-card-name">Angela B.</p>
                 <p class="review-verified">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Verified buyer
+                  <span data-i18n="verified_buyer">Verified buyer</span>
                 </p>
               </div>
               <time class="review-card-date" datetime="2026-11-17">17/11/26</time>
             </div>
             <p class="review-card-stars" aria-hidden="true">★★★★★</p>
-            <h3 class="review-card-title">Nice, clean finish</h3>
-            <p class="review-card-body">A radiant, natural finish that lasts all day. <a class="review-card-more" href="#avis">Read more</a></p>
+            <h3 class="review-card-title" data-i18n="r1_title">Nice, clean finish</h3>
+            <p class="review-card-body"><span data-i18n="r1_body">A radiant, natural finish that lasts all day.</span> <a class="review-card-more" href="#avis" data-i18n="read_more">Read more</a></p>
             <div class="review-card-product">
               <div class="review-product-thumb" aria-hidden="true"></div>
-              <p class="review-product-name">Uniko Beauties — Liquid Foundation</p>
+              <p class="review-product-name" data-i18n="r1_product">Uniko Beauties — Liquid Foundation</p>
             </div>
           </article>
           <article class="review-card" role="listitem">
@@ -1345,17 +1361,17 @@
                 <p class="review-card-name">Jess</p>
                 <p class="review-verified">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Verified review
+                  <span data-i18n="verified_review">Verified review</span>
                 </p>
               </div>
               <time class="review-card-date" datetime="2026-09-03">03/09/26</time>
             </div>
             <p class="review-card-stars" aria-hidden="true">★★★★★</p>
-            <h3 class="review-card-title">Second skin</h3>
-            <p class="review-card-body">No tightening or itching — perfect for my sensitive skin. <a class="review-card-more" href="#avis">Read more</a></p>
+            <h3 class="review-card-title" data-i18n="r2_title">Second skin</h3>
+            <p class="review-card-body"><span data-i18n="r2_body">No tightening or itching — perfect for my sensitive skin.</span> <a class="review-card-more" href="#avis" data-i18n="read_more">Read more</a></p>
             <div class="review-card-product">
               <div class="review-product-thumb" aria-hidden="true"></div>
-              <p class="review-product-name">Uniko Beauties — Loose Mineral Powder</p>
+              <p class="review-product-name" data-i18n="r2_product">Uniko Beauties — Loose Mineral Powder</p>
             </div>
           </article>
           <article class="review-card" role="listitem">
@@ -1364,17 +1380,17 @@
                 <p class="review-card-name">Belinda L.</p>
                 <p class="review-verified">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Verified buyer
+                  <span data-i18n="verified_buyer">Verified buyer</span>
                 </p>
               </div>
               <time class="review-card-date" datetime="2026-07-11">11/07/26</time>
             </div>
             <p class="review-card-stars" aria-hidden="true">★★★★★</p>
-            <h3 class="review-card-title">Perfect</h3>
-            <p class="review-card-body">Fantastic products and flawless makeup for my daughter's wedding.</p>
+            <h3 class="review-card-title" data-i18n="r3_title">Perfect</h3>
+            <p class="review-card-body" data-i18n="r3_body">Fantastic products and flawless makeup for my daughter's wedding.</p>
             <div class="review-card-product">
               <div class="review-product-thumb" aria-hidden="true"></div>
-              <p class="review-product-name">Uniko Beauties — Natural Perfection Set</p>
+              <p class="review-product-name" data-i18n="r3_product">Uniko Beauties — Natural Perfection Set</p>
             </div>
           </article>
           <article class="review-card" role="listitem">
@@ -1383,17 +1399,17 @@
                 <p class="review-card-name">Sophie M.</p>
                 <p class="review-verified">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#3d6ea8"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Verified buyer
+                  <span data-i18n="verified_buyer">Verified buyer</span>
                 </p>
               </div>
               <time class="review-card-date" datetime="2026-05-20">20/05/26</time>
             </div>
             <p class="review-card-stars" aria-hidden="true">★★★★★</p>
-            <h3 class="review-card-title">My new routine</h3>
-            <p class="review-card-body">Light texture, velvety finish — I am not switching brands. <a class="review-card-more" href="#avis">Read more</a></p>
+            <h3 class="review-card-title" data-i18n="r4_title">My new routine</h3>
+            <p class="review-card-body"><span data-i18n="r4_body">Light texture, velvety finish — I am not switching brands.</span> <a class="review-card-more" href="#avis" data-i18n="read_more">Read more</a></p>
             <div class="review-card-product">
               <div class="review-product-thumb" aria-hidden="true"></div>
-              <p class="review-product-name">Uniko Beauties — Botanical Glow Serum</p>
+              <p class="review-product-name" data-i18n="r4_product">Uniko Beauties — Botanical Glow Serum</p>
             </div>
           </article>
         </div>
@@ -1459,100 +1475,100 @@
           <span class="logo-name">UNIKO</span>
           <span class="logo-sub">BEAUTIES</span>
         </a>
-        <p class="footer-tagline">100% Natural Beauty | The world's most certified beauty brand</p>
+        <p class="footer-tagline" data-i18n="footer_tagline">100% Natural Beauty | The world's most certified beauty brand</p>
       </div>
 
       <div class="footer-col footer-links-desktop">
-        <h3>Shop</h3>
+        <h3 data-i18n="footer_shop">Shop</h3>
         <ul>
-          <li><a href="#soins">Skincare</a></li>
-          <li><a href="#visage">Face</a></li>
-          <li><a href="#yeux">Eyes</a></li>
-          <li><a href="#levres">Lips</a></li>
+          <li><a href="#soins" data-i18n="nav_skincare">Skincare</a></li>
+          <li><a href="#visage" data-i18n="cat_face">Face</a></li>
+          <li><a href="#yeux" data-i18n="cat_eyes">Eyes</a></li>
+          <li><a href="#levres" data-i18n="cat_lips">Lips</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-links-desktop">
-        <h3>Customer care</h3>
+        <h3 data-i18n="footer_customer">Customer care</h3>
         <ul>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#retours">Returns & refunds</a></li>
-          <li><a href="#livraison">Shipping</a></li>
+          <li><a href="#retours" data-i18n="footer_returns">Returns & refunds</a></li>
+          <li><a href="#livraison" data-i18n="footer_shipping">Shipping</a></li>
           <li><a href="#promotions">Promotions</a></li>
-          <li><a href="#confidentialite">Privacy</a></li>
-          <li><a href="#conditions">Terms of service</a></li>
-          <li><a href="#recompenses">Rewards terms</a></li>
+          <li><a href="#confidentialite" data-i18n="footer_privacy">Privacy</a></li>
+          <li><a href="#conditions" data-i18n="footer_terms">Terms of service</a></li>
+          <li><a href="#recompenses" data-i18n="footer_rewards_terms">Rewards terms</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-links-desktop">
-        <h3>Contact</h3>
+        <h3 data-i18n="footer_contact">Contact</h3>
         <ul>
-          <li><a href="#contact">Contact us</a></li>
-          <li><a href="#revendeurs">Find a stockist</a></li>
-          <li><a href="#grossiste">Wholesale enquiries</a></li>
-          <li><a href="#presse">Media enquiries</a></li>
-          <li><a href="#affiliation">Become an affiliate</a></li>
-          <li><a href="#newsletter">Newsletter signup</a></li>
+          <li><a href="#contact" data-i18n="footer_contact_us">Contact us</a></li>
+          <li><a href="#revendeurs" data-i18n="footer_stockist">Find a stockist</a></li>
+          <li><a href="#grossiste" data-i18n="footer_wholesale">Wholesale enquiries</a></li>
+          <li><a href="#presse" data-i18n="footer_media">Media enquiries</a></li>
+          <li><a href="#affiliation" data-i18n="footer_affiliate">Become an affiliate</a></li>
+          <li><a href="#newsletter" data-i18n="footer_newsletter">Newsletter signup</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-links-desktop">
-        <h3>About</h3>
+        <h3 data-i18n="footer_about">About</h3>
         <ul>
-          <li><a href="#a-propos">Our story</a></li>
-          <li><a href="#durabilite">Our sustainability promise</a></li>
-          <li><a href="#certifications">Our certifications</a></li>
-          <li><a href="#avis">Customer testimonials</a></li>
-          <li><a href="#ingredients">Ingredient glossary</a></li>
-          <li><a href="#recompenses">Awards</a></li>
+          <li><a href="#a-propos" data-i18n="footer_story">Our story</a></li>
+          <li><a href="#durabilite" data-i18n="footer_sustain">Our sustainability promise</a></li>
+          <li><a href="#certifications" data-i18n="footer_certs">Our certifications</a></li>
+          <li><a href="#avis" data-i18n="footer_testimonials">Customer testimonials</a></li>
+          <li><a href="#ingredients" data-i18n="footer_glossary">Ingredient glossary</a></li>
+          <li><a href="#recompenses" data-i18n="footer_awards">Awards</a></li>
         </ul>
       </div>
 
       <nav class="footer-accordion" aria-label="Footer navigation">
         <details>
-          <summary>Boutique <span aria-hidden="true">+</span></summary>
+          <summary><span data-i18n="footer_shop">Shop</span> <span aria-hidden="true">+</span></summary>
           <ul>
-            <li><a href="#soins">Skincare</a></li>
-            <li><a href="#visage">Face</a></li>
-            <li><a href="#yeux">Eyes</a></li>
-            <li><a href="#levres">Lips</a></li>
+            <li><a href="#soins" data-i18n="nav_skincare">Skincare</a></li>
+            <li><a href="#visage" data-i18n="cat_face">Face</a></li>
+            <li><a href="#yeux" data-i18n="cat_eyes">Eyes</a></li>
+            <li><a href="#levres" data-i18n="cat_lips">Lips</a></li>
           </ul>
         </details>
         <details>
-          <summary>Service client <span aria-hidden="true">+</span></summary>
+          <summary><span data-i18n="footer_customer">Customer care</span> <span aria-hidden="true">+</span></summary>
           <ul>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#retours">Returns & refunds</a></li>
-            <li><a href="#livraison">Shipping</a></li>
+            <li><a href="#retours" data-i18n="footer_returns">Returns & refunds</a></li>
+            <li><a href="#livraison" data-i18n="footer_shipping">Shipping</a></li>
             <li><a href="#promotions">Promotions</a></li>
-            <li><a href="#confidentialite">Privacy</a></li>
-            <li><a href="#conditions">Terms of service</a></li>
+            <li><a href="#confidentialite" data-i18n="footer_privacy">Privacy</a></li>
+            <li><a href="#conditions" data-i18n="footer_terms">Terms of service</a></li>
           </ul>
         </details>
         <details>
-          <summary>Contact <span aria-hidden="true">+</span></summary>
+          <summary><span data-i18n="footer_contact">Contact</span> <span aria-hidden="true">+</span></summary>
           <ul>
-            <li><a href="#contact">Contact us</a></li>
-            <li><a href="#revendeurs">Find a stockist</a></li>
-            <li><a href="#grossiste">Wholesale enquiries</a></li>
-            <li><a href="#newsletter">Newsletter signup</a></li>
+            <li><a href="#contact" data-i18n="footer_contact_us">Contact us</a></li>
+            <li><a href="#revendeurs" data-i18n="footer_stockist">Find a stockist</a></li>
+            <li><a href="#grossiste" data-i18n="footer_wholesale">Wholesale enquiries</a></li>
+            <li><a href="#newsletter" data-i18n="footer_newsletter">Newsletter signup</a></li>
           </ul>
         </details>
         <details>
-          <summary>À propos <span aria-hidden="true">+</span></summary>
+          <summary><span data-i18n="footer_about">About</span> <span aria-hidden="true">+</span></summary>
           <ul>
-            <li><a href="#a-propos">Our story</a></li>
-            <li><a href="#durabilite">Our sustainability promise</a></li>
-            <li><a href="#certifications">Our certifications</a></li>
-            <li><a href="#avis">Customer testimonials</a></li>
+            <li><a href="#a-propos" data-i18n="footer_story">Our story</a></li>
+            <li><a href="#durabilite" data-i18n="footer_sustain">Our sustainability promise</a></li>
+            <li><a href="#certifications" data-i18n="footer_certs">Our certifications</a></li>
+            <li><a href="#avis" data-i18n="footer_testimonials">Customer testimonials</a></li>
           </ul>
         </details>
       </nav>
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Uniko Beauties. All rights reserved.</p>
+      <p data-i18n="copyright">© 2026 Uniko Beauties. All rights reserved.</p>
       <div class="footer-social" aria-label="Social media">
         <a href="#instagram" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
@@ -1582,6 +1598,7 @@
     </div>
   </footer>
 
+  <script src="assets/uniko-i18n.js" defer></script>
   <script>
     const siteTop = document.getElementById("site-top");
 
@@ -1631,18 +1648,6 @@
   window.addEventListener("scroll", updateImpactZoom, { passive: true });
     window.addEventListener("resize", updateImpactZoom);
     updateImpactZoom();
-
-    const initTranslateLinks = () => {
-      const pageUrl = encodeURIComponent(window.location.href.split("#")[0]);
-      document.querySelectorAll("[data-translate-lang]").forEach((link) => {
-        const targetLang = link.getAttribute("data-translate-lang");
-        if (!targetLang) return;
-        link.href = `https://translate.google.com/translate?sl=en&tl=${targetLang}&u=${pageUrl}`;
-        link.rel = "noopener noreferrer";
-      });
-    };
-
-    initTranslateLinks();
 
     document.querySelectorAll("[data-review-carousel]").forEach((carousel) => {
       const track = carousel.querySelector(".review-cards-track");

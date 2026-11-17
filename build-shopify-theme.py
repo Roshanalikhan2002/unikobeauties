@@ -79,9 +79,8 @@ def main() -> None:
     body = re.sub(r"url\('images/([^']+)'\)", replace_css_url, body)
 
     body = body.replace(
-        '<a href="#accueil" hreflang="en" lang="en" aria-current="true"',
-        '<a href="{{ routes.root_url }}" hreflang="en" lang="en" aria-current="true"',
-        1,
+        'src="assets/uniko-i18n.js"',
+        "src=\"{{ 'uniko-i18n.js' | asset_url }}\"",
     )
 
     (ROOT / "assets" / "uniko.css").write_text(css + "\n", encoding="utf-8")
@@ -94,12 +93,13 @@ def main() -> None:
 
     (ROOT / "layout" / "theme.liquid").write_text(
         """<!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" translate="no">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-language" content="en">
   <meta name="language" content="English">
+  <meta name="google" content="notranslate">
   <title>{{ page_title }}</title>
   {{ content_for_header }}
   {{ 'uniko.css' | asset_url | stylesheet_tag }}
@@ -148,7 +148,7 @@ def main() -> None:
   {
     "name": "theme_info",
     "theme_name": "Uniko Beauties",
-    "theme_version": "1.3.0",
+    "theme_version": "1.4.0",
     "theme_author": "Uniko Beauties",
     "theme_documentation_url": "https://github.com/Roshanalikhan2002/unikobeauties",
     "theme_support_url": "https://github.com/Roshanalikhan2002/unikobeauties/issues"
