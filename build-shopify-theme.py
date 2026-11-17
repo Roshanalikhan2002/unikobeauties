@@ -22,7 +22,7 @@ def main() -> None:
     body = body_match.group(1).strip()
 
     def asset_url(m: re.Match[str]) -> str:
-        path = m.group(1)
+        path = f"images/{m.group(1)}"
         return f'src="{{{{ \'{path}\' | asset_url }}}}"'
 
     body = re.sub(r'src="images/([^"]+)"', asset_url, body)
