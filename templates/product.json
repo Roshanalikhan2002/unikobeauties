@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "uniko-product",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

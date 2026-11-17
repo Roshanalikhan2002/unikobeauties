@@ -1,0 +1,145 @@
+{% comment %}Default product template for Uniko Beauties{% endcomment %}
+<section class="uniko-product-page" id="product">
+  <div class="product-page-top">
+    <a class="product-back" href="{{ routes.root_url }}">← {{ 'Back to home' }}</a>
+  </div>
+  <div class="product-page-grid">
+    <div class="product-page-media">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | image_url: width: 1400 }}"
+          alt="{{ product.featured_image.alt | default: product.title | escape }}"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+          loading="eager"
+        >
+      {% else %}
+        <img
+          src="{{ 'uniko-aloe-vera-shampoo-studio.jpg' | asset_img_url: 'master' }}"
+          alt="{{ product.title | escape }}"
+          width="1200"
+          height="1400"
+          loading="eager"
+        >
+      {% endif %}
+    </div>
+    <div class="product-page-info">
+      <p class="product-page-brand">{{ shop.name }}</p>
+      <h1 class="product-page-title">{{ product.title }}</h1>
+      <p class="product-page-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+      {% if product.description != blank %}
+        <div class="product-page-description rte">{{ product.description }}</div>
+      {% endif %}
+      {% form 'product', product, id: 'uniko-product-form', class: 'product-page-form' %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" name="add" class="product-page-add" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+          {% if product.selected_or_first_available_variant.available %}
+            Add to cart
+          {% else %}
+            Sold out
+          {% endif %}
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .uniko-product-page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 22px 64px;
+  }
+  .product-page-top { margin-bottom: 22px; }
+  .product-back {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6a625a;
+  }
+  .product-back:hover { color: #b08968; }
+  .product-page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .product-page-media {
+    background: #fff;
+    border: 1px solid #ece7e1;
+    border-radius: 4px;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+  }
+  .product-page-media img {
+    width: min(100%, 520px);
+    height: auto;
+    object-fit: contain;
+  }
+  .product-page-brand {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b08968;
+    margin-bottom: 10px;
+  }
+  .product-page-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 600;
+    color: #2c2622;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .product-page-price {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #1d1a17;
+  }
+  .product-page-description {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #4a4540;
+    margin-bottom: 26px;
+  }
+  .product-page-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    min-height: 52px;
+    padding: 14px 28px;
+    border: 0;
+    border-radius: 2px;
+    background: #0d3d24;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .product-page-add:hover { background: #0a3320; }
+  .product-page-add:disabled {
+    background: #8a8178;
+    cursor: not-allowed;
+  }
+  @media (min-width: 901px) {
+    .product-page-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+    }
+    .uniko-product-page { padding: 40px 28px 80px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Default product",
+  "tag": "section",
+  "class": "uniko-product",
+  "settings": []
+}
+{% endschema %}
