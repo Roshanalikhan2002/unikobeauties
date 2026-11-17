@@ -48,6 +48,164 @@ def liquid_css_url(rel: str, mapping: dict[str, str]) -> str:
     return f"url({{{{ '{flat}' | asset_url }}}})"
 
 
+CATEGORY_TRACK_LIQUID = """
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'product' %}
+                {% assign card_product = block.settings.product %}
+                {% if card_product != blank %}
+                  <a
+                    class="category-card category-card--product"
+                    href="{{ card_product.url }}"
+                    role="listitem"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="category-card-media">
+                      {% if card_product.featured_media %}
+                        {% assign card_img_alt = card_product.featured_media.alt | default: card_product.title | escape %}
+                        {{
+                          card_product.featured_media
+                          | image_url: width: 900
+                          | image_tag:
+                            class: 'category-card-img',
+                            loading: 'lazy',
+                            widths: '280,560,900',
+                            sizes: '280px',
+                            alt: card_img_alt
+                        }}
+                      {% endif %}
+                    </div>
+                    <div class="category-card-caption">
+                      <span>{{ block.settings.label | default: card_product.title }}</span>
+                      <p class="category-card-price">{{ card_product.price | money }}</p>
+                    </div>
+                  </a>
+                {% endif %}
+              {% when 'category' %}
+                <a
+                  class="category-card{% if block.settings.image != blank %} category-card--has-image{% endif %}"
+                  href="{{ block.settings.link | default: '#' }}"
+                  role="listitem"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="category-card-media">
+                    {% if block.settings.image != blank %}
+                      {{
+                        block.settings.image
+                        | image_url: width: 900
+                        | image_tag:
+                          class: 'category-card-img',
+                          loading: 'lazy',
+                          widths: '280,560,900',
+                          sizes: '280px',
+                          alt: block.settings.label
+                      }}
+                    {% endif %}
+                  </div>
+                  {% if block.settings.show_price and block.settings.product != blank %}
+                    {% assign cat_product = block.settings.product %}
+                    <div class="category-card-caption">
+                      <span>{{ block.settings.label }}</span>
+                      <p class="category-card-price">{{ cat_product.price | money }}</p>
+                    </div>
+                  {% else %}
+                    <span>{{ block.settings.label }}</span>
+                  {% endif %}
+                </a>
+            {% endcase %}
+          {% endfor %}
+""".strip()
+
+
+HOMEPAGE_SCHEMA = """{% schema %}
+{
+  "name": "Uniko homepage",
+  "tag": "section",
+  "class": "uniko-homepage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "category_heading",
+      "label": "Category row heading",
+      "default": "Shop by category"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Card label (optional)",
+          "info": "Leave blank to use the product title"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "name": "Category card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Category"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product (optional, for price)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show product price",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "Page d'accueil Uniko",
+      "blocks": [
+        { "type": "product" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+"""
+
+
+def inject_category_track(body: str) -> str:
+    pattern = r"<!-- @shopify-category-track -->.*?<!-- @end-shopify-category-track -->"
+    if not re.search(pattern, body, flags=re.DOTALL):
+        raise SystemExit("Missing @shopify-category-track markers in index.html")
+    return re.sub(pattern, CATEGORY_TRACK_LIQUID, body, count=1, flags=re.DOTALL)
+
+
 def main() -> None:
     html = (ROOT / "index.html").read_text(encoding="utf-8")
 
@@ -81,6 +239,12 @@ def main() -> None:
     body = body.replace(
         'src="assets/uniko-i18n.js"',
         "src=\"{{ 'uniko-i18n.js' | asset_url }}\"",
+    )
+
+    body = inject_category_track(body)
+    body = body.replace(
+        '<h2 id="category-title" data-i18n="category_title">Shop by category</h2>',
+        '<h2 id="category-title" data-i18n="category_title">{{ section.settings.category_heading }}</h2>',
     )
 
     (ROOT / "assets" / "uniko.css").write_text(css + "\n", encoding="utf-8")
@@ -117,16 +281,7 @@ def main() -> None:
 
     liquid = "{% comment %}Auto-generated from index.html — run build-shopify-theme.py after edits{% endcomment %}\n"
     liquid += body + "\n"
-    liquid += """{% schema %}
-{
-  "name": "Uniko homepage",
-  "tag": "section",
-  "class": "uniko-homepage",
-  "settings": [],
-  "presets": [{ "name": "Page d'accueil Uniko" }]
-}
-{% endschema %}
-"""
+    liquid += HOMEPAGE_SCHEMA + "\n"
     (ROOT / "sections" / "uniko-homepage.liquid").write_text(liquid, encoding="utf-8")
 
     product_section = (ROOT / "sections" / "uniko-product.liquid")
@@ -150,19 +305,25 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    (ROOT / "templates" / "index.json").write_text(
-        """{
+    index_json = ROOT / "templates" / "index.json"
+    if not index_json.is_file():
+        index_json.write_text(
+            """{
   "sections": {
     "uniko_homepage": {
       "type": "uniko-homepage",
-      "settings": {}
+      "settings": {
+        "category_heading": "Shop by category"
+      },
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": ["uniko_homepage"]
 }
 """,
-        encoding="utf-8",
-    )
+            encoding="utf-8",
+        )
 
     (ROOT / "config" / "settings_schema.json").write_text(
         """[
@@ -179,7 +340,9 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    (ROOT / "config" / "settings_data.json").write_text("{}\n", encoding="utf-8")
+    settings_data = ROOT / "config" / "settings_data.json"
+    if not settings_data.is_file():
+        settings_data.write_text("{}\n", encoding="utf-8")
 
     (ROOT / "locales" / "en.default.json").write_text(
         """{
