@@ -1,0 +1,18 @@
+---
+description: Push all project changes to GitHub after completing work
+alwaysApply: true
+---
+
+# Uniko Beauties — GitHub sync
+
+Remote: `https://github.com/Roshanalikhan2002/unikobeauties.git` branch **`main`**.
+
+After you change project files in this workspace:
+
+1. If **`index.html`** changed, run `python build-shopify-theme.py` so Shopify theme files stay in sync.
+2. `git add` relevant files (never commit secrets).
+3. Commit with a clear message. Do not update global git config; use per-invocation identity:
+   `git -c user.name="Roshanalikhan2002" -c user.email="Roshanalikhan2002@users.noreply.github.com" commit -m "..."`
+4. **`git push origin main`** before considering the task done (unless push fails for auth — then tell the user to push manually).
+
+Only skip push when the user explicitly says not to commit or not to push.
