@@ -15,8 +15,8 @@ SRC = ROOT / "aloe vera shampoo" / "WhatsApp Image 2026-11-18 at 2.48.20 AM.jpeg
 OUT = ROOT / "aloe vera shampoo" / "aloe-vera-shampoo-studio.jpg"
 OUT_COPY = ROOT / "images" / "aloe-vera-shampoo-studio.jpg"
 
-W, H = 1600, 2000
-MARGIN = 0.06
+W, H = 800, 1000  # 4:5 card ratio
+FILL = 0.985  # product uses ~98.5% of card height
 JPEG_QUALITY = 97
 
 
@@ -66,6 +66,26 @@ def even_studio_light(rgba: Image.Image) -> Image.Image:
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
 
 
+def _trim_and_refill(img: Image.Image, w: int, h: int) -> Image.Image:
+    """Crop outer white margins, then scale content to fill the card frame."""
+    arr = np.array(img)
+    non_white = np.any(arr < 252, axis=2)
+    if not np.any(non_white):
+        return img
+    ys, xs = np.nonzero(non_white)
+    pad = max(4, int(min(w, h) * 0.012))
+    y0, y1 = max(0, ys.min() - pad), min(arr.shape[0], ys.max() + pad)
+    x0, x1 = max(0, xs.min() - pad), min(arr.shape[1], xs.max() + pad)
+    crop = img.crop((x0, y0, x1, y1))
+    cw, ch = crop.size
+    scale = min(w / cw, h / ch)
+    nw, nh = int(cw * scale), int(ch * scale)
+    crop = crop.resize((nw, nh), Image.Resampling.LANCZOS)
+    out = Image.new("RGB", (w, h), (255, 255, 255))
+    out.paste(crop, ((w - nw) // 2, (h - nh) // 2))
+    return out
+
+
 def contact_shadow_layer(width: int) -> Image.Image:
     """Soft oval shadow directly under product (no side cast shadow)."""
     sw = int(width * 0.62)
@@ -99,22 +119,24 @@ def main() -> None:
         product = product.crop(bbox)
 
     cw, ch = product.size
-    inner_w = int(W * (1 - 2 * MARGIN))
-    inner_h = int(H * (1 - 2 * MARGIN))
-    scale = min(inner_w / cw, inner_h / ch)
+    target_h = int(H * FILL)
+    scale = target_h / ch
     nw, nh = int(cw * scale), int(ch * scale)
+    if nw > int(W * FILL):
+        scale = (W * FILL) / cw
+        nw, nh = int(cw * scale), int(ch * scale)
     product = product.resize((nw, nh), Image.Resampling.LANCZOS)
 
     canvas = Image.new("RGBA", (W, H), (255, 255, 255, 255))
     px = (W - nw) // 2
-    py = int(H * 0.5 - nh * 0.52)
+    py = (H - nh) // 2 - int(H * 0.02)
 
     shadow = contact_shadow_layer(nw)
-    shadow_y = py + nh - int(shadow.size[1] * 0.35)
+    shadow_y = py + nh - int(shadow.size[1] * 0.22)
     canvas.alpha_composite(shadow, (px + (nw - shadow.size[0]) // 2, shadow_y))
     canvas.alpha_composite(product, (px, py))
 
-    rgb = canvas.convert("RGB")
+    rgb = _trim_and_refill(canvas.convert("RGB"), W, H)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     rgb.save(OUT, "JPEG", quality=JPEG_QUALITY, subsampling=0, optimize=True)
     OUT_COPY.parent.mkdir(parents=True, exist_ok=True)
