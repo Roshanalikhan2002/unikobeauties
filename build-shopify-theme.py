@@ -8,6 +8,46 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 
 
+def image_rel_to_flat(rel: str) -> str:
+    """Shopify assets/ must be flat — no subfolders on the store."""
+    return "uniko-" + rel.replace("/", "-")
+
+
+def copy_flat_theme_assets() -> dict[str, str]:
+    """Copy images/ into flat assets/uniko-* files; return rel -> flat name."""
+    mapping: dict[str, str] = {}
+    assets_dir = ROOT / "assets"
+    assets_dir.mkdir(exist_ok=True)
+
+    nested = assets_dir / "images"
+    if nested.exists():
+        shutil.rmtree(nested)
+
+    src_images = ROOT / "images"
+    if not src_images.is_dir():
+        return mapping
+
+    for path in src_images.rglob("*"):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(src_images).as_posix()
+        flat = image_rel_to_flat(rel)
+        shutil.copy2(path, assets_dir / flat)
+        mapping[rel] = flat
+
+    return mapping
+
+
+def liquid_src(rel: str, mapping: dict[str, str]) -> str:
+    flat = mapping[rel]
+    return f'src="{{{{ \'{flat}\' | asset_img_url: \'master\' }}}}"'
+
+
+def liquid_css_url(rel: str, mapping: dict[str, str]) -> str:
+    flat = mapping[rel]
+    return f"url({{{{ '{flat}' | asset_url }}}})"
+
+
 def main() -> None:
     html = (ROOT / "index.html").read_text(encoding="utf-8")
 
@@ -21,22 +61,24 @@ def main() -> None:
         raise SystemExit("No <body> found in index.html")
     body = body_match.group(1).strip()
 
-    def asset_url(m: re.Match[str]) -> str:
-        path = f"images/{m.group(1)}"
-        return f'src="{{{{ \'{path}\' | asset_url }}}}"'
+    mapping = copy_flat_theme_assets()
 
-    body = re.sub(r'src="images/([^"]+)"', asset_url, body)
+    def replace_img_src(match: re.Match[str]) -> str:
+        rel = match.group(1)
+        if rel not in mapping:
+            raise SystemExit(f"Missing theme asset for images/{rel}")
+        return liquid_src(rel, mapping)
 
-    assets_dir = ROOT / "assets"
-    assets_dir.mkdir(exist_ok=True)
-    (assets_dir / "uniko.css").write_text(css + "\n", encoding="utf-8")
+    def replace_css_url(match: re.Match[str]) -> str:
+        rel = match.group(1)
+        if rel not in mapping:
+            raise SystemExit(f"Missing theme asset for images/{rel}")
+        return liquid_css_url(rel, mapping)
 
-    src_images = ROOT / "images"
-    dest_images = assets_dir / "images"
-    if src_images.is_dir():
-        if dest_images.exists():
-            shutil.rmtree(dest_images)
-        shutil.copytree(src_images, dest_images)
+    body = re.sub(r'src="images/([^"]+)"', replace_img_src, body)
+    body = re.sub(r"url\('images/([^']+)'\)", replace_css_url, body)
+
+    (ROOT / "assets" / "uniko.css").write_text(css + "\n", encoding="utf-8")
 
     (ROOT / "layout").mkdir(exist_ok=True)
     (ROOT / "config").mkdir(exist_ok=True)
@@ -57,7 +99,7 @@ def main() -> None:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="uniko-body">
   {{ content_for_layout }}
 </body>
 </html>
@@ -98,7 +140,7 @@ def main() -> None:
   {
     "name": "theme_info",
     "theme_name": "Uniko Beauties",
-    "theme_version": "1.0.0",
+    "theme_version": "1.1.0",
     "theme_author": "Uniko Beauties",
     "theme_documentation_url": "https://github.com/Roshanalikhan2002/unikobeauties",
     "theme_support_url": "https://github.com/Roshanalikhan2002/unikobeauties/issues"
@@ -122,7 +164,7 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print("Shopify theme files updated.")
+    print(f"Shopify theme files updated ({len(mapping)} flat assets).")
 
 
 if __name__ == "__main__":

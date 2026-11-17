@@ -21,7 +21,7 @@ Then visit `http://127.0.0.1:5500/`.
 python build-shopify-theme.py
 ```
 
-This updates `assets/uniko.css`, `sections/uniko-homepage.liquid`, and copies images into `assets/images/`.
+This updates `assets/uniko.css`, `sections/uniko-homepage.liquid`, and copies images as **flat files** in `assets/` (e.g. `uniko-hero-banner.jpg`). Shopify does not support subfolders inside `assets/`.
 
 ## Connect to Shopify (GitHub)
 

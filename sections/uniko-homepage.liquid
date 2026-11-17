@@ -76,7 +76,7 @@
     <section class="hero" id="accueil-hero" aria-label="Bannière d'accueil">
       <img
         class="hero-banner-img"
-        src="{{ 'images/hero-banner.jpg' | asset_url }}"
+        src="{{ 'uniko-hero-banner.jpg' | asset_img_url: 'master' }}"
         alt="Uniko Beauties — beauté naturelle et maquillage bio"
         width="1600"
         height="800"
@@ -90,48 +90,44 @@
         <h2 id="category-title">Acheter par catégorie</h2>
       </div>
       <div class="category-track-wrap">
-        <!--
-          Images volontairement vides. Pour une carte :
-          <a class="category-card" style="--card-image: url('images/visage.jpg')">
-        -->
         <div class="category-track" tabindex="0" role="list" aria-label="Catégories de produits">
-          <a class="category-card" href="#visage" role="listitem">
+          <a class="category-card" href="#visage" role="listitem" style="--card-image: url({{ 'uniko-review-videos-02.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Visage</span>
           </a>
-          <a class="category-card" href="#yeux" role="listitem">
+          <a class="category-card" href="#yeux" role="listitem" style="--card-image: url({{ 'uniko-review-videos-03.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Yeux</span>
           </a>
-          <a class="category-card" href="#levres" role="listitem">
+          <a class="category-card" href="#levres" role="listitem" style="--card-image: url({{ 'uniko-review-videos-04.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Lèvres</span>
           </a>
-          <a class="category-card" href="#peau" role="listitem">
+          <a class="category-card" href="#peau" role="listitem" style="--card-image: url({{ 'uniko-sustainability-impact-hd.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Peau</span>
           </a>
-          <a class="category-card" href="#soins" role="listitem">
+          <a class="category-card" href="#soins" role="listitem" style="--card-image: url({{ 'uniko-review-videos-05.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Soins</span>
           </a>
-          <a class="category-card" href="#maquillage" role="listitem">
+          <a class="category-card" href="#maquillage" role="listitem" style="--card-image: url({{ 'uniko-review-videos-02.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Maquillage</span>
           </a>
-          <a class="category-card" href="#corps" role="listitem">
+          <a class="category-card" href="#corps" role="listitem" style="--card-image: url({{ 'uniko-hero-banner.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Corps</span>
           </a>
-          <a class="category-card" href="#cheveux" role="listitem">
+          <a class="category-card" href="#cheveux" role="listitem" style="--card-image: url({{ 'uniko-review-videos-03.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Cheveux</span>
           </a>
-          <a class="category-card" href="#nouveautes" role="listitem">
+          <a class="category-card" href="#nouveautes" role="listitem" style="--card-image: url({{ 'uniko-review-videos-04.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Nouveautés</span>
           </a>
-          <a class="category-card" href="#meilleures-ventes" role="listitem">
+          <a class="category-card" href="#meilleures-ventes" role="listitem" style="--card-image: url({{ 'uniko-review-videos-01.jpg' | asset_url }})">
             <div class="category-card-media" aria-hidden="true"></div>
             <span>Meilleures ventes</span>
           </a>
@@ -143,31 +139,31 @@
       <h2 class="trust-title" id="trust-title">La marque de beauté la plus certifiée au monde</h2>
       <div class="trust-track" tabindex="0" role="list" aria-label="Labels et certifications">
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/01-ofc-organic.png' | asset_url }}" alt="Certifié biologique Australie" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'master' }}" alt="Certifié biologique Australie" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/02-peta.png' | asset_url }}" alt="Sans test sur les animaux, certifié PETA" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'master' }}" alt="Sans test sur les animaux, certifié PETA" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/03-vegan.png' | asset_url }}" alt="Certifié Vegan Society" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'master' }}" alt="Certifié Vegan Society" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/04-cosmos-natural.png' | asset_url }}" alt="ACO COSMOS Natural" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-04-cosmos-natural.png' | asset_img_url: 'master' }}" alt="ACO COSMOS Natural" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/05-cosmos-organic.png' | asset_url }}" alt="ACO COSMOS Organic" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-05-cosmos-organic.png' | asset_img_url: 'master' }}" alt="ACO COSMOS Organic" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/06-halal.png' | asset_url }}" alt="Certifié Halal" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'master' }}" alt="Certifié Halal" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/07-organic-cosmetic.png' | asset_url }}" alt="Cosmétique biologique certifiée" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-07-organic-cosmetic.png' | asset_img_url: 'master' }}" alt="Cosmétique biologique certifiée" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/08-reef-friendly.png' | asset_url }}" alt="Certifié respectueux des récifs" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-08-reef-friendly.png' | asset_img_url: 'master' }}" alt="Certifié respectueux des récifs" width="300" height="300" loading="lazy" decoding="async">
         </div>
         <div class="trust-badge" role="listitem">
-          <img src="{{ 'images/trust-badges/09-cleanhub.png' | asset_url }}" alt="CleanHub" width="300" height="300" loading="lazy" decoding="async">
+          <img src="{{ 'uniko-trust-badges-09-cleanhub.png' | asset_img_url: 'master' }}" alt="CleanHub" width="300" height="300" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -175,7 +171,7 @@
     <section class="impact-section" id="durabilite" aria-labelledby="impact-eyebrow">
       <div class="impact-media" data-impact-media>
         <img
-          src="{{ 'images/sustainability-impact-hd.jpg' | asset_url }}"
+          src="{{ 'uniko-sustainability-impact-hd.jpg' | asset_img_url: 'master' }}"
           alt="Portrait naturel entouré de feuillage, thème durabilité"
           width="1600"
           height="800"
@@ -299,7 +295,7 @@
         <div class="review-video-track" tabindex="0" role="list" aria-label="Vidéos d'avis clients">
         <article class="review-video-card" role="listitem">
           <a class="review-video-link" href="#avis-video-1" aria-label="Voir la vidéo d'avis client 1">
-            <img src="{{ 'images/review-videos/01.jpg' | asset_url }}" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <img src="{{ 'uniko-review-videos-01.jpg' | asset_img_url: 'master' }}" alt="" width="480" height="854" loading="lazy" decoding="async">
             <span class="video-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
             </span>
@@ -307,7 +303,7 @@
         </article>
         <article class="review-video-card" role="listitem">
           <a class="review-video-link" href="#avis-video-2" aria-label="Voir la vidéo d'avis client 2">
-            <img src="{{ 'images/review-videos/02.jpg' | asset_url }}" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <img src="{{ 'uniko-review-videos-02.jpg' | asset_img_url: 'master' }}" alt="" width="480" height="854" loading="lazy" decoding="async">
             <span class="video-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
             </span>
@@ -315,7 +311,7 @@
         </article>
         <article class="review-video-card" role="listitem">
           <a class="review-video-link" href="#avis-video-3" aria-label="Voir la vidéo d'avis client 3">
-            <img src="{{ 'images/review-videos/03.jpg' | asset_url }}" alt="" width="480" height="854" loading="lazy" decoding="async">
+            <img src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="480" height="854" loading="lazy" decoding="async">
             <span class="video-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
             </span>
@@ -323,7 +319,7 @@
         </article>
         <article class="review-video-card" role="listitem">
           <a class="review-video-link" href="#avis-video-4" aria-label="Voir la vidéo d'avis client 4">
-            <img src="{{ 'images/review-videos/04.jpg' | asset_url }}" alt="" width="600" height="1067" loading="lazy" decoding="async">
+            <img src="{{ 'uniko-review-videos-04.jpg' | asset_img_url: 'master' }}" alt="" width="600" height="1067" loading="lazy" decoding="async">
             <span class="video-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
             </span>
@@ -331,7 +327,7 @@
         </article>
         <article class="review-video-card" role="listitem">
           <a class="review-video-link" href="#avis-video-5" aria-label="Voir la vidéo d'avis client 5">
-            <img src="{{ 'images/review-videos/05.jpg' | asset_url }}" alt="" width="1600" height="800" loading="lazy" decoding="async">
+            <img src="{{ 'uniko-review-videos-05.jpg' | asset_img_url: 'master' }}" alt="" width="1600" height="800" loading="lazy" decoding="async">
             <span class="video-play" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
             </span>
