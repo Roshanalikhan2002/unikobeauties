@@ -11,7 +11,9 @@ from rembg import new_session, remove
 SESSION = new_session("isnet-general-use")
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "aloe vera shampoo" / "WhatsApp Image 2026-11-18 at 2.48.20 AM.jpeg"
+WA_SRC = ROOT / "aloe vera shampoo" / "WhatsApp Image 2026-11-18 at 2.48.20 AM.jpeg"
+PNG_SRC = ROOT / "aloe vera shampoo" / "Uniko Beauties Aloe Vera Shampoo Bottle.png"
+STUDIO_SRC = ROOT / "images" / "aloe-vera-shampoo-studio.jpg"
 OUT = ROOT / "aloe vera shampoo" / "aloe-vera-shampoo-studio.jpg"
 OUT_COPY = ROOT / "images" / "aloe-vera-shampoo-studio.jpg"
 
@@ -99,8 +101,31 @@ def contact_shadow_layer(width: int) -> Image.Image:
     return layer
 
 
+def _resolve_source() -> tuple[bytes | None, Image.Image | None]:
+    if WA_SRC.is_file():
+        return WA_SRC.read_bytes(), None
+    if PNG_SRC.is_file():
+        img = Image.open(PNG_SRC).convert("RGBA")
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        return buf.getvalue(), None
+    if STUDIO_SRC.is_file():
+        return None, Image.open(STUDIO_SRC).convert("RGB")
+    raise SystemExit("No aloe product source image found")
+
+
 def main() -> None:
-    raw = SRC.read_bytes()
+    raw, existing_rgb = _resolve_source()
+    if existing_rgb is not None:
+        rgb = _trim_and_refill(existing_rgb, W, H)
+        OUT.parent.mkdir(parents=True, exist_ok=True)
+        rgb.save(OUT, "JPEG", quality=JPEG_QUALITY, subsampling=0, optimize=True)
+        OUT_COPY.parent.mkdir(parents=True, exist_ok=True)
+        rgb.save(OUT_COPY, "JPEG", quality=JPEG_QUALITY, subsampling=0, optimize=True)
+        print(f"Wrote {OUT} (from existing studio)")
+        return
+
+    raw = raw or b""
     cut = remove(
         raw,
         session=SESSION,
