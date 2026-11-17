@@ -38,6 +38,16 @@
       pdp_acc_certs: "Certifications",
       pdp_acc_how: "How to use",
       pdp_acc_ing: "Ingredients",
+      pdp_keys_title: "Key Ingredients",
+      pdp_key1_title: "Aloe Vera",
+      pdp_key1_desc:
+        "Helps cleanse gently while supporting moisture and comfort for skin and hair.",
+      pdp_key2_title: "Basil",
+      pdp_key2_desc:
+        "A fresh botanical note in our natural scented water, for a clean, uplifting wash.",
+      pdp_key3_title: "Vegetable oils",
+      pdp_key3_desc:
+        "Plant-derived oils help leave hair feeling soft and cared for after every rinse.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -137,6 +147,16 @@
       pdp_acc_certs: "Certifications",
       pdp_acc_how: "Mode d'emploi",
       pdp_acc_ing: "Ingrédients",
+      pdp_keys_title: "Ingrédients clés",
+      pdp_key1_title: "Aloe vera",
+      pdp_key1_desc:
+        "Nettoie en douceur tout en préservant l'hydratation et le confort de la peau et des cheveux.",
+      pdp_key2_title: "Basilique",
+      pdp_key2_desc:
+        "Note botanique fraîche dans notre eau de senteur naturelle, pour un lavage pur et vivifiant.",
+      pdp_key3_title: "Huiles végétales",
+      pdp_key3_desc:
+        "Des huiles d'origine végétale pour des cheveux doux et soignés après chaque rinçage.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:

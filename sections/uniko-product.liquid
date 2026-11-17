@@ -115,6 +115,60 @@
     </div>
   </div>
 
+  <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
+    <div class="uniko-pdp-keys-inner">
+      <h2 class="uniko-pdp-keys-title" id="uniko-pdp-keys-title" data-i18n="pdp_keys_title">Key Ingredients</h2>
+      <div class="uniko-pdp-keys-carousel" data-pdp-ing-carousel>
+        <button type="button" class="uniko-pdp-keys-nav uniko-pdp-keys-nav--prev" data-pdp-ing-prev aria-label="Previous ingredients">‹</button>
+        <div class="uniko-pdp-keys-track" tabindex="0" role="list">
+          <article class="uniko-pdp-key-card" role="listitem">
+            <img
+              class="uniko-pdp-key-img"
+              src="{{ 'uniko-ingredients-01-aloe-vera.jpg' | asset_img_url: 'width: 400' }}"
+              alt=""
+              loading="lazy"
+              width="200"
+              height="200"
+            >
+            <div class="uniko-pdp-key-body">
+              <h3 class="uniko-pdp-key-name" data-i18n="pdp_key1_title">Aloe Vera</h3>
+              <p class="uniko-pdp-key-text" data-i18n="pdp_key1_desc">Helps cleanse gently while supporting moisture and comfort for skin and hair.</p>
+            </div>
+          </article>
+          <article class="uniko-pdp-key-card" role="listitem">
+            <img
+              class="uniko-pdp-key-img"
+              src="{{ 'uniko-ingredients-02-basil.jpg' | asset_img_url: 'width: 400' }}"
+              alt=""
+              loading="lazy"
+              width="200"
+              height="200"
+            >
+            <div class="uniko-pdp-key-body">
+              <h3 class="uniko-pdp-key-name" data-i18n="pdp_key2_title">Basil</h3>
+              <p class="uniko-pdp-key-text" data-i18n="pdp_key2_desc">A fresh botanical note in our natural scented water, for a clean, uplifting wash.</p>
+            </div>
+          </article>
+          <article class="uniko-pdp-key-card" role="listitem">
+            <img
+              class="uniko-pdp-key-img"
+              src="{{ 'uniko-ingredients-03-vegetable-oils.jpg' | asset_img_url: 'width: 400' }}"
+              alt=""
+              loading="lazy"
+              width="200"
+              height="200"
+            >
+            <div class="uniko-pdp-key-body">
+              <h3 class="uniko-pdp-key-name" data-i18n="pdp_key3_title">Vegetable oils</h3>
+              <p class="uniko-pdp-key-text" data-i18n="pdp_key3_desc">Plant-derived oils help leave hair feeling soft and cared for after every rinse.</p>
+            </div>
+          </article>
+        </div>
+        <button type="button" class="uniko-pdp-keys-nav uniko-pdp-keys-nav--next" data-pdp-ing-next aria-label="Next ingredients">›</button>
+      </div>
+    </div>
+  </div>
+
   <div class="uniko-pdp-sticky" id="uniko-pdp-sticky" hidden>
     <div class="uniko-pdp-sticky-inner">
       <div class="uniko-pdp-sticky-meta">
@@ -134,7 +188,7 @@
 </section>
 
 {% stylesheet %}
-  .uniko-pdp { background: #faf8f5; }
+  .uniko-pdp { background: #fff; }
   .uniko-pdp-wrap {
     max-width: 1320px;
     margin: 0 auto;
@@ -149,10 +203,10 @@
     margin-right: -18px;
   }
   .uniko-pdp-main {
-    background: #f3ebe3;
+    background: #fff;
     border: 0;
     border-radius: 0;
-    min-height: clamp(280px, 48vw, 620px);
+    min-height: 0;
     padding: 0;
     display: flex;
     align-items: center;
@@ -163,9 +217,8 @@
   .uniko-pdp-main-img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: clamp(280px, 48vw, 620px);
-    max-height: min(82vh, 960px);
+    height: auto;
+    max-height: min(42vh, 380px);
     object-fit: contain;
     object-position: center;
     border: 0;
@@ -300,7 +353,100 @@
     gap: 16px;
   }
   .uniko-pdp-sticky-meta { display: flex; align-items: center; gap: 12px; min-width: 0; }
-  .uniko-pdp-sticky-thumb { width: 48px; height: 48px; object-fit: contain; border-radius: 4px; background: #f3ebe3; }
+  .uniko-pdp-sticky-thumb { width: 48px; height: 48px; object-fit: contain; border-radius: 4px; background: #fff; }
+  .uniko-pdp-keys {
+    background: #f2e7de;
+    padding: 36px 0 44px;
+    margin-top: 8px;
+  }
+  .uniko-pdp-keys-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+  .uniko-pdp-keys-title {
+    margin: 0 0 22px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(26px, 3.2vw, 34px);
+    font-weight: 600;
+    color: #2c2622;
+  }
+  .uniko-pdp-keys-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .uniko-pdp-keys-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 4px;
+  }
+  .uniko-pdp-keys-track::-webkit-scrollbar { display: none; }
+  .uniko-pdp-key-card {
+    flex: 0 0 min(100%, 340px);
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    min-height: 140px;
+    background: #fff;
+    overflow: hidden;
+    align-items: stretch;
+  }
+  .uniko-pdp-key-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .uniko-pdp-key-body {
+    padding: 16px 14px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .uniko-pdp-key-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #2c2622;
+  }
+  .uniko-pdp-key-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #5a534c;
+  }
+  .uniko-pdp-keys-nav {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #2c2622;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+  .uniko-pdp-keys-nav:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
   .uniko-pdp-sticky-title { margin: 0; font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 42vw; }
   .uniko-pdp-sticky-price { margin: 0; font-size: 13px; font-weight: 600; }
   .uniko-pdp-sticky-atc {
@@ -318,10 +464,13 @@
     white-space: nowrap;
   }
   @media (min-width: 901px) {
+    .uniko-pdp-main-img {
+      max-height: min(78vh, 900px);
+    }
     .uniko-pdp-wrap {
       grid-template-columns: 1.05fr 0.92fr;
       gap: 48px;
-      padding: 36px 28px 100px;
+      padding: 36px 28px 48px;
       align-items: start;
     }
     .uniko-pdp-gallery-col {
@@ -330,6 +479,19 @@
       margin-left: 0;
       margin-right: 0;
     }
+    .uniko-pdp-keys { padding: 48px 0 56px; }
+    .uniko-pdp-keys-inner { padding: 0 28px; }
+    .uniko-pdp-keys-track {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .uniko-pdp-key-card {
+      flex: unset;
+      min-width: 0;
+    }
+    .uniko-pdp-keys-nav { display: none; }
     .uniko-pdp-cert-row {
       flex-wrap: nowrap;
       justify-content: space-between;
@@ -370,6 +532,40 @@
       obs.observe(buy);
     }
     stickyAtc?.addEventListener("click", () => form?.requestSubmit());
+
+    const ingWrap = root.querySelector("[data-pdp-ing-carousel]");
+    const ingTrack = ingWrap?.querySelector(".uniko-pdp-keys-track");
+    const ingPrev = ingWrap?.querySelector("[data-pdp-ing-prev]");
+    const ingNext = ingWrap?.querySelector("[data-pdp-ing-next]");
+    if (ingTrack && ingNext) {
+      const ingStep = () => {
+        const card = ingTrack.querySelector(".uniko-pdp-key-card");
+        if (!card) return 320;
+        const gap = parseFloat(getComputedStyle(ingTrack).gap) || 16;
+        return card.getBoundingClientRect().width + gap;
+      };
+      const syncIngNav = () => {
+        const mobile = window.matchMedia("(max-width: 900px)").matches;
+        if (ingPrev) {
+          ingPrev.hidden = !mobile;
+          ingPrev.disabled = mobile && ingTrack.scrollLeft <= 4;
+        }
+        ingNext.hidden = !mobile;
+        ingNext.disabled =
+          mobile && ingTrack.scrollLeft + ingTrack.clientWidth >= ingTrack.scrollWidth - 4;
+      };
+      ingNext.addEventListener("click", () => {
+        ingTrack.scrollBy({ left: ingStep(), behavior: "smooth" });
+        setTimeout(syncIngNav, 350);
+      });
+      ingPrev?.addEventListener("click", () => {
+        ingTrack.scrollBy({ left: -ingStep(), behavior: "smooth" });
+        setTimeout(syncIngNav, 350);
+      });
+      ingTrack.addEventListener("scroll", syncIngNav, { passive: true });
+      window.addEventListener("resize", syncIngNav);
+      syncIngNav();
+    }
   })();
 </script>
 
