@@ -30,6 +30,8 @@
 
     {% if pdp_profile == 'spray' %}
       {% render 'uniko-pdp-spray-info' %}
+    {% elsif pdp_profile == 'hair_milk' %}
+      {% render 'uniko-pdp-hair-milk-info' %}
     {% else %}
     <div class="uniko-pdp-info-col">
       <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
@@ -122,6 +124,8 @@
 
   {% if pdp_profile == 'spray' %}
     {% render 'uniko-pdp-spray-sections' %}
+  {% elsif pdp_profile == 'hair_milk' %}
+    {% render 'uniko-pdp-hair-milk-sections' %}
   {% else %}
   <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
     <div class="uniko-pdp-keys-inner">
@@ -930,7 +934,8 @@
       "label": "Product page content",
       "options": [
         { "value": "aloe", "label": "Aloe vera shampoo" },
-        { "value": "spray", "label": "Xtremely Pretty Spray" }
+        { "value": "spray", "label": "Xtremely Pretty Spray" },
+        { "value": "hair_milk", "label": "Hair Milk Goldy Treasure" }
       ],
       "default": "aloe"
     }

@@ -257,6 +257,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign milk_product = all_products['hair-milk'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if milk_product != blank %}{{ milk_product.url }}{% else %}/products/hair-milk{% endif %}" aria-label="{% if milk_product != blank %}{{ milk_product.title | escape }}{% else %}Hair Milk Goldy Treasure{% endif %}">
+              <div class="category-card-media">
+                {% if milk_product != blank and milk_product.featured_media %}
+                  {% assign milk_img_alt = milk_product.featured_media.alt | default: milk_product.title | escape %}
+                  {{ milk_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: milk_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if milk_product != blank %}
+                <a class="category-card-product-title" href="{{ milk_product.url }}">{{ milk_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if milk_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ milk_product.price | money }}</span>
+                    {% if milk_product.compare_at_price > milk_product.price %}
+                      <s class="category-card-price-was">{{ milk_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ milk_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/hair-milk">Hair Milk Goldy Treasure</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/hair-milk" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           <a class="category-card" href="#yeux" role="listitem">
             <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
             <span data-i18n="cat_eyes">Eyes</span>

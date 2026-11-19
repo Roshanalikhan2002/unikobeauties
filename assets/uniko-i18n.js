@@ -131,6 +131,52 @@
       pdp_spray_rev3_title: "Scalp feels cared for",
       pdp_spray_rev3_body:
         "Light mist on the scalp is exactly what I wanted — part of my evening unwind.",
+      pdp_milk_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_milk_who: "For who: Men, Women, Kids — the whole family",
+      pdp_milk_desc_en:
+        "This 3-in-1 hair milk with a creamy texture helps hydrate and nourish your hair daily while supporting a beautiful look. Rich in fiber-loving care for naturally defined curls, in shaa Allah.",
+      pdp_milk_desc_fr:
+        "Ce lait capillaire 3-en-1 à texture crémeuse hydrate et nourrit au quotidien tout en préservant une belle tenue. Soin riche pour des boucles naturellement définies, in shaa Allah.",
+      pdp_milk_how_en: "Apply every morning. Also use as a mask, a leave-in, or a detangler.",
+      pdp_milk_how_fr: "Appliquer chaque matin. Utilisable aussi en masque, sans rinçage ou démêlant.",
+      pdp_milk_ing_en:
+        "Aloe vera, vitamin E, natural exotic scent, pure sesame butter or shea butter, basil.",
+      pdp_milk_ing_fr:
+        "Aloe vera, vitamine E, senteur exotique naturelle, beurre de sésame pur ou beurre de karité, basilique.",
+      pdp_milk_key1_title: "Aloe vera",
+      pdp_milk_key1_desc:
+        "Helps comfort the scalp and support daily moisture in your hair care routine.",
+      pdp_milk_key2_title: "Vitamin E",
+      pdp_milk_key2_desc: "Antioxidant care that supports nourished-looking hair fiber.",
+      pdp_milk_key3_title: "Shea & sesame butter",
+      pdp_milk_key3_desc:
+        "Rich plant butters for creamy texture, hydration and soft, manageable hair.",
+      pdp_milk_faq_q1: "How do I use Hair Milk Goldy Treasure?",
+      pdp_milk_faq_a1:
+        "Apply every morning. You can also use it as a mask, leave-in, or detangler.",
+      pdp_milk_faq_q2: "Is it a 3-in-1 product?",
+      pdp_milk_faq_a2:
+        "Yes — one creamy milk for daily care, masking, leave-in conditioning and detangling.",
+      pdp_milk_faq_q3: "Who can use it?",
+      pdp_milk_faq_a3: "Made for men, women and kids — the whole family.",
+      pdp_milk_faq_q4: "Will it help define curls?",
+      pdp_milk_faq_a4:
+        "Its nourishing formula is crafted to help support naturally defined curls with regular use.",
+      pdp_milk_cmp_col2: "Regular leave-in",
+      pdp_milk_cmp_col3: "Conventional hair milk",
+      pdp_milk_cmp_row1: "3-in-1 (mask / leave-in / detangler)",
+      pdp_milk_cmp_row2: "Daily morning care",
+      pdp_milk_cmp_row3: "Curl-defining support",
+      pdp_milk_cmp_row4: "Whole-family use",
+      pdp_milk_cmp_row5: "Aloe + vitamin E blend",
+      pdp_milk_reviews_meta: "5.0 · 24 reviews",
+      pdp_milk_rev1_title: "Curls look defined",
+      pdp_milk_rev1_body: "Morning routine is simple — my curls feel nourished and soft all day.",
+      pdp_milk_rev2_title: "Great for the kids",
+      pdp_milk_rev2_body: "We use it as a detangler before school — whole family shares one bottle.",
+      pdp_milk_rev3_title: "Creamy 3-in-1",
+      pdp_milk_rev3_body:
+        "Love that one product works as leave-in, mask and detangler. Texture is rich but not heavy.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -322,6 +368,52 @@
       pdp_spray_rev3_title: "Cuir chevelu apaisé",
       pdp_spray_rev3_body:
         "Une brume légère exactement ce qu'il me fallait pour mon rituel du soir.",
+      pdp_milk_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_milk_who: "Pour qui : hommes, femmes, enfants — toute la famille",
+      pdp_milk_desc_en:
+        "This 3-in-1 hair milk with a creamy texture helps hydrate and nourish your hair daily while supporting a beautiful look. Rich in fiber-loving care for naturally defined curls, in shaa Allah.",
+      pdp_milk_desc_fr:
+        "Ce lait capillaire 3-en-1 à texture crémeuse hydrate et nourrit au quotidien tout en préservant une belle tenue. Soin riche pour des boucles naturellement définies, in shaa Allah.",
+      pdp_milk_how_en: "Apply every morning. Also use as a mask, a leave-in, or a detangler.",
+      pdp_milk_how_fr: "Appliquer chaque matin. Utilisable aussi en masque, sans rinçage ou démêlant.",
+      pdp_milk_ing_en:
+        "Aloe vera, vitamin E, natural exotic scent, pure sesame butter or shea butter, basil.",
+      pdp_milk_ing_fr:
+        "Aloe vera, vitamine E, senteur exotique naturelle, beurre de sésame pur ou beurre de karité, basilique.",
+      pdp_milk_key1_title: "Aloe vera",
+      pdp_milk_key1_desc:
+        "Apaise le cuir chevelu et soutient l'hydratation au quotidien.",
+      pdp_milk_key2_title: "Vitamine E",
+      pdp_milk_key2_desc: "Soin antioxydant pour une fibre capillaire nourrie.",
+      pdp_milk_key3_title: "Beurre de karité & sésame",
+      pdp_milk_key3_desc:
+        "Beurres végétaux onctueux pour texture crémeuse et cheveux doux.",
+      pdp_milk_faq_q1: "Comment utiliser Hair Milk Goldy Treasure ?",
+      pdp_milk_faq_a1:
+        "Appliquer chaque matin. Utilisable en masque, sans rinçage ou démêlant.",
+      pdp_milk_faq_q2: "Est-ce un produit 3-en-1 ?",
+      pdp_milk_faq_a2:
+        "Oui — un lait crémeux pour soin quotidien, masque, sans rinçage et démêlage.",
+      pdp_milk_faq_q3: "Qui peut l'utiliser ?",
+      pdp_milk_faq_a3: "Pour hommes, femmes et enfants — toute la famille.",
+      pdp_milk_faq_q4: "Aide-t-il à définir les boucles ?",
+      pdp_milk_faq_a4:
+        "Sa formule nourrissante est pensée pour soutenir des boucles naturellement définies.",
+      pdp_milk_cmp_col2: "Sans rinçage classique",
+      pdp_milk_cmp_col3: "Lait capillaire classique",
+      pdp_milk_cmp_row1: "3-en-1 (masque / leave-in / démêlant)",
+      pdp_milk_cmp_row2: "Soin matinal quotidien",
+      pdp_milk_cmp_row3: "Soutien définition boucles",
+      pdp_milk_cmp_row4: "Toute la famille",
+      pdp_milk_cmp_row5: "Aloe + vitamine E",
+      pdp_milk_reviews_meta: "5,0 · 24 avis",
+      pdp_milk_rev1_title: "Boucles bien définies",
+      pdp_milk_rev1_body: "Routine du matin simple — mes boucles restent nourries et douces.",
+      pdp_milk_rev2_title: "Parfait pour les enfants",
+      pdp_milk_rev2_body: "On l'utilise en démêlant avant l'école — toute la famille partage le flacon.",
+      pdp_milk_rev3_title: "3-en-1 onctueux",
+      pdp_milk_rev3_body:
+        "Un seul produit en leave-in, masque et démêlant. Texture riche mais pas lourde.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
