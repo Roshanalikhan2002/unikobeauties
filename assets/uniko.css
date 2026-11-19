@@ -674,10 +674,42 @@
       object-fit: contain;
     }
 
-    @media (min-width: 1100px) {
+    @media (min-width: 901px) {
+      .trust-carousel-btn,
+      .trust-track-wrap::before,
+      .trust-track-wrap::after {
+        display: none;
+      }
+
+      .trust-track-wrap {
+        padding: 0 28px;
+        max-width: 1280px;
+      }
+
+      .trust-track {
+        overflow: visible;
+        justify-content: space-between;
+        gap: clamp(6px, 1.2vw, 18px);
+        scroll-snap-type: none;
+        padding: 0;
+      }
+
+      .trust-badge {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 118px;
+        scroll-snap-align: unset;
+      }
+
       .trust-badge img {
-        height: 112px;
-        max-width: 124px;
+        height: 86px;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .trust-badge img {
+        height: 96px;
       }
     }
 
