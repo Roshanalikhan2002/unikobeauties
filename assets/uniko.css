@@ -397,6 +397,11 @@
       box-sizing: border-box;
     }
 
+    .category-product-item:nth-child(1) .category-product-visual .category-card-media,
+    .category-product-item:nth-child(2) .category-product-visual .category-card-media {
+      padding: 24% 22%;
+    }
+
     .category-product-visual .category-card-media::after {
       display: none;
     }
