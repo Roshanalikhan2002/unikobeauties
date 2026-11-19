@@ -577,6 +577,39 @@
       letter-spacing: 0.01em;
     }
 
+    .trust-track-wrap {
+      position: relative;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 52px;
+    }
+
+    .trust-track-wrap::before,
+    .trust-track-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 48px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .trust-track-wrap::before {
+      left: 52px;
+      background: linear-gradient(90deg, #12572f 0%, rgba(18, 87, 47, 0) 100%);
+      opacity: 0;
+    }
+
+    .trust-track-wrap::after {
+      right: 52px;
+      background: linear-gradient(270deg, #12572f 0%, rgba(18, 87, 47, 0) 100%);
+    }
+
+    .trust-track-wrap.is-start::before { opacity: 0; }
+    .trust-track-wrap:not(.is-start)::before { opacity: 1; }
+    .trust-track-wrap.is-end::after { opacity: 0; }
+
     .trust-track {
       display: flex;
       align-items: center;
@@ -584,21 +617,45 @@
       overflow-x: auto;
       overflow-y: hidden;
       scroll-snap-type: x mandatory;
-      scroll-padding-inline: 24px;
-      padding: 4px 24px 10px;
+      scroll-padding-inline: 8px;
+      padding: 4px 8px 6px;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .trust-track::-webkit-scrollbar {
-      height: 5px;
+      display: none;
+      height: 0;
     }
 
-    .trust-track::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.35);
-      border-radius: 999px;
+    .trust-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      z-index: 2;
     }
+
+    .trust-carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .trust-carousel-btn:disabled {
+      opacity: 0.28;
+      cursor: default;
+    }
+
+    .trust-carousel-btn--prev { left: 8px; }
+    .trust-carousel-btn--next { right: 8px; }
 
   .trust-badge {
       flex: 0 0 auto;
@@ -618,15 +675,6 @@
     }
 
     @media (min-width: 1100px) {
-      .trust-track {
-        justify-content: center;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        max-width: 1320px;
-        margin: 0 auto;
-        padding-inline: 40px;
-      }
-
       .trust-badge img {
         height: 112px;
         max-width: 124px;
@@ -1470,10 +1518,17 @@
         font-size: 16px;
       }
 
+      .trust-track-wrap {
+        padding: 0 44px;
+      }
+
+      .trust-track-wrap::before { left: 44px; }
+      .trust-track-wrap::after { right: 44px; }
+
       .trust-track {
         gap: 22px;
-        scroll-padding-inline: 18px;
-        padding-inline: 18px;
+        scroll-padding-inline: 8px;
+        padding: 4px 8px 6px;
       }
 
       .trust-badge {
