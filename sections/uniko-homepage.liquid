@@ -148,38 +148,6 @@
                   </div>
                 {% endif %}
               {% when 'category' %}
-                <a
-                  class="category-card{% if block.settings.image != blank %} category-card--has-image{% endif %}"
-                  href="{{ block.settings.link | default: '#' }}"
-                  role="listitem"
-                  {{ block.shopify_attributes }}
-                >
-                  <div class="category-card-media">
-                    {% if block.settings.image != blank %}
-                      {{
-                        block.settings.image
-                        | image_url: width: 900
-                        | image_tag:
-                          class: 'category-card-img',
-                          loading: 'lazy',
-                          widths: '280,560,900',
-                          sizes: '280px',
-                          alt: block.settings.label
-                      }}
-                    {% endif %}
-                  </div>
-                  {% if block.settings.show_price and block.settings.product != blank %}
-                    {% assign cat_product = block.settings.product %}
-                    <div class="category-card-caption">
-                      <span>{{ block.settings.label }}</span>
-                      {% if cat_product.price > 0 %}
-                        <p class="category-card-price">{{ cat_product.price | money }}</p>
-                      {% endif %}
-                    </div>
-                  {% else %}
-                    <span>{{ block.settings.label }}</span>
-                  {% endif %}
-                </a>
             {% endcase %}
           {% endfor %}
           {% else %}
@@ -401,42 +369,6 @@
               {% endif %}
             </div>
           </div>
-          <a class="category-card" href="#yeux" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_eyes">Eyes</span>
-          </a>
-          <a class="category-card" href="#levres" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-04.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_lips">Lips</span>
-          </a>
-          <a class="category-card" href="#peau" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-sustainability-impact-hd.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_skin">Skin</span>
-          </a>
-          <a class="category-card" href="#soins" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-05.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_skincare">Skincare</span>
-          </a>
-          <a class="category-card" href="#maquillage" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-02.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_makeup">Makeup</span>
-          </a>
-          <a class="category-card" href="#corps" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-hero-banner.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_body">Body</span>
-          </a>
-          <a class="category-card" href="#cheveux" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_hair">Hair</span>
-          </a>
-          <a class="category-card" href="#nouveautes" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-04.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_new">New</span>
-          </a>
-          <a class="category-card" href="#meilleures-ventes" role="listitem">
-            <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-01.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
-            <span data-i18n="cat_bestsellers">Bestsellers</span>
-          </a>
           {% endif %}
         </div>
         <button type="button" class="carousel-btn carousel-btn--prev category-carousel-prev" data-category-prev aria-label="Previous categories">
@@ -968,10 +900,7 @@
     {
       "name": "Page d'accueil Uniko",
       "blocks": [
-        { "type": "product" },
-        { "type": "category" },
-        { "type": "category" },
-        { "type": "category" }
+        { "type": "product" }
       ]
     }
   ]
