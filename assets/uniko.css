@@ -291,6 +291,7 @@
     .category-track-wrap {
       position: relative;
       overflow: hidden;
+      padding-left: 52px;
       padding-right: 52px;
     }
 
@@ -312,11 +313,19 @@
       display: none;
     }
 
+    .category-carousel-prev,
     .category-carousel-next {
       position: absolute;
       top: 50%;
-      right: 4px;
       transform: translateY(-50%);
+    }
+
+    .category-carousel-prev {
+      left: 4px;
+    }
+
+    .category-carousel-next {
+      right: 4px;
     }
 
     .category-card {
@@ -1434,7 +1443,8 @@
       }
 
       .category-track-wrap {
-        padding-right: 44px;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .category-track {
