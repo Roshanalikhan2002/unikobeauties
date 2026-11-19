@@ -365,6 +365,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign queeny_product = all_products['queeny-lotion'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if queeny_product != blank %}{{ queeny_product.url }}{% else %}/products/queeny-lotion{% endif %}" aria-label="{% if queeny_product != blank %}{{ queeny_product.title | escape }}{% else %}Queeny Lotion{% endif %}">
+              <div class="category-card-media">
+                {% if queeny_product != blank and queeny_product.featured_media %}
+                  {% assign queeny_img_alt = queeny_product.featured_media.alt | default: queeny_product.title | escape %}
+                  {{ queeny_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: queeny_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if queeny_product != blank %}
+                <a class="category-card-product-title" href="{{ queeny_product.url }}">{{ queeny_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if queeny_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ queeny_product.price | money }}</span>
+                    {% if queeny_product.compare_at_price > queeny_product.price %}
+                      <s class="category-card-price-was">{{ queeny_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ queeny_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/queeny-lotion">Queeny Lotion</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/queeny-lotion" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           <a class="category-card" href="#yeux" role="listitem">
             <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
             <span data-i18n="cat_eyes">Eyes</span>

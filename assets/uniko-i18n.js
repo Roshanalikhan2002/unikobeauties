@@ -269,6 +269,54 @@
         "My husband, me and the kids all use the same cream. Light peppermint feel, not greasy.",
       pdp_det_rev3_title: "Scalp feels cared for",
       pdp_det_rev3_body: "Sectioning and focusing on the scalp as directed made a real difference. Hair is easier to comb after.",
+      pdp_queeny_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_queeny_who: "For who: Women (not for pregnant women)",
+      pdp_queeny_desc_en:
+        "An overnight hair lotion from roots to ends. Queeny lotion also helps exfoliate the scalp and fight dandruff with regular evening use.",
+      pdp_queeny_desc_fr:
+        "Lotion capillaire de nuit, des racines aux pointes. Queeny lotion aide aussi à exfolier le cuir chevelu et à lutter contre les pellicules lors d'une utilisation du soir régulière.",
+      pdp_queeny_how_en:
+        "Before going to bed, apply the Queeny lotion from the roots to the ends. The lotion also exfoliates the scalp and fights dandruff.",
+      pdp_queeny_how_fr:
+        "Avant de vous coucher, appliquez la Queeny lotion des racines aux pointes. La lotion exfolie aussi le cuir chevelu et aide à lutter contre les pellicules.",
+      pdp_queeny_ing_en:
+        "Aloe vera, vitamin E, tea tree / peppermint essential oil.",
+      pdp_queeny_ing_fr:
+        "Aloe vera, vitamine E, huile essentielle de tea tree / menthe poivrée.",
+      pdp_queeny_key1_title: "Aloe vera",
+      pdp_queeny_key1_desc:
+        "Helps comfort the scalp overnight as you apply from roots to ends.",
+      pdp_queeny_key2_title: "Vitamin E",
+      pdp_queeny_key2_desc: "A nourishing antioxidant oil for lengths while you sleep.",
+      pdp_queeny_key3_title: "Tea tree & peppermint",
+      pdp_queeny_key3_desc: "Essential oils that support a fresher-feeling scalp and dandruff-care ritual.",
+      pdp_queeny_faq_q1: "When should I apply it?",
+      pdp_queeny_faq_a1: "Before going to bed, apply from the roots to the ends.",
+      pdp_queeny_faq_q2: "Does it help with dandruff?",
+      pdp_queeny_faq_a2:
+        "The lotion also exfoliates the scalp and fights dandruff as part of your evening routine.",
+      pdp_queeny_faq_q3: "Who is it for?",
+      pdp_queeny_faq_a3: "Formulated for women. Not for pregnant women.",
+      pdp_queeny_faq_q4: "Should I rinse before bed?",
+      pdp_queeny_faq_a4:
+        "Leave it on overnight after applying from roots to ends, then wash as usual in the morning if you prefer.",
+      pdp_queeny_cmp_col2: "Regular hair oil",
+      pdp_queeny_cmp_col3: "Drugstore anti-dandruff",
+      pdp_queeny_cmp_row1: "Overnight roots-to-ends",
+      pdp_queeny_cmp_row2: "Scalp exfoliation",
+      pdp_queeny_cmp_row3: "Helps fight dandruff",
+      pdp_queeny_cmp_row4: "Tea tree & peppermint",
+      pdp_queeny_cmp_row5: "For women (not pregnant)",
+      pdp_queeny_reviews_meta: "5.0 · 18 reviews",
+      pdp_queeny_rev1_title: "Night routine that works",
+      pdp_queeny_rev1_body:
+        "I apply from roots to ends before bed — scalp feels cleaner in the morning and flakes are calmer.",
+      pdp_queeny_rev2_title: "Fresh tea tree feel",
+      pdp_queeny_rev2_body:
+        "Love the peppermint and tea tree. It feels like it actually works on the scalp, not just the lengths.",
+      pdp_queeny_rev3_title: "Dandruff calmer",
+      pdp_queeny_rev3_body:
+        "Using it at night a few times a week made my scalp much more comfortable. Clear who it is for on the page too.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -595,6 +643,53 @@
       pdp_det_rev2_body: "Mon mari, moi et les enfants : même crème. Menthe légère, pas gras.",
       pdp_det_rev3_title: "Cuir chevelu choyé",
       pdp_det_rev3_body: "Sectionner et insister sur le cuir chevelu comme indiqué — cheveux plus faciles à peigner.",
+      pdp_queeny_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_queeny_who: "Pour qui : femmes (pas pour les femmes enceintes)",
+      pdp_queeny_desc_en:
+        "An overnight hair lotion from roots to ends. Queeny lotion also helps exfoliate the scalp and fight dandruff with regular evening use.",
+      pdp_queeny_desc_fr:
+        "Lotion capillaire de nuit, des racines aux pointes. Queeny lotion aide aussi à exfolier le cuir chevelu et à lutter contre les pellicules lors d'une utilisation du soir régulière.",
+      pdp_queeny_how_en:
+        "Before going to bed, apply the Queeny lotion from the roots to the ends. The lotion also exfoliates the scalp and fights dandruff.",
+      pdp_queeny_how_fr:
+        "Avant de vous coucher, appliquez la Queeny lotion des racines aux pointes. La lotion exfolie aussi le cuir chevelu et aide à lutter contre les pellicules.",
+      pdp_queeny_ing_en:
+        "Aloe vera, vitamin E, tea tree / peppermint essential oil.",
+      pdp_queeny_ing_fr:
+        "Aloe vera, vitamine E, huile essentielle de tea tree / menthe poivrée.",
+      pdp_queeny_key1_title: "Aloe vera",
+      pdp_queeny_key1_desc: "Apaise le cuir chevelu la nuit, des racines aux pointes.",
+      pdp_queeny_key2_title: "Vitamine E",
+      pdp_queeny_key2_desc: "Huile antioxydante nourrissante pour les longueurs pendant le sommeil.",
+      pdp_queeny_key3_title: "Tea tree & menthe",
+      pdp_queeny_key3_desc: "Huiles essentielles pour un cuir chevelu plus frais et un rituel anti-pellicules.",
+      pdp_queeny_faq_q1: "Quand l'appliquer ?",
+      pdp_queeny_faq_a1: "Avant de vous coucher, des racines aux pointes.",
+      pdp_queeny_faq_q2: "Aide-t-elle contre les pellicules ?",
+      pdp_queeny_faq_a2:
+        "La lotion exfolie aussi le cuir chevelu et aide à lutter contre les pellicules le soir.",
+      pdp_queeny_faq_q3: "Pour qui ?",
+      pdp_queeny_faq_a3: "Pour les femmes. Pas pour les femmes enceintes.",
+      pdp_queeny_faq_q4: "Faut-il rincer le soir ?",
+      pdp_queeny_faq_a4:
+        "Laissez poser toute la nuit, puis lavez le matin si vous le souhaitez.",
+      pdp_queeny_cmp_col2: "Huile capillaire classique",
+      pdp_queeny_cmp_col3: "Anti-pelliculaire courant",
+      pdp_queeny_cmp_row1: "Nuit racines-pointes",
+      pdp_queeny_cmp_row2: "Exfoliation du cuir chevelu",
+      pdp_queeny_cmp_row3: "Aide contre les pellicules",
+      pdp_queeny_cmp_row4: "Tea tree & menthe",
+      pdp_queeny_cmp_row5: "Femmes (pas enceintes)",
+      pdp_queeny_reviews_meta: "5,0 · 18 avis",
+      pdp_queeny_rev1_title: "Rituel du soir",
+      pdp_queeny_rev1_body:
+        "Des racines aux pointes avant de dormir — cuir chevelu plus net le matin, moins de squames.",
+      pdp_queeny_rev2_title: "Fraîcheur tea tree",
+      pdp_queeny_rev2_body:
+        "J'adore la menthe et le tea tree. Ça travaille vraiment le cuir chevelu, pas seulement les longueurs.",
+      pdp_queeny_rev3_title: "Pellicules plus calmes",
+      pdp_queeny_rev3_body:
+        "Quelques soirs par semaine : cuir chevelu plus confortable. La page indique clairement pour qui c'est.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
