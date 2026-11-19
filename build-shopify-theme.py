@@ -240,6 +240,42 @@ CATEGORY_TRACK_LIQUID = """
               {% endif %}
             </div>
           </div>
+          {% assign mask_product = all_products['mask-pouss-2-in-1'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if mask_product != blank %}{{ mask_product.url }}{% else %}/products/mask-pouss-2-in-1{% endif %}" aria-label="{% if mask_product != blank %}{{ mask_product.title | escape }}{% else %}Mask Pouss+ 2 in 1{% endif %}">
+              <div class="category-card-media">
+                {% if mask_product != blank and mask_product.featured_media %}
+                  {% assign mask_img_alt = mask_product.featured_media.alt | default: mask_product.title | escape %}
+                  {{ mask_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: mask_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if mask_product != blank %}
+                <a class="category-card-product-title" href="{{ mask_product.url }}">{{ mask_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if mask_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ mask_product.price | money }}</span>
+                    {% if mask_product.compare_at_price > mask_product.price %}
+                      <s class="category-card-price-was">{{ mask_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ mask_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/mask-pouss-2-in-1">Mask Pouss+ 2 in 1</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/mask-pouss-2-in-1" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           <a class="category-card" href="#yeux" role="listitem">
             <div class="category-card-media"><img class="category-card-img" src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="560" height="700" loading="lazy"></div>
             <span data-i18n="cat_eyes">Eyes</span>
@@ -489,6 +525,7 @@ def main() -> None:
         ("product.aloe-vera-shampoo.json", "aloe", "Aloe vera shampoo"),
         ("product.xtremely-pretty-spray.json", "spray", "Xtremely Pretty Spray"),
         ("product.hair-milk.json", "hair_milk", "Hair Milk Goldy Treasure"),
+        ("product.mask-pouss-2-in-1.json", "mask_pouss", "Mask Pouss+ 2 in 1"),
     ):
         path = ROOT / "templates" / name
         if not path.is_file():

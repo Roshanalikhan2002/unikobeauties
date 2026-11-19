@@ -177,6 +177,52 @@
       pdp_milk_rev3_title: "Creamy 3-in-1",
       pdp_milk_rev3_body:
         "Love that one product works as leave-in, mask and detangler. Texture is rich but not heavy.",
+      pdp_mask_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_mask_who: "For who: Women, Girls",
+      pdp_mask_desc_en:
+        "A nourishing 2-in-1 hair mask to support growth and strength. Apply as a treatment or leave-in for softer, cared-for hair with regular use.",
+      pdp_mask_desc_fr:
+        "Masque capillaire 2-en-1 nourrissant pour la pousse et la force des cheveux. S'utilise en soin ou sans rinçage pour des cheveux plus doux au quotidien.",
+      pdp_mask_how_en:
+        "Apply the treatment and leave it on for at least 1 hour, or even overnight, before rinsing. Then wash your hair with shampoo, or you can use it as a leave-in.",
+      pdp_mask_how_fr:
+        "Appliquez le soin et laissez poser au moins 1 heure, ou toute la nuit, avant de rincer. Lavez ensuite au shampoing, ou utilisez-le en leave-in.",
+      pdp_mask_ing_en:
+        "Aloe vera, pure shea butter, hibiscus, vitamin E, basil, peppermint essential oil.",
+      pdp_mask_ing_fr:
+        "Aloe vera, beurre de karité pur, hibiscus, vitamine E, basilique, huile essentielle de menthe poivrée.",
+      pdp_mask_key1_title: "Aloe vera",
+      pdp_mask_key1_desc:
+        "Helps soothe the scalp while supporting comfort during your mask ritual.",
+      pdp_mask_key2_title: "Shea butter & hibiscus",
+      pdp_mask_key2_desc: "Rich butters and botanical flower care for nourished-looking hair fiber.",
+      pdp_mask_key3_title: "Vitamin E & peppermint",
+      pdp_mask_key3_desc: "Vitamin E with invigorating peppermint essential oil for a fresh finish.",
+      pdp_mask_faq_q1: "How long should I leave the mask on?",
+      pdp_mask_faq_a1:
+        "At least 1 hour, or overnight for deeper care — then rinse and shampoo as usual.",
+      pdp_mask_faq_q2: "Can I use it as a leave-in?",
+      pdp_mask_faq_a2: "Yes. After treatment you can also use a small amount as a leave-in on damp hair.",
+      pdp_mask_faq_q3: "Who is it for?",
+      pdp_mask_faq_a3: "Formulated for women and girls.",
+      pdp_mask_faq_q4: "What does 2-in-1 mean?",
+      pdp_mask_faq_a4: "One jar works as an intensive mask treatment and as a leave-in conditioner.",
+      pdp_mask_cmp_col2: "Regular hair mask",
+      pdp_mask_cmp_col3: "Drugstore conditioner",
+      pdp_mask_cmp_row1: "2-in-1 mask & leave-in",
+      pdp_mask_cmp_row2: "Overnight treatment",
+      pdp_mask_cmp_row3: "Growth & strength support",
+      pdp_mask_cmp_row4: "Shea & hibiscus blend",
+      pdp_mask_cmp_row5: "For women & girls",
+      pdp_mask_reviews_meta: "5.0 · 19 reviews",
+      pdp_mask_rev1_title: "Overnight game changer",
+      pdp_mask_rev1_body:
+        "I leave it on overnight once a week — hair feels stronger and smoother after wash day.",
+      pdp_mask_rev2_title: "Fresh peppermint touch",
+      pdp_mask_rev2_body:
+        "Love the cooling feel when rinsing. Also works great as a little leave-in on ends.",
+      pdp_mask_rev3_title: "2-in-1 convenience",
+      pdp_mask_rev3_body: "One jar for deep mask and light leave-in — perfect for my daughter and me.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -414,6 +460,51 @@
       pdp_milk_rev3_title: "3-en-1 onctueux",
       pdp_milk_rev3_body:
         "Un seul produit en leave-in, masque et démêlant. Texture riche mais pas lourde.",
+      pdp_mask_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_mask_who: "Pour qui : femmes, filles",
+      pdp_mask_desc_en:
+        "A nourishing 2-in-1 hair mask to support growth and strength. Apply as a treatment or leave-in for softer, cared-for hair with regular use.",
+      pdp_mask_desc_fr:
+        "Masque capillaire 2-en-1 nourrissant pour la pousse et la force des cheveux. S'utilise en soin ou sans rinçage pour des cheveux plus doux au quotidien.",
+      pdp_mask_how_en:
+        "Apply the treatment and leave it on for at least 1 hour, or even overnight, before rinsing. Then wash your hair with shampoo, or you can use it as a leave-in.",
+      pdp_mask_how_fr:
+        "Appliquez le soin et laissez poser au moins 1 heure, ou toute la nuit, avant de rincer. Lavez ensuite au shampoing, ou utilisez-le en leave-in.",
+      pdp_mask_ing_en:
+        "Aloe vera, pure shea butter, hibiscus, vitamin E, basil, peppermint essential oil.",
+      pdp_mask_ing_fr:
+        "Aloe vera, beurre de karité pur, hibiscus, vitamine E, basilique, huile essentielle de menthe poivrée.",
+      pdp_mask_key1_title: "Aloe vera",
+      pdp_mask_key1_desc:
+        "Apaise le cuir chevelu pendant votre rituel masque.",
+      pdp_mask_key2_title: "Beurre de karité & hibiscus",
+      pdp_mask_key2_desc: "Beurres et fleurs botaniques pour une fibre nourrie.",
+      pdp_mask_key3_title: "Vitamine E & menthe",
+      pdp_mask_key3_desc: "Vitamine E et menthe poivrée pour une finition fraîche.",
+      pdp_mask_faq_q1: "Combien de temps laisser poser ?",
+      pdp_mask_faq_a1:
+        "Au moins 1 heure, ou toute la nuit — puis rincer et shampouiner.",
+      pdp_mask_faq_q2: "En leave-in ?",
+      pdp_mask_faq_a2: "Oui, une petite quantité sur cheveux humides après le soin.",
+      pdp_mask_faq_q3: "Pour qui ?",
+      pdp_mask_faq_a3: "Pour femmes et filles.",
+      pdp_mask_faq_q4: "Qu'est-ce que 2-en-1 ?",
+      pdp_mask_faq_a4: "Un pot : masque intensif et soin sans rinçage.",
+      pdp_mask_cmp_col2: "Masque capillaire classique",
+      pdp_mask_cmp_col3: "Après-shampoing courant",
+      pdp_mask_cmp_row1: "2-en-1 masque & leave-in",
+      pdp_mask_cmp_row2: "Soin de nuit",
+      pdp_mask_cmp_row3: "Soutien pousse & force",
+      pdp_mask_cmp_row4: "Karité & hibiscus",
+      pdp_mask_cmp_row5: "Femmes & filles",
+      pdp_mask_reviews_meta: "5,0 · 19 avis",
+      pdp_mask_rev1_title: "Nuit magique",
+      pdp_mask_rev1_body:
+        "Une fois par semaine toute la nuit — cheveux plus forts après le lavage.",
+      pdp_mask_rev2_title: "Fraîcheur mentholée",
+      pdp_mask_rev2_body: "Sensation rafraîchissante au rinçage. Super en petit leave-in.",
+      pdp_mask_rev3_title: "Pratique 2-en-1",
+      pdp_mask_rev3_body: "Un pot pour masque et leave-in — pour moi et ma fille.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
