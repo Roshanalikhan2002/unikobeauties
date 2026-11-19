@@ -407,6 +407,19 @@
       margin: 0;
       object-fit: contain;
       object-position: center center;
+      transform: scale(1);
+      transform-origin: center center;
+      transition: transform 0.45s ease;
+    }
+
+    .category-product-item:hover .category-product-visual .category-card-img {
+      transform: scale(1.12);
+    }
+
+    @media (hover: none) {
+      .category-product-item:hover .category-product-visual .category-card-img {
+        transform: none;
+      }
     }
 
     .category-card-details {
