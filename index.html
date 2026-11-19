@@ -101,18 +101,9 @@
       gap: 16px;
     }
 
-    .rewards {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--bronze);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
+    .header-left-slot {
       justify-self: start;
     }
-
-    .rewards svg { flex-shrink: 0; }
 
     .logo {
       text-align: center;
@@ -1220,7 +1211,7 @@
         padding: 10px 12px;
       }
 
-      .rewards,
+      .header-left-slot,
       .desktop-search { display: none; }
 
       .header-top {
@@ -1587,12 +1578,7 @@
         </svg>
       </button>
 
-      <a class="rewards" href="#recompenses">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M8 1.2l1.35 3.55L13 5.1 10.2 7.6l.85 3.7L8 9.55 4.95 11.3l.85-3.7L2 5.1l3.65-.35L8 1.2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
-        </svg>
-        <span data-i18n="rewards">Rewards</span>
-      </a>
+      <div class="header-left-slot" aria-hidden="true"></div>
 
       <a class="logo" href="#accueil" aria-label="Uniko Beauties, home">
         <span class="logo-name">UNIKO</span>
@@ -1656,7 +1642,6 @@
       <a href="#maquillage" data-i18n="nav_makeup">Makeup</a>
       <a href="#destockage" data-i18n="nav_clearance">Clearance</a>
       <a href="#a-propos" data-i18n="nav_about">About</a>
-      <a href="#recompenses" data-i18n="rewards">Rewards</a>
     </nav>
     <p class="mobile-drawer-note" data-i18n="drawer_note">100% natural beauty</p>
   </aside>
