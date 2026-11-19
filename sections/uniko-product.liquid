@@ -535,14 +535,21 @@
   .uniko-pdp-acc-body { padding: 0 0 20px; font-size: 14px; line-height: 1.6; color: #4a4540; }
   .uniko-pdp-cert-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: flex-start;
-    gap: 14px 22px;
+    justify-content: space-between;
+    gap: 8px;
     padding: 4px 0 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .uniko-pdp-cert-row::-webkit-scrollbar {
+    display: none;
   }
   .uniko-pdp-cert-badge {
-    flex: 0 1 72px;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -550,8 +557,8 @@
   .uniko-pdp-cert-badge img {
     display: block;
     width: auto;
-    height: 72px;
-    max-width: 84px;
+    height: 56px;
+    max-width: 100%;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(48%) sepia(22%) saturate(820%) hue-rotate(353deg) brightness(94%) contrast(88%);
   }
