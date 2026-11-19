@@ -395,7 +395,9 @@ def main() -> None:
     },
     "main": {
       "type": "uniko-product",
-      "settings": {}
+      "settings": {
+        "content_profile": "aloe"
+      }
     },
     "footer": {
       "type": "uniko-site-footer",
@@ -410,6 +412,19 @@ def main() -> None:
         product_template.replace("Uniko product (default)", "Uniko product"),
         encoding="utf-8",
     )
+    # Product-specific templates (do not overwrite on every build if missing)
+    for name, profile, label in (
+        ("product.aloe-vera-shampoo.json", "aloe", "Aloe vera shampoo"),
+        ("product.xtremely-pretty-spray.json", "spray", "Xtremely Pretty Spray"),
+    ):
+        path = ROOT / "templates" / name
+        if not path.is_file():
+            path.write_text(
+                product_template.replace("Uniko product (default)", label).replace(
+                    '"content_profile": "aloe"', f'"content_profile": "{profile}"'
+                ),
+                encoding="utf-8",
+            )
 
     index_json = ROOT / "templates" / "index.json"
     if not index_json.is_file():

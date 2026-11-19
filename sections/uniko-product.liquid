@@ -1,4 +1,5 @@
 {% comment %}Inika-style product page — Uniko Beauties{% endcomment %}
+{% assign pdp_profile = section.settings.content_profile | default: 'aloe' %}
 <section class="uniko-pdp" id="product" data-uniko-pdp>
   <div class="uniko-pdp-wrap">
     <div class="uniko-pdp-gallery-col">
@@ -27,6 +28,9 @@
       </div>
     </div>
 
+    {% if pdp_profile == 'spray' %}
+      {% render 'uniko-pdp-spray-info' %}
+    {% else %}
     <div class="uniko-pdp-info-col">
       <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
 
@@ -113,8 +117,12 @@
         </details>
       </div>
     </div>
+    {% endif %}
   </div>
 
+  {% if pdp_profile == 'spray' %}
+    {% render 'uniko-pdp-spray-sections' %}
+  {% else %}
   <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
     <div class="uniko-pdp-keys-inner">
       <h2 class="uniko-pdp-keys-title" id="uniko-pdp-keys-title" data-i18n="pdp_keys_title">Key Ingredients</h2>
@@ -338,6 +346,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 
   <div class="uniko-pdp-sticky" id="uniko-pdp-sticky" hidden>
     <div class="uniko-pdp-sticky-inner">
@@ -418,6 +427,12 @@
     color: #2c2622;
   }
   .uniko-pdp-subtitle { margin: 0 0 12px; font-size: 15px; color: #5a534c; }
+  .uniko-pdp-audience {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6a625a;
+  }
   .uniko-pdp-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
   .uniko-pdp-stars { color: #c9972e; letter-spacing: 1px; }
   .uniko-pdp-rating-val { font-weight: 700; }
@@ -901,6 +916,17 @@
   "name": "Default product",
   "tag": "section",
   "class": "uniko-product",
-  "settings": []
+  "settings": [
+    {
+      "type": "select",
+      "id": "content_profile",
+      "label": "Product page content",
+      "options": [
+        { "value": "aloe", "label": "Aloe vera shampoo" },
+        { "value": "spray", "label": "Xtremely Pretty Spray" }
+      ],
+      "default": "aloe"
+    }
+  ]
 }
 {% endschema %}

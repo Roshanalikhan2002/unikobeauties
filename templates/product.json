@@ -7,7 +7,9 @@
     },
     "main": {
       "type": "uniko-product",
-      "settings": {}
+      "settings": {
+        "content_profile": "aloe"
+      }
     },
     "footer": {
       "type": "uniko-site-footer",

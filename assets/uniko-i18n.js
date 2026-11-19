@@ -84,6 +84,53 @@
       pdp_rev3_title: "No harsh foam",
       pdp_rev3_body:
         "Sulfate-free lather is light but my hair feels clean. Great for my sensitive skin too.",
+      pdp_spray_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_spray_who: "For who: Women, Girls",
+      pdp_spray_desc_en:
+        "An overnight scalp spray with water, cinnamon and clove. Before bed, apply to clean hair focusing on the scalp — do not rinse.",
+      pdp_spray_desc_fr:
+        "Spray de nuit pour le cuir chevelu à base d'eau, cannelle et clou de girofle. Avant le coucher, appliquez sur cheveux propres en ciblant le cuir chevelu — ne pas rincer.",
+      pdp_spray_how_en:
+        "Before going to bed, apply the spray to clean hair, focusing on the scalp. Do not rinse.",
+      pdp_spray_how_fr:
+        "Avant le coucher, vaporisez sur cheveux propres en insistant sur le cuir chevelu. Ne pas rincer.",
+      pdp_spray_ing_en: "Water, cinnamon, clove.",
+      pdp_spray_ing_fr: "Eau, cannelle, clou de girofle.",
+      pdp_spray_key1_title: "Water",
+      pdp_spray_key1_desc:
+        "A light, clean base that helps deliver the botanical blend across the scalp.",
+      pdp_spray_key2_title: "Cinnamon",
+      pdp_spray_key2_desc: "A warming botanical note in our nighttime hair care ritual.",
+      pdp_spray_key3_title: "Clove",
+      pdp_spray_key3_desc:
+        "Completes the aromatic blend for an indulgent evening scalp routine.",
+      pdp_spray_faq_q1: "Do I rinse after applying?",
+      pdp_spray_faq_a1:
+        "No. This is a leave-on bedtime spray — apply and let it work overnight without rinsing.",
+      pdp_spray_faq_q2: "When should I use it?",
+      pdp_spray_faq_a2: "Use before going to bed on clean, dry or towel-dried hair.",
+      pdp_spray_faq_q3: "Who is this spray for?",
+      pdp_spray_faq_a3:
+        "Designed for women and girls as part of the UniKo Beauties Hair Care Range.",
+      pdp_spray_faq_q4: "Where should I spray?",
+      pdp_spray_faq_a4: "Focus on the scalp, then lightly mist through lengths if desired.",
+      pdp_spray_cmp_col2: "Regular hairspray",
+      pdp_spray_cmp_col3: "Typical scalp oil",
+      pdp_spray_cmp_row1: "Overnight leave-on",
+      pdp_spray_cmp_row2: "Scalp-focused mist",
+      pdp_spray_cmp_row3: "No rinse needed",
+      pdp_spray_cmp_row4: "Cinnamon & clove blend",
+      pdp_spray_cmp_row5: "For women & girls",
+      pdp_spray_reviews_meta: "5.0 · 18 reviews",
+      pdp_spray_rev1_title: "Easy bedtime routine",
+      pdp_spray_rev1_body:
+        "I spray on my scalp before bed — no rinse, no fuss. Wakes up feeling fresh.",
+      pdp_spray_rev2_title: "Lovely scent",
+      pdp_spray_rev2_body:
+        "Cinnamon and clove smell warm but not overpowering. Perfect for my daughter too.",
+      pdp_spray_rev3_title: "Scalp feels cared for",
+      pdp_spray_rev3_body:
+        "Light mist on the scalp is exactly what I wanted — part of my evening unwind.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -229,6 +276,52 @@
       pdp_rev3_title: "Pas de mousse agressive",
       pdp_rev3_body:
         "La mousse sans sulfate est légère mais les cheveux sont propres. Idéal pour ma peau sensible.",
+      pdp_spray_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_spray_who: "Pour qui : femmes, filles",
+      pdp_spray_desc_en:
+        "An overnight scalp spray with water, cinnamon and clove. Before bed, apply to clean hair focusing on the scalp — do not rinse.",
+      pdp_spray_desc_fr:
+        "Spray de nuit pour le cuir chevelu à base d'eau, cannelle et clou de girofle. Avant le coucher, appliquez sur cheveux propres en ciblant le cuir chevelu — ne pas rincer.",
+      pdp_spray_how_en:
+        "Before going to bed, apply the spray to clean hair, focusing on the scalp. Do not rinse.",
+      pdp_spray_how_fr:
+        "Avant le coucher, vaporisez sur cheveux propres en insistant sur le cuir chevelu. Ne pas rincer.",
+      pdp_spray_ing_en: "Water, cinnamon, clove.",
+      pdp_spray_ing_fr: "Eau, cannelle, clou de girofle.",
+      pdp_spray_key1_title: "Eau",
+      pdp_spray_key1_desc:
+        "Une base légère et pure pour diffuser le mélange botanique sur le cuir chevelu.",
+      pdp_spray_key2_title: "Cannelle",
+      pdp_spray_key2_desc: "Une note botanique réconfortante pour le rituel capillaire du soir.",
+      pdp_spray_key3_title: "Clou de girofle",
+      pdp_spray_key3_desc: "Complète le bouquet aromatique pour un soin du cuir chevelu indulgent.",
+      pdp_spray_faq_q1: "Dois-je rincer après application ?",
+      pdp_spray_faq_a1:
+        "Non. Spray sans rinçage à laisser agir toute la nuit après application.",
+      pdp_spray_faq_q2: "Quand l'utiliser ?",
+      pdp_spray_faq_a2: "Avant le coucher, sur cheveux propres, secs ou essorés.",
+      pdp_spray_faq_q3: "Pour qui est ce spray ?",
+      pdp_spray_faq_a3:
+        "Conçu pour les femmes et les filles — gamme Hair Care UniKo Beauties.",
+      pdp_spray_faq_q4: "Où vaporiser ?",
+      pdp_spray_faq_a4: "Sur le cuir chevelu en priorité, puis légèrement sur les longueurs si besoin.",
+      pdp_spray_cmp_col2: "Laque classique",
+      pdp_spray_cmp_col3: "Huile cuir chevelu",
+      pdp_spray_cmp_row1: "À laisser toute la nuit",
+      pdp_spray_cmp_row2: "Brume ciblée cuir chevelu",
+      pdp_spray_cmp_row3: "Sans rinçage",
+      pdp_spray_cmp_row4: "Mélange cannelle & clou de girofle",
+      pdp_spray_cmp_row5: "Pour femmes & filles",
+      pdp_spray_reviews_meta: "5,0 · 18 avis",
+      pdp_spray_rev1_title: "Routine du soir simple",
+      pdp_spray_rev1_body:
+        "Je vaporise sur le cuir chevelu avant de dormir — pas de rinçage. Au réveil, sensation fraîche.",
+      pdp_spray_rev2_title: "Parfum agréable",
+      pdp_spray_rev2_body:
+        "Cannelle et clou de girofle, chauds mais pas trop. Ma fille adore aussi.",
+      pdp_spray_rev3_title: "Cuir chevelu apaisé",
+      pdp_spray_rev3_body:
+        "Une brume légère exactement ce qu'il me fallait pour mon rituel du soir.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
