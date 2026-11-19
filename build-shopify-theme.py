@@ -588,10 +588,9 @@ def main() -> None:
 }
 """
     (ROOT / "templates" / "product.json").write_text(product_template, encoding="utf-8")
-    (ROOT / "templates" / "product.uniko.json").write_text(
-        product_template.replace("Uniko product (default)", "Uniko product"),
-        encoding="utf-8",
-    )
+    extra_uniko = ROOT / "templates" / "product.uniko.json"
+    if extra_uniko.is_file():
+        extra_uniko.unlink()
     # Product-specific templates (do not overwrite on every build if missing)
     for name, profile, label in (
         ("product.aloe-vera-shampoo.json", "aloe", "Aloe vera shampoo"),
