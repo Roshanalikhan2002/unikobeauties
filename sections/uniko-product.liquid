@@ -386,13 +386,14 @@
   .uniko-pdp-gallery-col {
     min-width: 0;
     max-width: 100%;
+    background: #ffffff;
   }
   .uniko-pdp-main {
-    background: #fff;
+    background: #ffffff;
     border: 0;
     border-radius: 0;
     min-height: 0;
-    padding: 0;
+    padding: 12px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -401,13 +402,15 @@
   }
   .uniko-pdp-main-img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: min(78vw, 320px);
     height: auto;
-    max-height: min(42vh, 380px);
+    max-height: min(38vh, 340px);
     object-fit: contain;
     object-position: center;
     border: 0;
-    margin: 0;
+    margin: 0 auto;
+    background: #ffffff;
   }
   .uniko-pdp-back { font-size: 14px; font-weight: 600; color: #6a625a; text-decoration: none; }
   .uniko-pdp-eyebrow {
@@ -784,12 +787,16 @@
     white-space: nowrap;
   }
   @media (min-width: 901px) {
+    .uniko-pdp-main {
+      padding: 20px 16px;
+    }
     .uniko-pdp-main-img {
-      max-height: min(78vh, 900px);
+      max-width: min(100%, 400px);
+      max-height: min(50vh, 460px);
     }
     .uniko-pdp-wrap {
-      grid-template-columns: 1.05fr 0.92fr;
-      gap: 48px;
+      grid-template-columns: 0.82fr 1fr;
+      gap: 40px;
       padding: 36px 28px 48px;
       align-items: start;
     }
