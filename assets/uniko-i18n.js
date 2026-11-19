@@ -24,7 +24,7 @@
       cat_bestsellers: "Bestsellers",
       shop_now: "Shop now",
       pdp_back: "Back to shop",
-      pdp_subtitle: "Shampoing pour locks ● Shampoo for locks",
+      pdp_subtitle: "Shampoo for locks",
       pdp_desc_en:
         "A gentle aloe vera shampoo for body and hair (500 ml). Cleanses while helping maintain moisture and comfort for all skin and hair types. Free from sulfates, silicones and parabens.",
       pdp_desc_fr:
@@ -402,7 +402,7 @@
       cat_bestsellers: "Meilleures ventes",
       shop_now: "Acheter",
       pdp_back: "Retour à la boutique",
-      pdp_subtitle: "Shampoing pour locks ● Shampoo for locks",
+      pdp_subtitle: "Shampoing pour locks",
       pdp_desc_en:
         "A gentle aloe vera shampoo for body and hair (500 ml). Cleanses while helping maintain moisture and comfort for all skin and hair types. Free from sulfates, silicones and parabens.",
       pdp_desc_fr:

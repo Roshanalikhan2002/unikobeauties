@@ -44,7 +44,7 @@
 
       <p class="uniko-pdp-eyebrow">{{ shop.name }}</p>
       <h1 class="uniko-pdp-title">{{ product.title }}</h1>
-      <p class="uniko-pdp-subtitle" data-i18n="pdp_subtitle">Shampoing pour locks ● Shampoo for locks</p>
+      <p class="uniko-pdp-subtitle" data-i18n="pdp_subtitle">Shampoo for locks</p>
 
       <div class="uniko-pdp-rating" role="img" aria-label="5 out of 5 stars">
         <span class="uniko-pdp-stars" aria-hidden="true">★★★★★</span>
@@ -456,9 +456,21 @@
   .uniko-pdp-stars { color: #c9972e; letter-spacing: 1px; }
   .uniko-pdp-rating-val { font-weight: 700; }
   .uniko-pdp-lead { font-size: 15px; line-height: 1.6; color: #4a4540; margin-bottom: 16px; }
-  .uniko-pdp-lead-fr { display: none; }
-  html[lang="fr"] .uniko-pdp-lead-fr { display: block; }
-  html[lang="fr"] [data-i18n="pdp_desc_en"] { display: none; }
+  .uniko-pdp-lead-fr,
+  .uniko-pdp-lead [lang="fr"],
+  .uniko-pdp-acc-body [lang="fr"] {
+    display: none;
+  }
+  html[lang="fr"] .uniko-pdp-lead-fr,
+  html[lang="fr"] .uniko-pdp-lead [lang="fr"],
+  html[lang="fr"] .uniko-pdp-acc-body [lang="fr"] {
+    display: block;
+  }
+  html[lang="fr"] .uniko-pdp-lead > p:not([lang="fr"]):not(.uniko-pdp-lead-fr),
+  html[lang="fr"] .uniko-pdp-acc-body > p:not([lang="fr"]) {
+    display: none;
+  }
+  .uniko-pdp-admin-desc { display: none; }
   .uniko-pdp-size { font-size: 14px; font-weight: 600; margin: 0 0 16px; }
   .uniko-pdp-price { font-size: 24px; font-weight: 700; margin: 0 0 6px; }
   .uniko-pdp-compare { color: #8a837c; margin: 0 0 8px; }
