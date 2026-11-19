@@ -333,6 +333,34 @@
       impact_text:
         "Our products use only the purest 100% natural ingredients with proven results. We lead the way in sustainable beauty with eco-friendly packaging and a real fight against the plastic crisis.",
       learn_more: "Learn more",
+      home_cmp_title: "Uniko Beauties vs. other brands",
+      home_cmp_feature: "Feature",
+      home_cmp_other: "Typical",
+      home_cmp_r1: "Certified organic ingredients",
+      home_cmp_r2: "Sulfate, silicone & paraben free",
+      home_cmp_r3: "Vegan & cruelty-free",
+      home_cmp_r4: "Plastic-neutral packaging",
+      home_cmp_r5: "Halal accredited formulas",
+      home_cmp_r6: "Hair, body & makeup range",
+      home_faq_eyebrow: "Got questions?",
+      home_faq_title: "Frequently asked questions",
+      home_faq_q1: "What makes Uniko Beauties different?",
+      home_faq_a1:
+        "We are built around certified organic ingredients, vegan and cruelty-free formulas, and plastic-neutral packaging — with one of the most accredited beauty ranges in the world.",
+      home_faq_q2: "Who can use Uniko products?",
+      home_faq_a2:
+        "Our hair and body range is made for everyday routines. Some products suit the whole family; always check each product page for who it is for — for example Queeny Lotion is for women and not for use during pregnancy.",
+      home_faq_q3: "What makes your ingredients special?",
+      home_faq_a3:
+        "We lead with botanicals such as aloe vera, shea butter, vitamin E, hibiscus, basil and essential oils — chosen to cleanse, nourish and care for hair and scalp without sulfates, silicones or parabens.",
+      home_faq_q4: "Why do your certifications stand out?",
+      home_faq_a4:
+        "Look for organic (ACO / COSMOS), PETA animal-test-free, vegan, halal, reef-friendly and CleanHub marks across the site — the same badges you see in our certifications row.",
+      home_faq_q5: "When will I notice results?",
+      home_faq_a5:
+        "Many people feel a softer, cleaner ritual from the first use. Overnight sprays and masks work while you sleep; use as directed on each product for the best result.",
+      home_faq_q6: "Do you offer free shipping?",
+      home_faq_a6: "Yes. Delivery is free on orders over €95, as shown in the bar at the top of the site.",
       reviews_title: "Customer reviews",
       reviews_meta: "16,140 reviews",
       reviews_meta_aria: "Average rating 5 stars from 16,140 reviews",
@@ -706,6 +734,34 @@
       impact_text:
         "Nos produits n'utilisent que les ingr\u00e9dients 100 % naturels les plus purs, dont l'efficacit\u00e9 est prouv\u00e9e. Nous ouvrons la voie \u00e0 une beaut\u00e9 durable gr\u00e2ce \u00e0 un emballage \u00e9cologique et en luttant activement contre la crise du plastique.",
       learn_more: "En savoir plus",
+      home_cmp_title: "Uniko Beauties face aux autres marques",
+      home_cmp_feature: "Atout",
+      home_cmp_other: "Classique",
+      home_cmp_r1: "Ingrédients certifiés bio",
+      home_cmp_r2: "Sans sulfates, silicones ni parabènes",
+      home_cmp_r3: "Végan et sans cruauté",
+      home_cmp_r4: "Emballage neutre en plastique",
+      home_cmp_r5: "Formules accréditées halal",
+      home_cmp_r6: "Cheveux, corps et maquillage",
+      home_faq_eyebrow: "Des questions ?",
+      home_faq_title: "Questions fréquentes",
+      home_faq_q1: "Qu'est-ce qui distingue Uniko Beauties ?",
+      home_faq_a1:
+        "Nous misons sur des ingrédients certifiés bio, des formules véganes et sans cruauté, et un emballage neutre en plastique — parmi les gammes de beauté les plus certifiées au monde.",
+      home_faq_q2: "Qui peut utiliser les produits Uniko ?",
+      home_faq_a2:
+        "Notre gamme cheveux et corps est conçue pour le quotidien. Certains soins conviennent à toute la famille ; vérifiez chaque fiche produit — la Queeny Lotion est destinée aux femmes, pas pendant la grossesse.",
+      home_faq_q3: "Qu'ont de spécial vos ingrédients ?",
+      home_faq_a3:
+        "Nous privilégions l'aloe vera, le beurre de karité, la vitamine E, l'hibiscus, le basilic et les huiles essentielles — pour nettoyer et nourrir sans sulfates, silicones ni parabènes.",
+      home_faq_q4: "Pourquoi vos certifications comptent-elles ?",
+      home_faq_a4:
+        "Retrouvez le bio (ACO / COSMOS), PETA, végan, halal, reef-friendly et CleanHub — les mêmes badges que sur notre bandeau certifications.",
+      home_faq_q5: "Quand verrai-je des résultats ?",
+      home_faq_a5:
+        "Beaucoup ressentent un rituel plus doux dès la première utilisation. Sprays et masques de nuit agissent pendant le sommeil ; suivez le mode d'emploi de chaque produit.",
+      home_faq_q6: "Proposez-vous la livraison gratuite ?",
+      home_faq_a6: "Oui. Livraison gratuite dès 95 €, comme indiqué dans la barre en haut du site.",
       reviews_title: "Avis clients",
       reviews_meta: "16 140 avis",
       reviews_meta_aria: "Note moyenne 5 \u00e9toiles sur 16 140 avis",
