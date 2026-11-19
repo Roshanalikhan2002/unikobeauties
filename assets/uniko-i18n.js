@@ -223,6 +223,52 @@
         "Love the cooling feel when rinsing. Also works great as a little leave-in on ends.",
       pdp_mask_rev3_title: "2-in-1 convenience",
       pdp_mask_rev3_body: "One jar for deep mask and light leave-in — perfect for my daughter and me.",
+      pdp_det_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_det_who: "For who: Men, Women, Kids — the whole family",
+      pdp_det_desc_en:
+        "A family detangling cream that helps slip through knots while nourishing the scalp. Apply a small amount through sectioned hair for softer, easier styling.",
+      pdp_det_desc_fr:
+        "Crème démêlante pour toute la famille : elle facilite le démêlage tout en nourrissant le cuir chevelu. Appliquez une petite quantité sur cheveux sectionnés pour un coiffage plus doux.",
+      pdp_det_how_en:
+        "Section your hair and apply a small amount throughout, focusing on the scalp.",
+      pdp_det_how_fr:
+        "Séparez vos cheveux en sections et appliquez une petite quantité sur l'ensemble, en insistant sur le cuir chevelu.",
+      pdp_det_ing_en:
+        "Aloe vera, vitamin E, pure shea butter, basil, peppermint essential oil.",
+      pdp_det_ing_fr:
+        "Aloe vera, vitamine E, beurre de karité pur, basilique, huile essentielle de menthe poivrée.",
+      pdp_det_key1_title: "Aloe vera",
+      pdp_det_key1_desc:
+        "Helps soothe the scalp while you work the cream through each section.",
+      pdp_det_key2_title: "Shea butter & vitamin E",
+      pdp_det_key2_desc: "Nourishing butter and vitamin E for slip and softness while detangling.",
+      pdp_det_key3_title: "Basil & peppermint",
+      pdp_det_key3_desc: "Botanical basil with peppermint essential oil for a fresh, clean finish.",
+      pdp_det_faq_q1: "How do I apply it?",
+      pdp_det_faq_a1:
+        "Section your hair and apply a small amount throughout, focusing on the scalp.",
+      pdp_det_faq_q2: "Can the whole family use it?",
+      pdp_det_faq_a2: "Yes. It is formulated for men, women and kids — the whole family.",
+      pdp_det_faq_q3: "Should I rinse it out?",
+      pdp_det_faq_a3: "Use as a leave-in detangler on damp or dry hair. A small amount is enough.",
+      pdp_det_faq_q4: "Where should I focus?",
+      pdp_det_faq_a4: "Work through each section and focus on the scalp, then comb gently through lengths.",
+      pdp_det_cmp_col2: "Regular detangler",
+      pdp_det_cmp_col3: "Drugstore cream",
+      pdp_det_cmp_row1: "Whole-family use",
+      pdp_det_cmp_row2: "Scalp-focused application",
+      pdp_det_cmp_row3: "Aloe, shea & vitamin E",
+      pdp_det_cmp_row4: "Basil & peppermint oils",
+      pdp_det_cmp_row5: "Men, women & kids",
+      pdp_det_reviews_meta: "5.0 · 21 reviews",
+      pdp_det_rev1_title: "School-morning saver",
+      pdp_det_rev1_body:
+        "A little on the scalp and through the lengths — knots come out without the fight. Kids actually sit still now.",
+      pdp_det_rev2_title: "One jar for everyone",
+      pdp_det_rev2_body:
+        "My husband, me and the kids all use the same cream. Light peppermint feel, not greasy.",
+      pdp_det_rev3_title: "Scalp feels cared for",
+      pdp_det_rev3_body: "Sectioning and focusing on the scalp as directed made a real difference. Hair is easier to comb after.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -505,6 +551,50 @@
       pdp_mask_rev2_body: "Sensation rafraîchissante au rinçage. Super en petit leave-in.",
       pdp_mask_rev3_title: "Pratique 2-en-1",
       pdp_mask_rev3_body: "Un pot pour masque et leave-in — pour moi et ma fille.",
+      pdp_det_eyebrow: "UniKo Beauties | Hair Care Range",
+      pdp_det_who: "Pour qui : hommes, femmes, enfants — toute la famille",
+      pdp_det_desc_en:
+        "A family detangling cream that helps slip through knots while nourishing the scalp. Apply a small amount through sectioned hair for softer, easier styling.",
+      pdp_det_desc_fr:
+        "Crème démêlante pour toute la famille : elle facilite le démêlage tout en nourrissant le cuir chevelu. Appliquez une petite quantité sur cheveux sectionnés pour un coiffage plus doux.",
+      pdp_det_how_en:
+        "Section your hair and apply a small amount throughout, focusing on the scalp.",
+      pdp_det_how_fr:
+        "Séparez vos cheveux en sections et appliquez une petite quantité sur l'ensemble, en insistant sur le cuir chevelu.",
+      pdp_det_ing_en:
+        "Aloe vera, vitamin E, pure shea butter, basil, peppermint essential oil.",
+      pdp_det_ing_fr:
+        "Aloe vera, vitamine E, beurre de karité pur, basilique, huile essentielle de menthe poivrée.",
+      pdp_det_key1_title: "Aloe vera",
+      pdp_det_key1_desc: "Apaise le cuir chevelu pendant que vous travaillez la crème section par section.",
+      pdp_det_key2_title: "Beurre de karité & vitamine E",
+      pdp_det_key2_desc: "Beurre nourrissant et vitamine E pour le glissant et la douceur au démêlage.",
+      pdp_det_key3_title: "Basilique & menthe",
+      pdp_det_key3_desc: "Basilique botanique et menthe poivrée pour une finition fraîche.",
+      pdp_det_faq_q1: "Comment l'appliquer ?",
+      pdp_det_faq_a1:
+        "Séparez vos cheveux en sections et appliquez une petite quantité sur l'ensemble, en insistant sur le cuir chevelu.",
+      pdp_det_faq_q2: "Toute la famille peut-elle l'utiliser ?",
+      pdp_det_faq_a2: "Oui. Pour hommes, femmes et enfants — toute la famille.",
+      pdp_det_faq_q3: "Faut-il rincer ?",
+      pdp_det_faq_a3: "Utilisez-la en leave-in sur cheveux humides ou secs. Une petite quantité suffit.",
+      pdp_det_faq_q4: "Où insister ?",
+      pdp_det_faq_a4: "Travaillez chaque section en insistant sur le cuir chevelu, puis peignez les longueurs.",
+      pdp_det_cmp_col2: "Démêlant classique",
+      pdp_det_cmp_col3: "Crème courante",
+      pdp_det_cmp_row1: "Toute la famille",
+      pdp_det_cmp_row2: "Application cuir chevelu",
+      pdp_det_cmp_row3: "Aloe, karité & vitamine E",
+      pdp_det_cmp_row4: "Basilique & menthe",
+      pdp_det_cmp_row5: "Hommes, femmes & enfants",
+      pdp_det_reviews_meta: "5,0 · 21 avis",
+      pdp_det_rev1_title: "Sauveur du matin",
+      pdp_det_rev1_body:
+        "Un peu sur le cuir chevelu et les longueurs — les nœuds partent sans bataille. Les enfants restent calmes.",
+      pdp_det_rev2_title: "Un pot pour tous",
+      pdp_det_rev2_body: "Mon mari, moi et les enfants : même crème. Menthe légère, pas gras.",
+      pdp_det_rev3_title: "Cuir chevelu choyé",
+      pdp_det_rev3_body: "Sectionner et insister sur le cuir chevelu comme indiqué — cheveux plus faciles à peigner.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:

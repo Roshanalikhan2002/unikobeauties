@@ -34,6 +34,8 @@
       {% render 'uniko-pdp-hair-milk-info' %}
     {% elsif pdp_profile == 'mask_pouss' %}
       {% render 'uniko-pdp-mask-pouss-info' %}
+    {% elsif pdp_profile == 'detangling' %}
+      {% render 'uniko-pdp-detangling-info' %}
     {% else %}
     <div class="uniko-pdp-info-col">
       <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
@@ -130,6 +132,8 @@
     {% render 'uniko-pdp-hair-milk-sections' %}
   {% elsif pdp_profile == 'mask_pouss' %}
     {% render 'uniko-pdp-mask-pouss-sections' %}
+  {% elsif pdp_profile == 'detangling' %}
+    {% render 'uniko-pdp-detangling-sections' %}
   {% else %}
   <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
     <div class="uniko-pdp-keys-inner">
@@ -940,7 +944,8 @@
         { "value": "aloe", "label": "Aloe vera shampoo" },
         { "value": "spray", "label": "Xtremely Pretty Spray" },
         { "value": "hair_milk", "label": "Hair Milk Goldy Treasure" },
-        { "value": "mask_pouss", "label": "Mask Pouss+ 2 in 1" }
+        { "value": "mask_pouss", "label": "Mask Pouss+ 2 in 1" },
+        { "value": "detangling", "label": "Detangling cream" }
       ],
       "default": "aloe"
     }

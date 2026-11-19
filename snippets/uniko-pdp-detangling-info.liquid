@@ -1,0 +1,84 @@
+<div class="uniko-pdp-info-col">
+  <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
+
+  <p class="uniko-pdp-eyebrow" data-i18n="pdp_det_eyebrow">UniKo Beauties | Hair Care Range</p>
+  <h1 class="uniko-pdp-title">{{ product.title }}</h1>
+  <p class="uniko-pdp-audience" data-i18n="pdp_det_who">For who: Men, Women, Kids — the whole family</p>
+
+  <div class="uniko-pdp-rating" role="img" aria-label="5 out of 5 stars">
+    <span class="uniko-pdp-stars" aria-hidden="true">★★★★★</span>
+    <span class="uniko-pdp-rating-val">5.0</span>
+  </div>
+
+  <div class="uniko-pdp-lead rte">
+    <p data-i18n="pdp_det_desc_en">A family detangling cream that helps slip through knots while nourishing the scalp. Apply a small amount through sectioned hair for softer, easier styling.</p>
+    <p class="uniko-pdp-lead-fr" data-i18n="pdp_det_desc_fr" lang="fr">Crème démêlante pour toute la famille : elle facilite le démêlage tout en nourrissant le cuir chevelu. Appliquez une petite quantité sur cheveux sectionnés pour un coiffage plus doux.</p>
+  </div>
+
+  <div class="uniko-pdp-price-block">
+    {% if product.selected_or_first_available_variant.price > 0 %}
+      <p class="uniko-pdp-price">{{ product.selected_or_first_available_variant.price | money }}</p>
+      {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+        <p class="uniko-pdp-compare"><s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s></p>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% form 'product', product, id: 'uniko-pdp-form', class: 'uniko-pdp-form' %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <div class="uniko-pdp-buy">
+      <div class="uniko-pdp-qty">
+        <button type="button" class="uniko-pdp-qty-btn" data-qty-minus aria-label="Decrease quantity">−</button>
+        <input type="number" name="quantity" value="1" min="1" class="uniko-pdp-qty-input" aria-label="Quantity">
+        <button type="button" class="uniko-pdp-qty-btn" data-qty-plus aria-label="Increase quantity">+</button>
+      </div>
+      <button type="submit" name="add" class="uniko-pdp-atc" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+        {% if product.selected_or_first_available_variant.available %}
+          <span data-i18n="pdp_atc">Add to cart</span>
+        {% else %}
+          <span data-i18n="pdp_soldout">Sold out</span>
+        {% endif %}
+      </button>
+    </div>
+  {% endform %}
+
+  {% if product.description != blank %}
+    <div class="uniko-pdp-admin-desc rte">{{ product.description }}</div>
+  {% endif %}
+
+  <div class="uniko-pdp-accordions">
+    <details class="uniko-pdp-acc" open>
+      <summary data-i18n="pdp_acc_certs">Certifications</summary>
+      <div class="uniko-pdp-cert-row" role="list" aria-label="Certifications">
+        <div class="uniko-pdp-cert-badge" role="listitem">
+          <img src="{{ 'uniko-trust-badges-01-ofc-organic.png' | asset_img_url: 'width: 320' }}" alt="Certified Organic Australia" loading="lazy" width="88" height="88">
+        </div>
+        <div class="uniko-pdp-cert-badge" role="listitem">
+          <img src="{{ 'uniko-trust-badges-02-peta.png' | asset_img_url: 'width: 320' }}" alt="Animal test-free, PETA" loading="lazy" width="88" height="88">
+        </div>
+        <div class="uniko-pdp-cert-badge" role="listitem">
+          <img src="{{ 'uniko-trust-badges-03-vegan.png' | asset_img_url: 'width: 320' }}" alt="Certified Vegan" loading="lazy" width="88" height="88">
+        </div>
+        <div class="uniko-pdp-cert-badge" role="listitem">
+          <img src="{{ 'uniko-trust-badges-06-halal.png' | asset_img_url: 'width: 320' }}" alt="Halal accredited" loading="lazy" width="88" height="88">
+        </div>
+      </div>
+    </details>
+
+    <details class="uniko-pdp-acc">
+      <summary data-i18n="pdp_acc_how">How to use</summary>
+      <div class="uniko-pdp-acc-body">
+        <p data-i18n="pdp_det_how_en">Section your hair and apply a small amount throughout, focusing on the scalp.</p>
+        <p lang="fr" data-i18n="pdp_det_how_fr">Séparez vos cheveux en sections et appliquez une petite quantité sur l'ensemble, en insistant sur le cuir chevelu.</p>
+      </div>
+    </details>
+
+    <details class="uniko-pdp-acc">
+      <summary data-i18n="pdp_acc_ing">Ingredients</summary>
+      <div class="uniko-pdp-acc-body">
+        <p><strong data-i18n="pdp_ing_label_en">Ingredients:</strong> <span data-i18n="pdp_det_ing_en">Aloe vera, vitamin E, pure shea butter, basil, peppermint essential oil.</span></p>
+        <p lang="fr"><strong data-i18n="pdp_ing_label_fr">Ingrédients :</strong> <span data-i18n="pdp_det_ing_fr">Aloe vera, vitamine E, beurre de karité pur, basilique, huile essentielle de menthe poivrée.</span></p>
+      </div>
+    </details>
+  </div>
+</div>
