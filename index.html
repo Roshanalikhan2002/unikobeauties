@@ -386,11 +386,11 @@
       display: block;
       width: 100%;
       flex: 0 0 auto;
-      background: #fff;
-      border: 1px solid #e8e2db;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px rgba(31, 28, 25, 0.05);
-      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: visible;
       text-decoration: none;
     }
 
@@ -398,8 +398,8 @@
       aspect-ratio: 4 / 5;
       width: 100%;
       margin: 0;
-      background-color: #fff;
-      border-radius: 16px;
+      background-color: transparent;
+      border-radius: 0;
       line-height: 0;
       display: flex;
       align-items: center;
@@ -2065,15 +2065,15 @@
     .uniko-search-card {
       text-decoration: none;
       color: var(--ink);
-      background: #fff;
-      border: 1px solid #e8e2db;
-      border-radius: 12px;
-      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
     }
 
     .uniko-search-card-media {
       aspect-ratio: 4 / 5;
-      background: #fff;
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2137,11 +2137,15 @@
 
     .uniko-collection-card .category-product-visual {
       width: 100%;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
     }
 
     .uniko-collection-card .category-product-visual .category-card-media {
       aspect-ratio: 1 / 1;
       padding: 20% 18%;
+      background: transparent;
     }
 
     .uniko-collection-card .category-card-product-title {
