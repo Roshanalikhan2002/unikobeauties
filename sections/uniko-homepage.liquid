@@ -478,6 +478,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign balm_product = all_products['moisturizing-balm'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if balm_product != blank %}{{ balm_product.url }}{% else %}/products/moisturizing-balm{% endif %}" aria-label="{% if balm_product != blank %}{{ balm_product.title | escape }}{% else %}Moisturizing Balm{% endif %}">
+              <div class="category-card-media">
+                {% if balm_product != blank and balm_product.featured_media %}
+                  {% assign balm_img_alt = balm_product.featured_media.alt | default: balm_product.title | escape %}
+                  {{ balm_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: balm_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if balm_product != blank %}
+                <a class="category-card-product-title" href="{{ balm_product.url }}">{{ balm_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if balm_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ balm_product.price | money }}</span>
+                    {% if balm_product.compare_at_price > balm_product.price %}
+                      <s class="category-card-price-was">{{ balm_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ balm_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/moisturizing-balm">Moisturizing Balm</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/moisturizing-balm" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           {% endif %}
         </div>
         <button type="button" class="carousel-btn carousel-btn--prev category-carousel-prev" data-category-prev aria-label="Previous categories">

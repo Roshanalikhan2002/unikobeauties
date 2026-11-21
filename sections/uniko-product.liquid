@@ -44,6 +44,8 @@
       {% render 'uniko-pdp-facial-spray-info' %}
     {% elsif pdp_profile == 'rajel' %}
       {% render 'uniko-pdp-rajel-info' %}
+    {% elsif pdp_profile == 'balm' %}
+      {% render 'uniko-pdp-balm-info' %}
     {% else %}
     <div class="uniko-pdp-info-col">
       <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
@@ -150,6 +152,8 @@
     {% render 'uniko-pdp-facial-spray-sections' %}
   {% elsif pdp_profile == 'rajel' %}
     {% render 'uniko-pdp-rajel-sections' %}
+  {% elsif pdp_profile == 'balm' %}
+    {% render 'uniko-pdp-balm-sections' %}
   {% else %}
   <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
     <div class="uniko-pdp-keys-inner">
@@ -984,7 +988,8 @@
         { "value": "queeny", "label": "Queeny Lotion" },
         { "value": "yiri", "label": "YIRI Soap" },
         { "value": "facial_spray", "label": "Facial Spray" },
-        { "value": "rajel", "label": "Rajel Beard Spray" }
+        { "value": "rajel", "label": "Rajel Beard Spray" },
+        { "value": "balm", "label": "Moisturizing Balm" }
       ],
       "default": "aloe"
     }

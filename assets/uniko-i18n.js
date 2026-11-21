@@ -446,6 +446,49 @@
       pdp_rajel_rev3_title: "Clear who it’s for",
       pdp_rajel_rev3_body:
         "Men and boys — that’s us. Morning spray is now part of the routine.",
+      pdp_balm_eyebrow: "UniKo Beauties | Body Care Range",
+      pdp_balm_who: "For who: Men, Women, Kids — the whole family",
+      pdp_balm_desc_en:
+        "A moisturizing balm with aloe vera, vitamin E and cocoa butter or sesame butter. Apply all over the body for deep hydration that enhances the skin, bi idnillah.",
+      pdp_balm_desc_fr:
+        "Baume hydratant à l'aloe vera, à la vitamine E et au beurre de cacao ou de sésame. Appliquez sur tout le corps pour une hydratation profonde qui sublime la peau, bi idnillah.",
+      pdp_balm_how_en:
+        "Apply the balm all over the body. This balm provides deep hydration and enhances the skin, bi idnillah.",
+      pdp_balm_how_fr:
+        "Appliquez le baume sur tout le corps. Ce baume offre une hydratation profonde et sublime la peau, bi idnillah.",
+      pdp_balm_ing_en: "Aloe vera, vitamin E, cocoa butter or sesame butter.",
+      pdp_balm_ing_fr: "Aloe vera, vitamine E, beurre de cacao ou beurre de sésame.",
+      pdp_balm_key1_title: "Aloe vera",
+      pdp_balm_key1_desc: "A gentle botanical in the balm as you apply it all over the body.",
+      pdp_balm_key2_title: "Vitamin E",
+      pdp_balm_key2_desc: "An antioxidant care note that supports the deep-hydration ritual.",
+      pdp_balm_key3_title: "Cocoa or sesame butter",
+      pdp_balm_key3_desc: "A rich butter — cocoa or sesame — for comfort after you spread the balm on the body.",
+      pdp_balm_faq_q1: "How do I use Moisturizing Balm?",
+      pdp_balm_faq_a1: "Apply the balm all over the body.",
+      pdp_balm_faq_q2: "What does it do?",
+      pdp_balm_faq_a2: "This balm provides deep hydration and enhances the skin, bi idnillah.",
+      pdp_balm_faq_q3: "Can the whole family use it?",
+      pdp_balm_faq_a3: "Yes. It is for men, women and kids — the whole family.",
+      pdp_balm_faq_q4: "What is in the balm?",
+      pdp_balm_faq_a4: "Aloe vera, vitamin E, and cocoa butter or sesame butter.",
+      pdp_balm_cmp_col2: "Regular body cream",
+      pdp_balm_cmp_col3: "Drugstore lotion",
+      pdp_balm_cmp_row1: "Aloe, vitamin E & butter",
+      pdp_balm_cmp_row2: "All-over body apply",
+      pdp_balm_cmp_row3: "Deep hydration",
+      pdp_balm_cmp_row4: "Cocoa or sesame butter",
+      pdp_balm_cmp_row5: "Whole family",
+      pdp_balm_reviews_meta: "5.0 · 15 reviews",
+      pdp_balm_rev1_title: "Deep hydration",
+      pdp_balm_rev1_body:
+        "I spread it all over after the shower. Skin feels cared for — the whole family uses the same jar.",
+      pdp_balm_rev2_title: "Rich butter feel",
+      pdp_balm_rev2_body:
+        "Aloe, vitamin E and cocoa butter — it soaks in and the skin looks softer, bi idnillah.",
+      pdp_balm_rev3_title: "One balm for everyone",
+      pdp_balm_rev3_body:
+        "Men, women and kids in our house. Simple: apply all over the body after bathing.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -976,6 +1019,49 @@
       pdp_rajel_rev3_title: "Cible claire",
       pdp_rajel_rev3_body:
         "Hommes et garçons — c'est nous. Le spray du matin fait partie du rituel.",
+      pdp_balm_eyebrow: "UniKo Beauties | Soin du corps",
+      pdp_balm_who: "Pour qui : hommes, femmes, enfants — toute la famille",
+      pdp_balm_desc_en:
+        "A moisturizing balm with aloe vera, vitamin E and cocoa butter or sesame butter. Apply all over the body for deep hydration that enhances the skin, bi idnillah.",
+      pdp_balm_desc_fr:
+        "Baume hydratant à l'aloe vera, à la vitamine E et au beurre de cacao ou de sésame. Appliquez sur tout le corps pour une hydratation profonde qui sublime la peau, bi idnillah.",
+      pdp_balm_how_en:
+        "Apply the balm all over the body. This balm provides deep hydration and enhances the skin, bi idnillah.",
+      pdp_balm_how_fr:
+        "Appliquez le baume sur tout le corps. Ce baume offre une hydratation profonde et sublime la peau, bi idnillah.",
+      pdp_balm_ing_en: "Aloe vera, vitamin E, cocoa butter or sesame butter.",
+      pdp_balm_ing_fr: "Aloe vera, vitamine E, beurre de cacao ou beurre de sésame.",
+      pdp_balm_key1_title: "Aloe vera",
+      pdp_balm_key1_desc: "Un botanique doux dans le baume, à appliquer sur tout le corps.",
+      pdp_balm_key2_title: "Vitamine E",
+      pdp_balm_key2_desc: "Une note antioxydante pour le rituel d'hydratation profonde.",
+      pdp_balm_key3_title: "Beurre de cacao ou de sésame",
+      pdp_balm_key3_desc: "Un beurre riche — cacao ou sésame — pour le confort après l'application.",
+      pdp_balm_faq_q1: "Comment utiliser Moisturizing Balm ?",
+      pdp_balm_faq_a1: "Appliquez le baume sur tout le corps.",
+      pdp_balm_faq_q2: "Que fait-il ?",
+      pdp_balm_faq_a2: "Ce baume offre une hydratation profonde et sublime la peau, bi idnillah.",
+      pdp_balm_faq_q3: "Toute la famille peut-elle l'utiliser ?",
+      pdp_balm_faq_a3: "Oui. Hommes, femmes et enfants — toute la famille.",
+      pdp_balm_faq_q4: "Quels sont les ingrédients ?",
+      pdp_balm_faq_a4: "Aloe vera, vitamine E, et beurre de cacao ou de sésame.",
+      pdp_balm_cmp_col2: "Crème corps classique",
+      pdp_balm_cmp_col3: "Lait drugstore",
+      pdp_balm_cmp_row1: "Aloe, vitamine E & beurre",
+      pdp_balm_cmp_row2: "Application sur tout le corps",
+      pdp_balm_cmp_row3: "Hydratation profonde",
+      pdp_balm_cmp_row4: "Beurre de cacao ou de sésame",
+      pdp_balm_cmp_row5: "Toute la famille",
+      pdp_balm_reviews_meta: "5,0 · 15 avis",
+      pdp_balm_rev1_title: "Hydratation profonde",
+      pdp_balm_rev1_body:
+        "Je l'étale partout après la douche. La peau est soignée — toute la famille utilise le même pot.",
+      pdp_balm_rev2_title: "Beurre riche",
+      pdp_balm_rev2_body:
+        "Aloe, vitamine E et beurre de cacao — ça pénètre et la peau paraît plus douce, bi idnillah.",
+      pdp_balm_rev3_title: "Un baume pour tous",
+      pdp_balm_rev3_body:
+        "Hommes, femmes et enfants chez nous. Simple : appliquer sur tout le corps après le bain.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
