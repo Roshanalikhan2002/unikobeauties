@@ -317,6 +317,50 @@
       pdp_queeny_rev3_title: "Dandruff calmer",
       pdp_queeny_rev3_body:
         "Using it at night a few times a week made my scalp much more comfortable. Clear who it is for on the page too.",
+      pdp_yiri_eyebrow: "UniKo Beauties | Body Care Range",
+      pdp_yiri_who: "For who: Men, Women, Kids — the whole family",
+      pdp_yiri_desc_en:
+        "A gentle botanical soap that cleanses without stripping. Enriched with aloe vera, shea butter and vitamin E for comfortable, cared-for skin after every rinse.",
+      pdp_yiri_desc_fr:
+        "Savon botanique doux qui nettoie sans agresser. Enrichi en aloe vera, beurre de karité et vitamine E pour une peau confortable après chaque rinçage.",
+      pdp_yiri_how_en:
+        "Work into a lather with water and apply to damp skin. Rinse thoroughly. Use daily on the body.",
+      pdp_yiri_how_fr:
+        "Faites mousser avec de l'eau et appliquez sur peau humide. Rincez bien. Utilisez chaque jour sur le corps.",
+      pdp_yiri_ing_en: "Aloe vera, pure shea butter, vitamin E.",
+      pdp_yiri_ing_fr: "Aloe vera, beurre de karité pur, vitamine E.",
+      pdp_yiri_key1_title: "Aloe vera",
+      pdp_yiri_key1_desc: "Helps cleanse gently while supporting comfort on skin after rinsing.",
+      pdp_yiri_key2_title: "Shea butter",
+      pdp_yiri_key2_desc: "A rich botanical butter so skin does not feel stripped after the wash.",
+      pdp_yiri_key3_title: "Vitamin E",
+      pdp_yiri_key3_desc: "An antioxidant care note for a softer, nourished-feeling finish.",
+      pdp_yiri_faq_q1: "How do I use YIRI Soap?",
+      pdp_yiri_faq_a1: "Work into a lather with water and apply to damp skin. Rinse thoroughly.",
+      pdp_yiri_faq_q2: "Can the whole family use it?",
+      pdp_yiri_faq_a2: "Yes. It is formulated for men, women and kids — the whole family.",
+      pdp_yiri_faq_q3: "Is it a daily soap?",
+      pdp_yiri_faq_a3: "Yes. Use it daily on the body as your gentle botanical wash.",
+      pdp_yiri_faq_q4: "Will it dry out my skin?",
+      pdp_yiri_faq_a4:
+        "It is made with aloe, shea and vitamin E to cleanse while helping skin stay comfortable after rinsing.",
+      pdp_yiri_cmp_col2: "Regular bar soap",
+      pdp_yiri_cmp_col3: "Drugstore body wash",
+      pdp_yiri_cmp_row1: "Aloe, shea & vitamin E",
+      pdp_yiri_cmp_row2: "Gentle daily cleanse",
+      pdp_yiri_cmp_row3: "Whole-family use",
+      pdp_yiri_cmp_row4: "Sulfate-free botanicals",
+      pdp_yiri_cmp_row5: "Men, women & kids",
+      pdp_yiri_reviews_meta: "5.0 · 16 reviews",
+      pdp_yiri_rev1_title: "Soft after the shower",
+      pdp_yiri_rev1_body:
+        "Cleans well but my skin does not feel tight. The whole family shares one bar now.",
+      pdp_yiri_rev2_title: "Simple daily wash",
+      pdp_yiri_rev2_body:
+        "Nice lather, no heavy perfume. It feels like a real botanical soap, not a drugstore bar.",
+      pdp_yiri_rev3_title: "Gentle on kids too",
+      pdp_yiri_rev3_body:
+        "We switched the bathroom bar to YIRI. Kids’ skin looks calmer and it rinses clean.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -718,6 +762,50 @@
       pdp_queeny_rev3_title: "Pellicules plus calmes",
       pdp_queeny_rev3_body:
         "Quelques soirs par semaine : cuir chevelu plus confortable. La page indique clairement pour qui c'est.",
+      pdp_yiri_eyebrow: "UniKo Beauties | Soin du corps",
+      pdp_yiri_who: "Pour qui : hommes, femmes, enfants — toute la famille",
+      pdp_yiri_desc_en:
+        "A gentle botanical soap that cleanses without stripping. Enriched with aloe vera, shea butter and vitamin E for comfortable, cared-for skin after every rinse.",
+      pdp_yiri_desc_fr:
+        "Savon botanique doux qui nettoie sans agresser. Enrichi en aloe vera, beurre de karité et vitamine E pour une peau confortable après chaque rinçage.",
+      pdp_yiri_how_en:
+        "Work into a lather with water and apply to damp skin. Rinse thoroughly. Use daily on the body.",
+      pdp_yiri_how_fr:
+        "Faites mousser avec de l'eau et appliquez sur peau humide. Rincez bien. Utilisez chaque jour sur le corps.",
+      pdp_yiri_ing_en: "Aloe vera, pure shea butter, vitamin E.",
+      pdp_yiri_ing_fr: "Aloe vera, beurre de karité pur, vitamine E.",
+      pdp_yiri_key1_title: "Aloe vera",
+      pdp_yiri_key1_desc: "Nettoie en douceur et aide la peau à rester confortable après le rinçage.",
+      pdp_yiri_key2_title: "Beurre de karité",
+      pdp_yiri_key2_desc: "Un beurre botanique riche pour que la peau ne se sente pas tirailée après le lavage.",
+      pdp_yiri_key3_title: "Vitamine E",
+      pdp_yiri_key3_desc: "Une note antioxydante pour une peau plus douce et nourrie.",
+      pdp_yiri_faq_q1: "Comment utiliser le savon YIRI ?",
+      pdp_yiri_faq_a1: "Faites mousser avec de l'eau et appliquez sur peau humide. Rincez bien.",
+      pdp_yiri_faq_q2: "Toute la famille peut-elle l'utiliser ?",
+      pdp_yiri_faq_a2: "Oui. Il est formulé pour les hommes, les femmes et les enfants — toute la famille.",
+      pdp_yiri_faq_q3: "Est-ce un savon quotidien ?",
+      pdp_yiri_faq_a3: "Oui. Utilisez-le chaque jour sur le corps comme lavage botanique doux.",
+      pdp_yiri_faq_q4: "Va-t-il assécher ma peau ?",
+      pdp_yiri_faq_a4:
+        "Il est formulé avec aloe, karité et vitamine E pour nettoyer tout en gardant la peau confortable.",
+      pdp_yiri_cmp_col2: "Savon classique",
+      pdp_yiri_cmp_col3: "Gel douche courant",
+      pdp_yiri_cmp_row1: "Aloe, karité & vitamine E",
+      pdp_yiri_cmp_row2: "Nettoyage quotidien doux",
+      pdp_yiri_cmp_row3: "Pour toute la famille",
+      pdp_yiri_cmp_row4: "Botaniques sans sulfates",
+      pdp_yiri_cmp_row5: "Hommes, femmes & enfants",
+      pdp_yiri_reviews_meta: "5,0 · 16 avis",
+      pdp_yiri_rev1_title: "Doux après la douche",
+      pdp_yiri_rev1_body:
+        "Nettoie bien sans tirer la peau. Toute la famille partage maintenant le même savon.",
+      pdp_yiri_rev2_title: "Lavage simple du quotidien",
+      pdp_yiri_rev2_body:
+        "Belle mousse, pas de parfum lourd. Un vrai savon botanique, pas un savon de supermarché.",
+      pdp_yiri_rev3_title: "Doux aussi pour les enfants",
+      pdp_yiri_rev3_body:
+        "On a remplacé le savon de la salle de bain par YIRI. La peau des enfants est plus calme et ça rince bien.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:

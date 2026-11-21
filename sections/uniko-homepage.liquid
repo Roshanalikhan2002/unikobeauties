@@ -370,6 +370,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign yiri_product = all_products['yiri-soap'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if yiri_product != blank %}{{ yiri_product.url }}{% else %}/products/yiri-soap{% endif %}" aria-label="{% if yiri_product != blank %}{{ yiri_product.title | escape }}{% else %}YIRI Soap{% endif %}">
+              <div class="category-card-media">
+                {% if yiri_product != blank and yiri_product.featured_media %}
+                  {% assign yiri_img_alt = yiri_product.featured_media.alt | default: yiri_product.title | escape %}
+                  {{ yiri_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: yiri_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if yiri_product != blank %}
+                <a class="category-card-product-title" href="{{ yiri_product.url }}">{{ yiri_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if yiri_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ yiri_product.price | money }}</span>
+                    {% if yiri_product.compare_at_price > yiri_product.price %}
+                      <s class="category-card-price-was">{{ yiri_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ yiri_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/yiri-soap">YIRI Soap</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/yiri-soap" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           {% endif %}
         </div>
         <button type="button" class="carousel-btn carousel-btn--prev category-carousel-prev" data-category-prev aria-label="Previous categories">
