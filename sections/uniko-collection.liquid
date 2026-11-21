@@ -15,24 +15,26 @@
       {% if collection.products.size == 0 %}
         <p class="uniko-cart-empty" data-i18n="collection_empty">No products yet.</p>
       {% else %}
-        <div class="uniko-search-grid uniko-collection-grid">
+        <div class="uniko-collection-grid">
           {% for product in collection.products %}
             <article class="uniko-collection-card">
-              <a class="uniko-collection-card-link" href="{{ product.url }}">
-                <div class="uniko-search-card-media">
+              <a class="category-product-visual" href="{{ product.url }}">
+                <div class="category-card-media">
                   {% if product.featured_media %}
-                    {{ product.featured_media | image_url: width: 720 | image_tag: loading: 'lazy', alt: product.title }}
+                    {{ product.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title, class: 'category-card-img' }}
                   {% endif %}
                 </div>
-                <h2>{{ product.title }}</h2>
-                <p class="uniko-collection-card-price">
-                  <span>{{ product.price | money }}</span>
+              </a>
+              <div class="category-card-details">
+                <a class="category-card-product-title" href="{{ product.url }}">{{ product.title }}</a>
+                <p class="category-card-price-row">
+                  <span class="category-card-price-now">{{ product.price | money }}</span>
                   {% if product.compare_at_price > product.price %}
-                    <span class="uniko-collection-card-was">{{ product.compare_at_price | money }}</span>
+                    <span class="category-card-price-was">{{ product.compare_at_price | money }}</span>
                   {% endif %}
                 </p>
-              </a>
-              <a class="category-card-shop-btn" href="{{ product.url }}" data-i18n="shop_now">Shop now</a>
+                <a class="category-card-shop-btn" href="{{ product.url }}" data-i18n="shop_now">Shop now</a>
+              </div>
             </article>
           {% endfor %}
         </div>

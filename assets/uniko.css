@@ -2083,46 +2083,85 @@
     .uniko-search-form--page { margin: 16px 0 24px; }
 
     .uniko-collection-page {
-      max-width: 1180px;
+      max-width: 1240px;
+      padding: 36px 28px 80px;
+    }
+
+    .uniko-collection-page .uniko-page-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(34px, 4vw, 46px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--green);
     }
 
     .uniko-collection-page .uniko-search-count {
       margin-top: 8px;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       color: var(--muted);
+    }
+
+    .uniko-collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 36px 24px;
+      margin-top: 32px;
     }
 
     .uniko-collection-card {
       display: flex;
       flex-direction: column;
-      background: #fff;
-      border: 1px solid #e8e2db;
-      border-radius: 12px;
-      overflow: hidden;
+      gap: 14px;
+      background: transparent;
+      border: 0;
     }
 
-    .uniko-collection-card-link {
-      text-decoration: none;
-      color: var(--ink);
-      flex: 1;
+    .uniko-collection-card .category-product-visual {
+      width: 100%;
     }
 
-    .uniko-collection-card-price {
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-      padding: 0 12px 8px;
-      font-weight: 600;
+    .uniko-collection-card .category-product-visual .category-card-media {
+      aspect-ratio: 1 / 1;
+      padding: 20% 18%;
     }
 
-    .uniko-collection-card-was {
-      color: #9a928a;
-      text-decoration: line-through;
-      font-weight: 500;
+    .uniko-collection-card .category-card-product-title {
+      min-height: 2.7em;
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      color: #1f1c19;
     }
 
-    .uniko-collection-card .category-card-shop-btn {
-      width: auto;
-      margin: 0 12px 14px;
+    .uniko-collection-card .category-card-price-now {
+      font-size: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .uniko-collection-page {
+        padding: 24px 16px 56px;
+      }
+
+      .uniko-collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 14px;
+      }
+
+      .uniko-collection-card .category-card-product-title {
+        font-size: 13.5px;
+        min-height: 3.6em;
+      }
+
+      .uniko-collection-card .category-card-shop-btn {
+        padding: 11px 10px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
     }
 
     body.uniko-search-open,
