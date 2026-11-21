@@ -257,20 +257,22 @@
       position: relative;
       display: block;
       overflow: hidden;
-      background: var(--hero-deep);
+      background: #e8dccb;
+      line-height: 0;
     }
 
     .hero-banner-img {
       display: block;
       width: 100%;
       height: auto;
-      object-fit: cover;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center center;
     }
 
     .hero-banner-img--desktop {
-      min-height: clamp(280px, 34vw, 460px);
-      max-height: 52vh;
-      object-position: center center;
+      min-height: 0;
+      max-height: none;
     }
 
     .hero-banner-img--mobile {
@@ -1685,9 +1687,8 @@
 
       .hero-banner-img--mobile {
         display: block;
-        min-height: min(78vh, 720px);
+        min-height: 0;
         max-height: none;
-        object-position: center top;
       }
 
       .category-section {
@@ -1843,7 +1844,6 @@
 
     @media (max-width: 420px) {
       .logo-img { height: 40px; max-width: 112px; }
-      .hero-banner-img--mobile { min-height: min(72vh, 640px); }
     }
   </style>
 </head>
