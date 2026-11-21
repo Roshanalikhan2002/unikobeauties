@@ -593,7 +593,7 @@ def main() -> None:
 
     body = inject_category_track(body)
     body = body.replace(
-        '<h2 id="category-title" data-i18n="category_title">Shop by category</h2>',
+        '<h2 id="category-title" data-i18n="category_title">Shop the range</h2>',
         '<h2 id="category-title" data-i18n="category_title">{{ section.settings.category_heading }}</h2>',
     )
 
