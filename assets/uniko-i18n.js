@@ -403,6 +403,49 @@
       pdp_facial_rev3_title: "My morning and night",
       pdp_facial_rev3_body:
         "Clear who it is for — women and girls. I use it twice a day and skip extra products like they say.",
+      pdp_rajel_eyebrow: "UniKo Beauties | Beard Care Range",
+      pdp_rajel_who: "For who: Men, Boys",
+      pdp_rajel_desc_en:
+        "A beard spray with aloe vera, peppermint essential oil and vitamin E. Shake well and apply delicately all over the beard — especially in the morning.",
+      pdp_rajel_desc_fr:
+        "Spray barbe à l'aloe vera, à l'huile essentielle de menthe poivrée et à la vitamine E. Bien agiter et appliquer délicatement sur toute la barbe — surtout le matin.",
+      pdp_rajel_how_en:
+        "Shake well and delicately apply all over your beard. It is recommended to use it especially in the morning.",
+      pdp_rajel_how_fr:
+        "Bien agiter et appliquer délicatement sur toute la barbe. Il est recommandé de l'utiliser surtout le matin.",
+      pdp_rajel_ing_en: "Aloe vera, peppermint essential oil, vitamin E.",
+      pdp_rajel_ing_fr: "Aloe vera, huile essentielle de menthe poivrée, vitamine E.",
+      pdp_rajel_key1_title: "Aloe vera",
+      pdp_rajel_key1_desc: "A gentle botanical for the beard when you mist Rajel all over in the morning.",
+      pdp_rajel_key2_title: "Peppermint essential oil",
+      pdp_rajel_key2_desc: "A fresh essential-oil note for a clean, awake feel on the beard.",
+      pdp_rajel_key3_title: "Vitamin E",
+      pdp_rajel_key3_desc: "An antioxidant care note to finish the morning beard ritual.",
+      pdp_rajel_faq_q1: "How do I use Rajel Beard Spray?",
+      pdp_rajel_faq_a1: "Shake well and delicately apply all over your beard.",
+      pdp_rajel_faq_q2: "When should I use it?",
+      pdp_rajel_faq_a2: "It is recommended to use it especially in the morning.",
+      pdp_rajel_faq_q3: "Who is it for?",
+      pdp_rajel_faq_a3: "Formulated for men and boys.",
+      pdp_rajel_faq_q4: "What is in Rajel Spray?",
+      pdp_rajel_faq_a4: "Aloe vera, peppermint essential oil and vitamin E.",
+      pdp_rajel_cmp_col2: "Regular beard oil",
+      pdp_rajel_cmp_col3: "Drugstore beard balm",
+      pdp_rajel_cmp_row1: "Aloe, peppermint & vitamin E",
+      pdp_rajel_cmp_row2: "All-over beard mist",
+      pdp_rajel_cmp_row3: "Morning ritual",
+      pdp_rajel_cmp_row4: "Peppermint essential oil",
+      pdp_rajel_cmp_row5: "For men & boys",
+      pdp_rajel_reviews_meta: "5.0 · 12 reviews",
+      pdp_rajel_rev1_title: "Morning beard mist",
+      pdp_rajel_rev1_body:
+        "Shake and spray all over. Peppermint feels fresh and it takes a minute before I leave the house.",
+      pdp_rajel_rev2_title: "Light, not greasy",
+      pdp_rajel_rev2_body:
+        "Aloe and vitamin E, no heavy oil. I apply it delicately and the beard stays soft.",
+      pdp_rajel_rev3_title: "Clear who it’s for",
+      pdp_rajel_rev3_body:
+        "Men and boys — that’s us. Morning spray is now part of the routine.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -890,6 +933,49 @@
       pdp_facial_rev3_title: "Mon matin et mon soir",
       pdp_facial_rev3_body:
         "C'est clair : pour les femmes et les filles. Deux fois par jour, sans produits en plus.",
+      pdp_rajel_eyebrow: "UniKo Beauties | Soin de la barbe",
+      pdp_rajel_who: "Pour qui : hommes, garçons",
+      pdp_rajel_desc_en:
+        "A beard spray with aloe vera, peppermint essential oil and vitamin E. Shake well and apply delicately all over the beard — especially in the morning.",
+      pdp_rajel_desc_fr:
+        "Spray barbe à l'aloe vera, à l'huile essentielle de menthe poivrée et à la vitamine E. Bien agiter et appliquer délicatement sur toute la barbe — surtout le matin.",
+      pdp_rajel_how_en:
+        "Shake well and delicately apply all over your beard. It is recommended to use it especially in the morning.",
+      pdp_rajel_how_fr:
+        "Bien agiter et appliquer délicatement sur toute la barbe. Il est recommandé de l'utiliser surtout le matin.",
+      pdp_rajel_ing_en: "Aloe vera, peppermint essential oil, vitamin E.",
+      pdp_rajel_ing_fr: "Aloe vera, huile essentielle de menthe poivrée, vitamine E.",
+      pdp_rajel_key1_title: "Aloe vera",
+      pdp_rajel_key1_desc: "Un botanique doux pour la barbe quand vous vaporisez Rajel le matin.",
+      pdp_rajel_key2_title: "Huile essentielle de menthe poivrée",
+      pdp_rajel_key2_desc: "Une note fraîche pour une barbe nette et réveillée.",
+      pdp_rajel_key3_title: "Vitamine E",
+      pdp_rajel_key3_desc: "Une note antioxydante pour terminer le rituel barbe du matin.",
+      pdp_rajel_faq_q1: "Comment utiliser Rajel Beard Spray ?",
+      pdp_rajel_faq_a1: "Bien agiter et appliquer délicatement sur toute la barbe.",
+      pdp_rajel_faq_q2: "Quand l'utiliser ?",
+      pdp_rajel_faq_a2: "Il est recommandé de l'utiliser surtout le matin.",
+      pdp_rajel_faq_q3: "Pour qui ?",
+      pdp_rajel_faq_a3: "Formulé pour les hommes et les garçons.",
+      pdp_rajel_faq_q4: "Quels sont les ingrédients ?",
+      pdp_rajel_faq_a4: "Aloe vera, huile essentielle de menthe poivrée et vitamine E.",
+      pdp_rajel_cmp_col2: "Huile à barbe classique",
+      pdp_rajel_cmp_col3: "Baume drugstore",
+      pdp_rajel_cmp_row1: "Aloe, menthe & vitamine E",
+      pdp_rajel_cmp_row2: "Brume sur toute la barbe",
+      pdp_rajel_cmp_row3: "Rituel du matin",
+      pdp_rajel_cmp_row4: "Huile essentielle de menthe",
+      pdp_rajel_cmp_row5: "Pour hommes & garçons",
+      pdp_rajel_reviews_meta: "5,0 · 12 avis",
+      pdp_rajel_rev1_title: "Brume barbe du matin",
+      pdp_rajel_rev1_body:
+        "Agiter et vaporiser partout. La menthe est fraîche et ça prend une minute avant de sortir.",
+      pdp_rajel_rev2_title: "Léger, pas gras",
+      pdp_rajel_rev2_body:
+        "Aloe et vitamine E, pas d'huile lourde. J'applique délicatement et la barbe reste douce.",
+      pdp_rajel_rev3_title: "Cible claire",
+      pdp_rajel_rev3_body:
+        "Hommes et garçons — c'est nous. Le spray du matin fait partie du rituel.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:

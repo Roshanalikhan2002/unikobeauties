@@ -442,6 +442,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign rajel_product = all_products['rajel-beard-spray'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if rajel_product != blank %}{{ rajel_product.url }}{% else %}/products/rajel-beard-spray{% endif %}" aria-label="{% if rajel_product != blank %}{{ rajel_product.title | escape }}{% else %}Rajel Beard Spray{% endif %}">
+              <div class="category-card-media">
+                {% if rajel_product != blank and rajel_product.featured_media %}
+                  {% assign rajel_img_alt = rajel_product.featured_media.alt | default: rajel_product.title | escape %}
+                  {{ rajel_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: rajel_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if rajel_product != blank %}
+                <a class="category-card-product-title" href="{{ rajel_product.url }}">{{ rajel_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if rajel_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ rajel_product.price | money }}</span>
+                    {% if rajel_product.compare_at_price > rajel_product.price %}
+                      <s class="category-card-price-was">{{ rajel_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ rajel_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/rajel-beard-spray">Rajel Beard Spray</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/rajel-beard-spray" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           {% endif %}
         </div>
         <button type="button" class="carousel-btn carousel-btn--prev category-carousel-prev" data-category-prev aria-label="Previous categories">
