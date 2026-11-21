@@ -1,0 +1,18 @@
+{
+  "name": "Cart",
+  "sections": {
+    "header": {
+      "type": "uniko-site-header",
+      "settings": {}
+    },
+    "main": {
+      "type": "uniko-cart",
+      "settings": {}
+    },
+    "footer": {
+      "type": "uniko-site-footer",
+      "settings": {}
+    }
+  },
+  "order": ["header", "main", "footer"]
+}

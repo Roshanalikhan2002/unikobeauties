@@ -1,0 +1,53 @@
+<section class="uniko-page uniko-search-page">
+  <div class="uniko-page-inner">
+    <h1 class="uniko-page-title" data-i18n="search_label">Search</h1>
+    <form class="uniko-search-form uniko-search-form--page" action="{{ routes.search_url }}" method="get" role="search">
+      <input type="hidden" name="type" value="product">
+      <input
+        class="uniko-search-input"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="Search Uniko Beauties"
+        data-i18n-placeholder="search_placeholder"
+        autocomplete="off"
+      >
+      <button class="uniko-search-submit" type="submit" data-i18n="search_submit">Search</button>
+    </form>
+
+    {% if search.performed %}
+      {% paginate search.results by 24 %}
+        {% if search.results_count == 0 %}
+          <p class="uniko-cart-empty" data-i18n="search_none">No products found.</p>
+        {% else %}
+          <p class="uniko-search-count">{{ search.results_count }} <span data-i18n="search_results">results</span></p>
+          <div class="uniko-search-grid">
+            {% for item in search.results %}
+              <a class="uniko-search-card" href="{{ item.url }}">
+                <div class="uniko-search-card-media">
+                  {% if item.featured_media %}
+                    {{ item.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', alt: item.title }}
+                  {% elsif item.image %}
+                    {{ item.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: item.title }}
+                  {% endif %}
+                </div>
+                <h2>{{ item.title }}</h2>
+                {% if item.price %}
+                  <p>{{ item.price | money }}</p>
+                {% endif %}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endpaginate %}
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Uniko search",
+  "tag": "section",
+  "class": "uniko-search-section",
+  "settings": []
+}
+{% endschema %}

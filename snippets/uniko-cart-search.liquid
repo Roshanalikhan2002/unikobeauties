@@ -1,0 +1,66 @@
+<div class="uniko-search-overlay" id="uniko-search-overlay" hidden>
+  <button type="button" class="uniko-search-backdrop" data-uniko-close-search aria-label="Close search"></button>
+  <div class="uniko-search-panel" role="dialog" aria-modal="true" aria-labelledby="uniko-search-label">
+    <div class="uniko-search-head">
+      <p id="uniko-search-label" data-i18n="search_label">Search</p>
+      <button type="button" class="uniko-search-close" data-uniko-close-search aria-label="Close search">×</button>
+    </div>
+    <form class="uniko-search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <input type="hidden" name="type" value="product">
+      <input
+        class="uniko-search-input"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="Search Uniko Beauties"
+        data-i18n-placeholder="search_placeholder"
+        autocomplete="off"
+        id="uniko-search-input"
+      >
+      <button class="uniko-search-submit" type="submit" data-i18n="search_submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="uniko-cart-drawer" id="uniko-cart-drawer" hidden data-money-format="{{ shop.money_format | escape }}">
+  <button type="button" class="uniko-cart-backdrop" data-uniko-close-cart aria-label="Close cart"></button>
+  <aside class="uniko-cart-panel" role="dialog" aria-modal="true" aria-labelledby="uniko-cart-title">
+    <div class="uniko-cart-head">
+      <h2 id="uniko-cart-title" data-i18n="cart_title">Your cart</h2>
+      <button type="button" class="uniko-cart-close" data-uniko-close-cart aria-label="Close cart">×</button>
+    </div>
+    <div class="uniko-cart-body" data-cart-items>
+      {% if cart.item_count == 0 %}
+        <p class="uniko-cart-empty" data-i18n="cart_empty">Your cart is empty.</p>
+      {% else %}
+        {% for item in cart.items %}
+          <article class="uniko-cart-line" data-key="{{ item.key }}">
+            <a class="uniko-cart-thumb" href="{{ item.url }}">
+              {% if item.image %}
+                {{ item.image | image_url: width: 160 | image_tag: alt: item.product.title, loading: 'lazy' }}
+              {% endif %}
+            </a>
+            <div class="uniko-cart-line-info">
+              <a class="uniko-cart-line-title" href="{{ item.url }}">{{ item.product.title }}</a>
+              <p class="uniko-cart-line-price">{{ item.final_line_price | money }}</p>
+              <div class="uniko-cart-line-qty">
+                <button type="button" data-cart-qty="-1" data-key="{{ item.key }}" aria-label="Decrease quantity">−</button>
+                <span>{{ item.quantity }}</span>
+                <button type="button" data-cart-qty="1" data-key="{{ item.key }}" aria-label="Increase quantity">+</button>
+                <button type="button" class="uniko-cart-remove" data-cart-remove data-key="{{ item.key }}" data-i18n="cart_remove">Remove</button>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="uniko-cart-foot" data-cart-foot {% if cart.item_count == 0 %}hidden{% endif %}>
+      <p class="uniko-cart-subtotal">
+        <span data-i18n="cart_subtotal">Subtotal</span>
+        <strong data-cart-subtotal>{{ cart.total_price | money }}</strong>
+      </p>
+      <a class="uniko-cart-checkout" href="{{ routes.cart_url }}" data-i18n="cart_view">View cart</a>
+      <a class="uniko-cart-checkout uniko-cart-checkout--primary" href="/checkout" data-i18n="cart_checkout">Checkout</a>
+    </div>
+  </aside>
+</div>

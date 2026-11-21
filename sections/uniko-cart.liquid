@@ -1,0 +1,48 @@
+<section class="uniko-page uniko-cart-page" data-uniko-cart-page>
+  <div class="uniko-page-inner">
+    <h1 class="uniko-page-title" data-i18n="cart_title">Your cart</h1>
+    {% if cart.item_count == 0 %}
+      <p class="uniko-cart-empty" data-i18n="cart_empty">Your cart is empty.</p>
+      <a class="uniko-cart-checkout uniko-cart-checkout--primary" href="{{ routes.root_url }}" data-i18n="cart_continue">Continue shopping</a>
+    {% else %}
+      <form action="{{ routes.cart_url }}" method="post">
+        <div class="uniko-cart-page-list">
+          {% for item in cart.items %}
+            <article class="uniko-cart-line">
+              <a class="uniko-cart-thumb" href="{{ item.url }}">
+                {% if item.image %}
+                  {{ item.image | image_url: width: 240 | image_tag: alt: item.product.title }}
+                {% endif %}
+              </a>
+              <div class="uniko-cart-line-info">
+                <a class="uniko-cart-line-title" href="{{ item.url }}">{{ item.product.title }}</a>
+                <p class="uniko-cart-line-price">{{ item.final_line_price | money }}</p>
+                <label class="uniko-cart-page-qty">
+                  <span data-i18n="pdp_qty">Qty</span>
+                  <input type="number" name="updates[{{ item.key }}]" value="{{ item.quantity }}" min="0">
+                </label>
+                <a href="{{ item.url_to_remove }}" data-i18n="cart_remove">Remove</a>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="uniko-cart-page-summary">
+          <p class="uniko-cart-subtotal">
+            <span data-i18n="cart_subtotal">Subtotal</span>
+            <strong>{{ cart.total_price | money }}</strong>
+          </p>
+          <button type="submit" name="update" class="uniko-cart-checkout" data-i18n="cart_update">Update cart</button>
+          <button type="submit" name="checkout" class="uniko-cart-checkout uniko-cart-checkout--primary" data-i18n="cart_checkout">Checkout</button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Uniko cart",
+  "tag": "section",
+  "class": "uniko-cart-section",
+  "settings": []
+}
+{% endschema %}

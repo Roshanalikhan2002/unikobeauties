@@ -1846,6 +1846,265 @@
     @media (max-width: 420px) {
       .logo-img { height: 36px; max-width: 148px; }
     }
+
+    .cart-count[hidden] { display: none; }
+
+    .uniko-search-overlay,
+    .uniko-cart-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+    }
+
+    .uniko-search-backdrop,
+    .uniko-cart-backdrop {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: rgba(22, 20, 18, 0.48);
+      cursor: pointer;
+    }
+
+    .uniko-search-panel {
+      position: relative;
+      z-index: 1;
+      margin: 72px auto 0;
+      width: min(640px, calc(100% - 28px));
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 18px 22px;
+      box-shadow: 0 16px 40px rgba(31, 28, 25, 0.18);
+    }
+
+    .uniko-search-head,
+    .uniko-cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .uniko-search-head p,
+    .uniko-cart-head h2,
+    .uniko-page-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 28px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .uniko-search-close,
+    .uniko-cart-close {
+      border: 0;
+      background: none;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .uniko-search-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .uniko-search-input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid #e8e2db;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font: inherit;
+    }
+
+    .uniko-search-submit,
+    .uniko-cart-checkout {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      background: #ece7e1;
+      color: var(--ink);
+    }
+
+    .uniko-cart-checkout--primary,
+    .uniko-search-submit {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .uniko-cart-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      width: min(420px, 100%);
+      height: 100%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -12px 0 32px rgba(31, 28, 25, 0.12);
+    }
+
+    .uniko-cart-head,
+    .uniko-cart-foot {
+      padding: 18px 18px 12px;
+    }
+
+    .uniko-cart-body {
+      flex: 1;
+      overflow: auto;
+      padding: 0 18px 18px;
+    }
+
+    .uniko-cart-empty { color: var(--muted); }
+
+    .uniko-cart-line {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid #ece7e1;
+    }
+
+    .uniko-cart-thumb {
+      display: block;
+      background: #fff;
+      border: 1px solid #e8e2db;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+
+    .uniko-cart-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .uniko-cart-line-title {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .uniko-cart-line-price {
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .uniko-cart-line-qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .uniko-cart-line-qty button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #e8e2db;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .uniko-cart-remove {
+      border: 0 !important;
+      width: auto !important;
+      background: none !important;
+      text-decoration: underline;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .uniko-cart-subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .uniko-cart-foot {
+      display: grid;
+      gap: 8px;
+      border-top: 1px solid #ece7e1;
+      padding-bottom: 22px;
+    }
+
+    .uniko-page {
+      padding: 28px 18px 64px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .uniko-cart-page-list { margin: 18px 0 28px; }
+
+    .uniko-cart-page-summary {
+      display: grid;
+      gap: 10px;
+      max-width: 360px;
+      margin-left: auto;
+    }
+
+    .uniko-search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .uniko-search-card {
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #e8e2db;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .uniko-search-card-media {
+      aspect-ratio: 4 / 5;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .uniko-search-card-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .uniko-search-card h2 {
+      font-size: 15px;
+      padding: 10px 12px 4px;
+    }
+
+    .uniko-search-card p {
+      padding: 0 12px 12px;
+      font-weight: 600;
+    }
+
+    .uniko-search-form--page { margin: 16px 0 24px; }
+
+    body.uniko-search-open,
+    body.uniko-cart-open { overflow: hidden; }
+
+    @media (max-width: 700px) {
+      .uniko-search-panel { margin-top: 18px; }
+      .uniko-search-form { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
@@ -1871,13 +2130,13 @@
           <span aria-hidden="true">·</span>
           <button type="button" class="lang-set" data-set-lang="fr" hreflang="fr" lang="fr" title="Français">FR</button>
         </nav>
-        <button class="icon-btn mobile-search" type="button" aria-label="Search">
+        <button class="icon-btn mobile-search" type="button" data-uniko-open-search aria-label="Search">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
             <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </button>
-        <button class="icon-btn desktop-search" type="button" aria-label="Search">
+        <button class="icon-btn desktop-search" type="button" data-uniko-open-search aria-label="Search">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
             <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
@@ -1889,12 +2148,12 @@
             <path d="M5.2 19.2c1.4-3 3.8-4.4 6.8-4.4s5.4 1.4 6.8 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </a>
-        <a class="icon-btn" href="#panier" aria-label="Cart, 0 items">
+        <a class="icon-btn" href="/cart" data-uniko-open-cart aria-label="Cart, 0 items">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6.5 8.5h11l-.8 10.2a1.5 1.5 0 0 1-1.5 1.3H8.8a1.5 1.5 0 0 1-1.5-1.3L6.5 8.5z" stroke="currentColor" stroke-width="1.6"/>
             <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <span class="cart-count">0</span>
+          <span class="cart-count" data-cart-count hidden>0</span>
         </a>
       </div>
     </div>
@@ -1927,6 +2186,7 @@
     </nav>
     <p class="mobile-drawer-note" data-i18n="drawer_note">Hair, face, beard and body</p>
   </aside>
+  <!-- @uniko-cart-search -->
 
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">

@@ -580,6 +580,20 @@
       hero_alt:
         "Uniko Beauties \u2014 botanical care with aloe vera",
       drawer_note: "Hair, face, beard and body",
+      search_label: "Search",
+      search_placeholder: "Search Uniko Beauties",
+      search_submit: "Search",
+      search_none: "No products found.",
+      search_results: "results",
+      cart_title: "Your cart",
+      cart_empty: "Your cart is empty.",
+      cart_subtotal: "Subtotal",
+      cart_checkout: "Checkout",
+      cart_view: "View cart",
+      cart_update: "Update cart",
+      cart_continue: "Continue shopping",
+      cart_remove: "Remove",
+      pdp_qty: "Qty",
     },
     fr: {
       promo: "Livraison gratuite pour les commandes de plus de\u00a095\u00a0\u20ac",
@@ -1155,6 +1169,20 @@
       hero_alt:
         "Uniko Beauties \u2014 soins botaniques à l'aloe vera",
       drawer_note: "Cheveux, visage, barbe et corps",
+      search_label: "Recherche",
+      search_placeholder: "Rechercher Uniko Beauties",
+      search_submit: "Rechercher",
+      search_none: "Aucun produit trouvé.",
+      search_results: "résultats",
+      cart_title: "Votre panier",
+      cart_empty: "Votre panier est vide.",
+      cart_subtotal: "Sous-total",
+      cart_checkout: "Paiement",
+      cart_view: "Voir le panier",
+      cart_update: "Mettre à jour",
+      cart_continue: "Continuer les achats",
+      cart_remove: "Retirer",
+      pdp_qty: "Qté",
     },
   };
 
@@ -1190,6 +1218,11 @@
     document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
       const key = el.getAttribute("data-i18n-alt");
       if (key && key in pack) el.setAttribute("alt", pack[key]);
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (key && key in pack) el.setAttribute("placeholder", pack[key]);
     });
 
     document.querySelectorAll("[data-set-lang]").forEach((btn) => {

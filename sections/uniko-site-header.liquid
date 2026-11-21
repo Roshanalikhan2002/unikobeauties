@@ -21,13 +21,13 @@
           <span aria-hidden="true">·</span>
           <button type="button" class="lang-set" data-set-lang="fr" hreflang="fr" lang="fr" title="Français">FR</button>
         </nav>
-        <button class="icon-btn mobile-search" type="button" aria-label="Search">
+        <button class="icon-btn mobile-search" type="button" data-uniko-open-search aria-label="Search">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
             <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </button>
-        <button class="icon-btn desktop-search" type="button" aria-label="Search">
+        <button class="icon-btn desktop-search" type="button" data-uniko-open-search aria-label="Search">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="11" cy="11" r="6.25" stroke="currentColor" stroke-width="1.6"/>
             <path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
@@ -39,12 +39,12 @@
             <path d="M5.2 19.2c1.4-3 3.8-4.4 6.8-4.4s5.4 1.4 6.8 4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </a>
-        <a class="icon-btn" href="{{ routes.cart_url }}" aria-label="Cart, 0 items">
+        <a class="icon-btn" href="{{ routes.cart_url }}" data-uniko-open-cart aria-label="Cart, {{ cart.item_count }} items">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6.5 8.5h11l-.8 10.2a1.5 1.5 0 0 1-1.5 1.3H8.8a1.5 1.5 0 0 1-1.5-1.3L6.5 8.5z" stroke="currentColor" stroke-width="1.6"/>
             <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <span class="cart-count">0</span>
+          <span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
         </a>
       </div>
     </div>
@@ -106,6 +106,7 @@
   });
 })();
 </script>
+{% render 'uniko-cart-search' %}
 
 {% schema %}
 {

@@ -592,6 +592,16 @@ def main() -> None:
     )
 
     body = inject_category_track(body)
+    body = body.replace("<!-- @uniko-cart-search -->", "{% render 'uniko-cart-search' %}")
+    body = body.replace('href="/cart"', 'href="{{ routes.cart_url }}"')
+    body = body.replace(
+        'aria-label="Cart, 0 items"',
+        'aria-label="Cart, {{ cart.item_count }} items"',
+    )
+    body = body.replace(
+        '<span class="cart-count" data-cart-count hidden>0</span>',
+        '<span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>',
+    )
     body = body.replace(
         '<h2 id="category-title" data-i18n="category_title">Shop the range</h2>',
         '<h2 id="category-title" data-i18n="category_title">{{ section.settings.category_heading }}</h2>',
@@ -635,6 +645,7 @@ def main() -> None:
 <body class="uniko-body">
   {{ content_for_layout }}
   <script src="{{ 'uniko-i18n.js' | asset_url }}" defer></script>
+  <script src="{{ 'uniko-cart.js' | asset_url }}" defer></script>
 </body>
 </html>
 """,
