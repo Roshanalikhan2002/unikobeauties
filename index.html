@@ -108,26 +108,20 @@
     .logo {
       text-align: center;
       color: var(--bronze);
-      line-height: 0.9;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
     }
 
-    .logo-name {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 600;
-      font-size: 34px;
-      letter-spacing: 0.22em;
+    .logo-img {
       display: block;
-      padding-left: 0.22em;
-    }
-
-    .logo-sub {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.42em;
-      display: block;
-      margin-top: 4px;
-      padding-left: 0.42em;
+      height: 52px;
+      width: auto;
+      max-width: 148px;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     .header-tools {
@@ -270,10 +264,17 @@
       display: block;
       width: 100%;
       height: auto;
-      min-height: clamp(380px, 52vw, 680px);
-      max-height: 82vh;
       object-fit: cover;
-      object-position: center 32%;
+    }
+
+    .hero-banner-img--desktop {
+      min-height: clamp(280px, 34vw, 460px);
+      max-height: 52vh;
+      object-position: center center;
+    }
+
+    .hero-banner-img--mobile {
+      display: none;
     }
 
     .category-section {
@@ -1276,18 +1277,15 @@
     }
 
     .footer-logo {
-      display: inline-block;
+      display: inline-flex;
       text-align: left;
+      justify-content: flex-start;
     }
 
-    .footer-brand .logo-name {
-      font-size: 30px;
-      color: var(--bronze);
-    }
-
-    .footer-brand .logo-sub {
-      font-size: 11px;
-      color: var(--bronze);
+    .footer-logo .logo-img {
+      height: 64px;
+      max-width: 168px;
+      border-radius: 10px;
     }
 
     .footer-tagline {
@@ -1481,8 +1479,7 @@
 
       .header-tools .mobile-search { display: inline-flex; }
 
-      .logo-name { font-size: 26px; letter-spacing: 0.18em; }
-      .logo-sub { font-size: 11px; letter-spacing: 0.34em; margin-top: 2px; }
+      .logo-img { height: 44px; max-width: 124px; }
 
       .nav { display: none; }
 
@@ -1577,13 +1574,11 @@
         border-bottom: 1px solid rgba(176, 137, 104, 0.22);
       }
 
-      .mobile-drawer-brand {
-        font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: 26px;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        color: var(--bronze);
-        padding-left: 0.2em;
+      .mobile-drawer-brand-img {
+        display: block;
+        height: 44px;
+        width: auto;
+        border-radius: 8px;
       }
 
       .mobile-drawer-close {
@@ -1686,10 +1681,13 @@
         overflow: hidden;
       }
 
-      .hero-banner-img {
-        min-height: 420px;
-        max-height: 68vh;
-        object-position: center 28%;
+      .hero-banner-img--desktop { display: none; }
+
+      .hero-banner-img--mobile {
+        display: block;
+        min-height: min(78vh, 720px);
+        max-height: none;
+        object-position: center top;
       }
 
       .category-section {
@@ -1844,8 +1842,8 @@
     }
 
     @media (max-width: 420px) {
-      .logo-name { font-size: 22px; }
-      .hero-banner-img { min-height: 360px; }
+      .logo-img { height: 40px; max-width: 112px; }
+      .hero-banner-img--mobile { min-height: min(72vh, 640px); }
     }
   </style>
 </head>
@@ -1863,8 +1861,7 @@
       <div class="header-left-slot" aria-hidden="true"></div>
 
       <a class="logo" href="#accueil" aria-label="Uniko Beauties, home">
-        <span class="logo-name">UNIKO</span>
-        <span class="logo-sub">BEAUTIES</span>
+        <img class="logo-img" src="images/brand-logo.jpg" alt="Uniko Beauties" width="300" height="300">
       </a>
 
       <div class="header-tools">
@@ -1915,7 +1912,7 @@
   <aside class="mobile-side-drawer" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-drawer-shimmer" aria-hidden="true"></div>
     <div class="mobile-drawer-head">
-      <span class="mobile-drawer-brand">UNIKO</span>
+      <img class="mobile-drawer-brand-img" src="images/brand-logo.jpg" alt="Uniko Beauties" width="300" height="300">
       <button type="button" class="mobile-drawer-close" id="mobile-menu-close" aria-label="Close menu">×</button>
     </div>
     <nav class="mobile-drawer-nav">
@@ -1931,12 +1928,20 @@
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">
       <img
-        class="hero-banner-img"
-        src="images/hero-banner.jpg"
+        class="hero-banner-img hero-banner-img--desktop"
+        src="images/hero-banner-desktop.jpg"
         data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1600"
-        height="800"
+        width="1920"
+        height="700"
         fetchpriority="high"
+        decoding="async"
+      >
+      <img
+        class="hero-banner-img hero-banner-img--mobile"
+        src="images/hero-banner-mobile.jpg"
+        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
+        width="1080"
+        height="1620"
         decoding="async"
       >
     </section>
@@ -2340,8 +2345,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="logo footer-logo" href="#accueil" aria-label="Uniko Beauties, home">
-          <span class="logo-name">UNIKO</span>
-          <span class="logo-sub">BEAUTIES</span>
+          <img class="logo-img" src="images/brand-logo.jpg" alt="Uniko Beauties" width="300" height="300">
         </a>
         <p class="footer-tagline" data-i18n="footer_tagline">100% Natural Beauty | The world's most certified beauty brand</p>
       </div>

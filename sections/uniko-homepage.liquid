@@ -12,8 +12,7 @@
       <div class="header-left-slot" aria-hidden="true"></div>
 
       <a class="logo" href="#accueil" aria-label="Uniko Beauties, home">
-        <span class="logo-name">UNIKO</span>
-        <span class="logo-sub">BEAUTIES</span>
+        <img class="logo-img" src="{{ 'uniko-brand-logo.jpg' | asset_img_url: 'master' }}" alt="Uniko Beauties" width="300" height="300">
       </a>
 
       <div class="header-tools">
@@ -64,7 +63,7 @@
   <aside class="mobile-side-drawer" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
     <div class="mobile-drawer-shimmer" aria-hidden="true"></div>
     <div class="mobile-drawer-head">
-      <span class="mobile-drawer-brand">UNIKO</span>
+      <img class="mobile-drawer-brand-img" src="{{ 'uniko-brand-logo.jpg' | asset_img_url: 'master' }}" alt="Uniko Beauties" width="300" height="300">
       <button type="button" class="mobile-drawer-close" id="mobile-menu-close" aria-label="Close menu">×</button>
     </div>
     <nav class="mobile-drawer-nav">
@@ -80,12 +79,20 @@
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">
       <img
-        class="hero-banner-img"
-        src="{{ 'uniko-hero-banner.jpg' | asset_img_url: 'master' }}"
+        class="hero-banner-img hero-banner-img--desktop"
+        src="{{ 'uniko-hero-banner-desktop.jpg' | asset_img_url: 'master' }}"
         data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1600"
-        height="800"
+        width="1920"
+        height="700"
         fetchpriority="high"
+        decoding="async"
+      >
+      <img
+        class="hero-banner-img hero-banner-img--mobile"
+        src="{{ 'uniko-hero-banner-mobile.jpg' | asset_img_url: 'master' }}"
+        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
+        width="1080"
+        height="1620"
         decoding="async"
       >
     </section>
@@ -675,8 +682,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="logo footer-logo" href="#accueil" aria-label="Uniko Beauties, home">
-          <span class="logo-name">UNIKO</span>
-          <span class="logo-sub">BEAUTIES</span>
+          <img class="logo-img" src="{{ 'uniko-brand-logo.jpg' | asset_img_url: 'master' }}" alt="Uniko Beauties" width="300" height="300">
         </a>
         <p class="footer-tagline" data-i18n="footer_tagline">100% Natural Beauty | The world's most certified beauty brand</p>
       </div>
