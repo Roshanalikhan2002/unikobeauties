@@ -406,6 +406,42 @@
               {% endif %}
             </div>
           </div>
+          {% assign facial_product = all_products['facial-spray'] %}
+          <div class="category-product-item" role="listitem">
+            <a class="category-product-visual" href="{% if facial_product != blank %}{{ facial_product.url }}{% else %}/products/facial-spray{% endif %}" aria-label="{% if facial_product != blank %}{{ facial_product.title | escape }}{% else %}Facial Spray{% endif %}">
+              <div class="category-card-media">
+                {% if facial_product != blank and facial_product.featured_media %}
+                  {% assign facial_img_alt = facial_product.featured_media.alt | default: facial_product.title | escape %}
+                  {{ facial_product.featured_media | image_url: width: 900 | image_tag: class: 'category-card-img', loading: 'lazy', widths: '280,560,900', sizes: '280px', alt: facial_img_alt }}
+                {% endif %}
+              </div>
+            </a>
+            <div class="category-card-details">
+              {% if facial_product != blank %}
+                <a class="category-card-product-title" href="{{ facial_product.url }}">{{ facial_product.title }}</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                {% if facial_product.price > 0 %}
+                  <p class="category-card-price-row">
+                    <span class="category-card-price-now">{{ facial_product.price | money }}</span>
+                    {% if facial_product.compare_at_price > facial_product.price %}
+                      <s class="category-card-price-was">{{ facial_product.compare_at_price | money }}</s>
+                    {% endif %}
+                  </p>
+                {% endif %}
+                <a class="category-card-shop-btn" href="{{ facial_product.url }}" data-i18n="shop_now">Shop now</a>
+              {% else %}
+                <a class="category-card-product-title" href="/products/facial-spray">Facial Spray</a>
+                <div class="category-card-rating" role="img" aria-label="Rating 5.0 out of 5 stars">
+                  <span class="category-card-stars" aria-hidden="true">★★★★★</span>
+                  <span class="category-card-rating-value">5.0</span>
+                </div>
+                <a class="category-card-shop-btn" href="/products/facial-spray" data-i18n="shop_now">Shop now</a>
+              {% endif %}
+            </div>
+          </div>
           {% endif %}
         </div>
         <button type="button" class="carousel-btn carousel-btn--prev category-carousel-prev" data-category-prev aria-label="Previous categories">

@@ -40,6 +40,8 @@
       {% render 'uniko-pdp-queeny-info' %}
     {% elsif pdp_profile == 'yiri' %}
       {% render 'uniko-pdp-yiri-info' %}
+    {% elsif pdp_profile == 'facial_spray' %}
+      {% render 'uniko-pdp-facial-spray-info' %}
     {% else %}
     <div class="uniko-pdp-info-col">
       <a class="uniko-pdp-back" href="{{ routes.root_url }}">← <span data-i18n="pdp_back">Back to shop</span></a>
@@ -142,6 +144,8 @@
     {% render 'uniko-pdp-queeny-sections' %}
   {% elsif pdp_profile == 'yiri' %}
     {% render 'uniko-pdp-yiri-sections' %}
+  {% elsif pdp_profile == 'facial_spray' %}
+    {% render 'uniko-pdp-facial-spray-sections' %}
   {% else %}
   <div class="uniko-pdp-keys" aria-labelledby="uniko-pdp-keys-title">
     <div class="uniko-pdp-keys-inner">
@@ -974,7 +978,8 @@
         { "value": "mask_pouss", "label": "Mask Pouss+ 2 in 1" },
         { "value": "detangling", "label": "Detangling cream" },
         { "value": "queeny", "label": "Queeny Lotion" },
-        { "value": "yiri", "label": "YIRI Soap" }
+        { "value": "yiri", "label": "YIRI Soap" },
+        { "value": "facial_spray", "label": "Facial Spray" }
       ],
       "default": "aloe"
     }

@@ -360,6 +360,49 @@
       pdp_yiri_rev3_title: "Gentle for the family",
       pdp_yiri_rev3_body:
         "Men, women and kids in our house all use YIRI on the face. Easy to follow at night too.",
+      pdp_facial_eyebrow: "UniKo Beauties | Face Care Range",
+      pdp_facial_who: "For who: Women, Girls",
+      pdp_facial_desc_en:
+        "A face spray with aloe vera and vitamin E. Shake well and apply after cleansing with YIRI soap, morning and evening, without adding any other products.",
+      pdp_facial_desc_fr:
+        "Brume visage à l'aloe vera et à la vitamine E. Bien agiter et appliquer après le nettoyage au savon YIRI, matin et soir, sans ajouter d'autres produits.",
+      pdp_facial_how_en:
+        "Shake well and gently apply the spray after thoroughly cleansing your face with the Yiri soap. It is recommended to use it in the morning and evening without adding any other products.",
+      pdp_facial_how_fr:
+        "Bien agiter et appliquer délicatement le spray après avoir soigneusement nettoyé le visage avec le savon Yiri. Il est recommandé de l'utiliser le matin et le soir, sans ajouter d'autres produits.",
+      pdp_facial_ing_en: "Aloe vera, vitamin E.",
+      pdp_facial_ing_fr: "Aloe vera, vitamine E.",
+      pdp_facial_key1_title: "Aloe vera",
+      pdp_facial_key1_desc: "A gentle botanical mist for the face after cleansing with YIRI soap.",
+      pdp_facial_key2_title: "Vitamin E",
+      pdp_facial_key2_desc: "An antioxidant care note to finish the morning and evening face ritual.",
+      pdp_facial_key3_title: "After YIRI soap",
+      pdp_facial_key3_desc: "Apply only after a thorough cleanse with YIRI soap — no other products added.",
+      pdp_facial_faq_q1: "How do I use Facial Spray?",
+      pdp_facial_faq_a1: "Shake well and gently apply after thoroughly cleansing your face with YIRI soap.",
+      pdp_facial_faq_q2: "When should I use it?",
+      pdp_facial_faq_a2: "Use it in the morning and evening, without adding any other products.",
+      pdp_facial_faq_q3: "Who is it for?",
+      pdp_facial_faq_a3: "Formulated for women and girls.",
+      pdp_facial_faq_q4: "What is in Facial Spray?",
+      pdp_facial_faq_a4: "Aloe vera and vitamin E.",
+      pdp_facial_cmp_col2: "Regular face mist",
+      pdp_facial_cmp_col3: "Drugstore toner",
+      pdp_facial_cmp_row1: "Aloe vera & vitamin E",
+      pdp_facial_cmp_row2: "After YIRI soap",
+      pdp_facial_cmp_row3: "Morning & evening",
+      pdp_facial_cmp_row4: "No other products added",
+      pdp_facial_cmp_row5: "For women & girls",
+      pdp_facial_reviews_meta: "5.0 · 14 reviews",
+      pdp_facial_rev1_title: "After YIRI, then spray",
+      pdp_facial_rev1_body:
+        "I cleanse with YIRI soap then mist this on. Morning and evening is simple — I don’t layer anything else.",
+      pdp_facial_rev2_title: "Gentle aloe mist",
+      pdp_facial_rev2_body:
+        "Shake, spray, done. Vitamin E and aloe feel light on the face after a thorough cleanse.",
+      pdp_facial_rev3_title: "My morning and night",
+      pdp_facial_rev3_body:
+        "Clear who it is for — women and girls. I use it twice a day and skip extra products like they say.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
@@ -804,6 +847,49 @@
       pdp_yiri_rev3_title: "Doux pour la famille",
       pdp_yiri_rev3_body:
         "Hommes, femmes et enfants chez nous utilisent YIRI sur le visage. Facile à suivre le soir aussi.",
+      pdp_facial_eyebrow: "UniKo Beauties | Soin du visage",
+      pdp_facial_who: "Pour qui : femmes, filles",
+      pdp_facial_desc_en:
+        "A face spray with aloe vera and vitamin E. Shake well and apply after cleansing with YIRI soap, morning and evening, without adding any other products.",
+      pdp_facial_desc_fr:
+        "Brume visage à l'aloe vera et à la vitamine E. Bien agiter et appliquer après le nettoyage au savon YIRI, matin et soir, sans ajouter d'autres produits.",
+      pdp_facial_how_en:
+        "Shake well and gently apply the spray after thoroughly cleansing your face with the Yiri soap. It is recommended to use it in the morning and evening without adding any other products.",
+      pdp_facial_how_fr:
+        "Bien agiter et appliquer délicatement le spray après avoir soigneusement nettoyé le visage avec le savon Yiri. Il est recommandé de l'utiliser le matin et le soir, sans ajouter d'autres produits.",
+      pdp_facial_ing_en: "Aloe vera, vitamin E.",
+      pdp_facial_ing_fr: "Aloe vera, vitamine E.",
+      pdp_facial_key1_title: "Aloe vera",
+      pdp_facial_key1_desc: "Une brume botanique douce pour le visage après le nettoyage au savon YIRI.",
+      pdp_facial_key2_title: "Vitamine E",
+      pdp_facial_key2_desc: "Une note antioxydante pour terminer le rituel visage du matin et du soir.",
+      pdp_facial_key3_title: "Après le savon YIRI",
+      pdp_facial_key3_desc: "À appliquer seulement après un nettoyage soigneux au savon YIRI — sans autres produits.",
+      pdp_facial_faq_q1: "Comment utiliser Facial Spray ?",
+      pdp_facial_faq_a1: "Bien agiter et appliquer délicatement après un nettoyage soigneux au savon YIRI.",
+      pdp_facial_faq_q2: "Quand l'utiliser ?",
+      pdp_facial_faq_a2: "Le matin et le soir, sans ajouter d'autres produits.",
+      pdp_facial_faq_q3: "Pour qui ?",
+      pdp_facial_faq_a3: "Formulé pour les femmes et les filles.",
+      pdp_facial_faq_q4: "Quels sont les ingrédients ?",
+      pdp_facial_faq_a4: "Aloe vera et vitamine E.",
+      pdp_facial_cmp_col2: "Brume visage classique",
+      pdp_facial_cmp_col3: "Lotion drugstore",
+      pdp_facial_cmp_row1: "Aloe vera & vitamine E",
+      pdp_facial_cmp_row2: "Après le savon YIRI",
+      pdp_facial_cmp_row3: "Matin et soir",
+      pdp_facial_cmp_row4: "Sans autres produits",
+      pdp_facial_cmp_row5: "Pour femmes & filles",
+      pdp_facial_reviews_meta: "5,0 · 14 avis",
+      pdp_facial_rev1_title: "YIRI puis le spray",
+      pdp_facial_rev1_body:
+        "Je nettoie avec le savon YIRI puis je vaporise. Matin et soir, simple — je n'ajoute rien d'autre.",
+      pdp_facial_rev2_title: "Brume d'aloe douce",
+      pdp_facial_rev2_body:
+        "Agiter, vaporiser, c'est tout. Vitamine E et aloe, légers sur le visage après un bon nettoyage.",
+      pdp_facial_rev3_title: "Mon matin et mon soir",
+      pdp_facial_rev3_body:
+        "C'est clair : pour les femmes et les filles. Deux fois par jour, sans produits en plus.",
       pdp_how_en:
         "Shake well and apply the shampoo 1 to 2 times on the entire hair, from the scalp to the tips, then rinse. Repeat if necessary.",
       pdp_how_fr:
