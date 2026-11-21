@@ -103,11 +103,11 @@
 
     .logo-img {
       display: block;
-      height: 52px;
+      height: 46px;
       width: auto;
-      max-width: 148px;
+      max-width: 180px;
       object-fit: contain;
-      border-radius: 8px;
+      background: transparent;
     }
 
     .header-tools {
@@ -1271,9 +1271,8 @@
     }
 
     .footer-logo .logo-img {
-      height: 64px;
-      max-width: 168px;
-      border-radius: 10px;
+      height: 52px;
+      max-width: 200px;
     }
 
     .footer-tagline {
@@ -1467,7 +1466,7 @@
 
       .header-tools .mobile-search { display: inline-flex; }
 
-      .logo-img { height: 44px; max-width: 124px; }
+      .logo-img { height: 40px; max-width: 160px; }
 
       .nav { display: none; }
 
@@ -1564,9 +1563,8 @@
 
       .mobile-drawer-brand-img {
         display: block;
-        height: 44px;
+        height: 40px;
         width: auto;
-        border-radius: 8px;
       }
 
       .mobile-drawer-close {
@@ -1829,5 +1827,5 @@
     }
 
     @media (max-width: 420px) {
-      .logo-img { height: 40px; max-width: 112px; }
+      .logo-img { height: 36px; max-width: 148px; }
     }
