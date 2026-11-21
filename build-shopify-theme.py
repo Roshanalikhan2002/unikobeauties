@@ -595,6 +595,10 @@ def main() -> None:
     body = body.replace("<!-- @uniko-cart-search -->", "{% render 'uniko-cart-search' %}")
     body = body.replace('href="/cart"', 'href="{{ routes.cart_url }}"')
     body = body.replace(
+        'href="/collections/all"',
+        'href="{{ routes.all_products_collection_url }}"',
+    )
+    body = body.replace(
         'aria-label="Cart, 0 items"',
         'aria-label="Cart, {{ cart.item_count }} items"',
     )

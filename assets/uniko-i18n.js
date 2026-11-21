@@ -594,6 +594,9 @@
       cart_continue: "Continue shopping",
       cart_remove: "Remove",
       pdp_qty: "Qty",
+      collection_title: "Shop",
+      collection_count: "products",
+      collection_empty: "No products yet.",
     },
     fr: {
       promo: "Livraison gratuite pour les commandes de plus de\u00a095\u00a0\u20ac",
@@ -1183,6 +1186,9 @@
       cart_continue: "Continuer les achats",
       cart_remove: "Retirer",
       pdp_qty: "Qté",
+      collection_title: "Boutique",
+      collection_count: "produits",
+      collection_empty: "Aucun produit pour le moment.",
     },
   };
 

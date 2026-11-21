@@ -2082,6 +2082,49 @@
 
     .uniko-search-form--page { margin: 16px 0 24px; }
 
+    .uniko-collection-page {
+      max-width: 1180px;
+    }
+
+    .uniko-collection-page .uniko-search-count {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .uniko-collection-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e8e2db;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .uniko-collection-card-link {
+      text-decoration: none;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    .uniko-collection-card-price {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      padding: 0 12px 8px;
+      font-weight: 600;
+    }
+
+    .uniko-collection-card-was {
+      color: #9a928a;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+
+    .uniko-collection-card .category-card-shop-btn {
+      width: auto;
+      margin: 0 12px 14px;
+    }
+
     body.uniko-search-open,
     body.uniko-cart-open { overflow: hidden; }
 
