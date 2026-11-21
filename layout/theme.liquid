@@ -6,8 +6,19 @@
   <meta http-equiv="content-language" content="en">
   <meta name="language" content="English">
   <meta name="google" content="notranslate">
-  <title>{{ page_title }}</title>
+  {%- liquid
+    assign brand_name = 'Uniko Beauties'
+    if template.name == 'index' or page_title == blank or page_title == shop.name or page_title == 'My Store'
+      assign tab_title = brand_name
+    else
+      assign tab_title = page_title | replace: 'My Store', brand_name | append: ' | ' | append: brand_name
+    endif
+  -%}
+  <title>{{ tab_title }}</title>
   {{ content_for_header }}
+  <link rel="icon" type="image/png" href="{{ 'uniko-brand-logo.png' | asset_url }}">
+  <link rel="shortcut icon" type="image/png" href="{{ 'uniko-brand-logo.png' | asset_url }}">
+  <link rel="apple-touch-icon" href="{{ 'uniko-brand-logo.png' | asset_url }}">
   {{ 'uniko.css' | asset_url | stylesheet_tag }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
