@@ -241,9 +241,7 @@
 
     .hero {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       overflow: hidden;
       background: #e8dccb;
       line-height: 0;
@@ -251,7 +249,7 @@
 
     .hero-banner-img {
       display: block;
-      width: auto;
+      width: 100%;
       height: auto;
       max-width: 100%;
       object-fit: contain;
@@ -259,7 +257,7 @@
     }
 
     .hero-banner-img--desktop {
-      max-height: 280px;
+      max-height: 460px;
     }
 
     .hero-banner-img--mobile {
@@ -1672,7 +1670,7 @@
 
       .hero-banner-img--mobile {
         display: block;
-        max-height: 420px;
+        max-height: 68vh;
       }
 
       .category-section {
