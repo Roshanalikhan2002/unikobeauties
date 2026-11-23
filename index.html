@@ -598,6 +598,7 @@
       background: #f4efe6;
       padding: 56px 0 0;
       overflow: hidden;
+      position: relative;
     }
 
     .orbit-copy {
@@ -655,32 +656,12 @@
 
     .orbit-stage {
       position: relative;
-      height: 430px;
-      margin-top: 12px;
-      perspective: 1400px;
-      perspective-origin: 50% 42%;
-      overflow: hidden;
-    }
-
-    .orbit-stage::before,
-    .orbit-stage::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: min(90px, 12vw);
-      z-index: 8;
-      pointer-events: none;
-    }
-
-    .orbit-stage::before {
-      left: 0;
-      background: linear-gradient(90deg, #f4efe6 0%, transparent 100%);
-    }
-
-    .orbit-stage::after {
-      right: 0;
-      background: linear-gradient(270deg, #f4efe6 0%, transparent 100%);
+      z-index: 1;
+      height: 400px;
+      margin-top: 8px;
+      perspective: 1600px;
+      perspective-origin: 50% 80%;
+      overflow: visible;
     }
 
     .orbit-ring {
@@ -693,7 +674,7 @@
     .orbit-card {
       position: absolute;
       left: 50%;
-      top: 8%;
+      top: 0;
       width: 220px;
       height: 360px;
       margin: 0;
@@ -703,9 +684,10 @@
       overflow: hidden;
       background: #fff;
       box-shadow: 0 18px 40px rgba(13, 61, 36, 0.14);
-      transform-origin: center center;
+      transform-origin: center bottom;
       transform-style: preserve-3d;
       backface-visibility: hidden;
+      will-change: transform, opacity;
     }
 
     .orbit-card img {
@@ -723,6 +705,14 @@
       background: #fff;
     }
 
+    .orbit-horizon {
+      position: relative;
+      z-index: 6;
+      height: 78px;
+      margin-top: -52px;
+      background: #12572f;
+    }
+
     @media (max-width: 700px) {
       .orbit-section {
         padding-top: 40px;
@@ -735,7 +725,7 @@
       }
 
       .orbit-stage {
-        height: 340px;
+        height: 320px;
       }
 
       .orbit-card {
@@ -743,12 +733,19 @@
         height: 270px;
         border-radius: 22px;
       }
+
+      .orbit-horizon {
+        height: 64px;
+        margin-top: -44px;
+      }
     }
 
     .trust-section {
       background: #12572f;
       color: var(--white);
-      padding: 50px 0 58px;
+      padding: 28px 0 58px;
+      position: relative;
+      z-index: 6;
     }
 
     .trust-title {
@@ -2655,6 +2652,7 @@
           </article>
         </div>
       </div>
+      <div class="orbit-horizon" aria-hidden="true"></div>
     </section>
 
     <section class="trust-section" id="certifications" aria-labelledby="trust-title">
@@ -3229,31 +3227,33 @@
       const n = cards.length;
       let angle = 0;
       let last = performance.now();
-      let radiusX = 420;
-      let radiusZ = 380;
+      let radiusX = 480;
+      let radiusY = 340;
 
       const measure = () => {
         const w = stage.clientWidth;
+        const h = stage.clientHeight;
         const mobile = w < 701;
-        radiusX = Math.min(w * 0.46, mobile ? 210 : 520);
-        radiusZ = Math.min(w * 0.4, mobile ? 190 : 460);
+        radiusX = Math.min(w * 0.52, mobile ? 250 : 580);
+        radiusY = Math.min(h * 1.05, mobile ? 300 : 390);
       };
 
       const paint = () => {
         cards.forEach((card, i) => {
           const a = angle + (i * Math.PI * 2) / n;
+          const lift = Math.cos(a);
           const x = Math.sin(a) * radiusX;
-          const z = Math.cos(a) * radiusZ;
-          const y = (1 - Math.cos(a)) * 36;
-          const rot = (Math.sin(a) * 38);
-          const front = (z + radiusZ) / (2 * radiusZ);
-          const scale = 0.78 + front * 0.28;
-          const hide = z < -radiusZ * 0.22;
+          const y = radiusY * (1 - lift);
+          const tilt = Math.sin(a) * 34;
+          const yaw = Math.sin(a) * 16;
+          const scale = 0.86 + Math.max(0, lift) * 0.16;
+          const under = lift < -0.08;
+          const fade = Math.max(0, Math.min(1, (lift + 0.12) / 0.7));
           card.style.transform =
-            "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px) rotateY(" + rot + "deg) scale(" + scale + ")";
-          card.style.opacity = hide ? "0" : String(0.4 + front * 0.6);
-          card.style.zIndex = String(Math.round(100 + z));
-          card.style.visibility = hide ? "hidden" : "visible";
+            "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) rotateZ(" + tilt + "deg) rotateY(" + yaw + "deg) scale(" + scale + ")";
+          card.style.opacity = under ? "0" : String(0.35 + fade * 0.65);
+          card.style.visibility = under ? "hidden" : "visible";
+          card.style.zIndex = String(Math.round(80 + lift * 80));
         });
       };
 
@@ -3269,7 +3269,7 @@
       const tick = (now) => {
         const dt = Math.min(40, now - last);
         last = now;
-        angle += dt * 0.00032;
+        angle += dt * 0.0003;
         paint();
         requestAnimationFrame(tick);
       };

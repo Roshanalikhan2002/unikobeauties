@@ -587,6 +587,7 @@
           </article>
         </div>
       </div>
+      <div class="orbit-horizon" aria-hidden="true"></div>
     </section>
 
     <section class="trust-section" id="certifications" aria-labelledby="trust-title">
@@ -1161,31 +1162,33 @@
       const n = cards.length;
       let angle = 0;
       let last = performance.now();
-      let radiusX = 420;
-      let radiusZ = 380;
+      let radiusX = 480;
+      let radiusY = 340;
 
       const measure = () => {
         const w = stage.clientWidth;
+        const h = stage.clientHeight;
         const mobile = w < 701;
-        radiusX = Math.min(w * 0.46, mobile ? 210 : 520);
-        radiusZ = Math.min(w * 0.4, mobile ? 190 : 460);
+        radiusX = Math.min(w * 0.52, mobile ? 250 : 580);
+        radiusY = Math.min(h * 1.05, mobile ? 300 : 390);
       };
 
       const paint = () => {
         cards.forEach((card, i) => {
           const a = angle + (i * Math.PI * 2) / n;
+          const lift = Math.cos(a);
           const x = Math.sin(a) * radiusX;
-          const z = Math.cos(a) * radiusZ;
-          const y = (1 - Math.cos(a)) * 36;
-          const rot = (Math.sin(a) * 38);
-          const front = (z + radiusZ) / (2 * radiusZ);
-          const scale = 0.78 + front * 0.28;
-          const hide = z < -radiusZ * 0.22;
+          const y = radiusY * (1 - lift);
+          const tilt = Math.sin(a) * 34;
+          const yaw = Math.sin(a) * 16;
+          const scale = 0.86 + Math.max(0, lift) * 0.16;
+          const under = lift < -0.08;
+          const fade = Math.max(0, Math.min(1, (lift + 0.12) / 0.7));
           card.style.transform =
-            "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px) rotateY(" + rot + "deg) scale(" + scale + ")";
-          card.style.opacity = hide ? "0" : String(0.4 + front * 0.6);
-          card.style.zIndex = String(Math.round(100 + z));
-          card.style.visibility = hide ? "hidden" : "visible";
+            "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) rotateZ(" + tilt + "deg) rotateY(" + yaw + "deg) scale(" + scale + ")";
+          card.style.opacity = under ? "0" : String(0.35 + fade * 0.65);
+          card.style.visibility = under ? "hidden" : "visible";
+          card.style.zIndex = String(Math.round(80 + lift * 80));
         });
       };
 
@@ -1201,7 +1204,7 @@
       const tick = (now) => {
         const dt = Math.min(40, now - last);
         last = now;
-        angle += dt * 0.00032;
+        angle += dt * 0.0003;
         paint();
         requestAnimationFrame(tick);
       };
