@@ -597,6 +597,8 @@
       collection_title: "Shop",
       collection_count: "products",
       collection_empty: "No products yet.",
+      orbit_line1: "Botanical beauty.",
+      orbit_line2: "We've been getting around",
     },
     fr: {
       promo: "Livraison gratuite pour les commandes de plus de\u00a095\u00a0\u20ac",
@@ -1189,6 +1191,8 @@
       collection_title: "Boutique",
       collection_count: "produits",
       collection_empty: "Aucun produit pour le moment.",
+      orbit_line1: "Beaut\u00e9 botanique.",
+      orbit_line2: "Nous sommes partout",
     },
   };
 
