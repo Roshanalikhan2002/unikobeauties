@@ -675,16 +675,16 @@
       position: absolute;
       left: 50%;
       top: 0;
-      width: 220px;
-      height: 360px;
+      width: 236px;
+      height: 372px;
       margin: 0;
       border: 0;
       padding: 0;
       border-radius: 28px;
       overflow: hidden;
       background: #fff;
-      box-shadow: 0 18px 40px rgba(13, 61, 36, 0.14);
-      transform-origin: center bottom;
+      box-shadow: 0 10px 26px rgba(13, 61, 36, 0.12);
+      transform-origin: 50% 88%;
       transform-style: preserve-3d;
       backface-visibility: hidden;
       will-change: transform, opacity;
@@ -729,8 +729,8 @@
       }
 
       .orbit-card {
-        width: 156px;
-        height: 270px;
+        width: 168px;
+        height: 278px;
         border-radius: 22px;
       }
 
@@ -3227,33 +3227,37 @@
       const n = cards.length;
       let angle = 0;
       let last = performance.now();
-      let radiusX = 480;
-      let radiusY = 340;
+      let radiusX = 420;
+      let radiusY = 160;
+      const visEnd = 0.64;
 
       const measure = () => {
         const w = stage.clientWidth;
         const h = stage.clientHeight;
         const mobile = w < 701;
-        radiusX = Math.min(w * 0.52, mobile ? 250 : 580);
-        radiusY = Math.min(h * 1.05, mobile ? 300 : 390);
+        radiusX = Math.min(w * 0.7, mobile ? 280 : 760);
+        radiusY = Math.min(h * 0.42, mobile ? 130 : 168);
       };
 
       const paint = () => {
         cards.forEach((card, i) => {
-          const a = angle + (i * Math.PI * 2) / n;
-          const lift = Math.cos(a);
-          const x = Math.sin(a) * radiusX;
-          const y = radiusY * (1 - lift);
-          const tilt = Math.sin(a) * 34;
-          const yaw = Math.sin(a) * 16;
-          const scale = 0.86 + Math.max(0, lift) * 0.16;
-          const under = lift < -0.08;
-          const fade = Math.max(0, Math.min(1, (lift + 0.12) / 0.7));
+          let t = i / n - angle;
+          t -= Math.floor(t);
+          const underground = t > visEnd;
+          const u = underground ? 0 : t / visEnd;
+          const spread = 1.02;
+          const theta = (u - 0.5) * spread;
+          const x = Math.sin(theta) * radiusX;
+          const y = 18 + radiusY * (1 - Math.cos(theta));
+          const tilt = theta * (180 / Math.PI);
+          const yaw = theta * (180 / Math.PI) * 0.28;
+          const edge = 1 - Math.min(1, Math.abs(u - 0.5) * 2.05);
+          const scale = 0.92 + edge * 0.1;
           card.style.transform =
             "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) rotateZ(" + tilt + "deg) rotateY(" + yaw + "deg) scale(" + scale + ")";
-          card.style.opacity = under ? "0" : String(0.35 + fade * 0.65);
-          card.style.visibility = under ? "hidden" : "visible";
-          card.style.zIndex = String(Math.round(80 + lift * 80));
+          card.style.opacity = underground ? "0" : String(0.55 + edge * 0.45);
+          card.style.visibility = underground ? "hidden" : "visible";
+          card.style.zIndex = String(Math.round(40 + edge * 80));
         });
       };
 
@@ -3269,7 +3273,7 @@
       const tick = (now) => {
         const dt = Math.min(40, now - last);
         last = now;
-        angle += dt * 0.0003;
+        angle += dt * 0.000055;
         paint();
         requestAnimationFrame(tick);
       };
