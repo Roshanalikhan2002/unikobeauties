@@ -2,13 +2,13 @@
   <div class="uniko-page-inner">
     <h1 class="uniko-page-title">
       {% if collection.handle == 'all' %}
-        <span data-i18n="collection_title">Shop</span>
+        <span data-i18n="collection_title" data-uniko-collection-title>Shop</span>
       {% else %}
         {{ collection.title }}
       {% endif %}
     </h1>
     {% if collection.products_count > 0 %}
-      <p class="uniko-search-count">{{ collection.products_count }} <span data-i18n="collection_count">products</span></p>
+      <p class="uniko-search-count"><span data-uniko-collection-count>{{ collection.products_count }}</span> <span data-i18n="collection_count">products</span></p>
     {% endif %}
 
     {% paginate collection.products by 50 %}
@@ -17,7 +17,7 @@
       {% else %}
         <div class="uniko-collection-grid">
           {% for product in collection.products %}
-            <article class="uniko-collection-card">
+            <article class="uniko-collection-card" data-product-handle="{{ product.handle }}">
               <a class="category-product-visual" href="{{ product.url }}">
                 <div class="category-card-media">
                   {% if product.featured_media %}
@@ -38,6 +38,7 @@
             </article>
           {% endfor %}
         </div>
+        <p class="uniko-cart-empty" data-uniko-collection-empty hidden data-i18n="collection_empty">No products yet.</p>
       {% endif %}
     {% endpaginate %}
   </div>

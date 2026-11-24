@@ -594,9 +594,10 @@ def main() -> None:
     body = inject_category_track(body)
     body = body.replace("<!-- @uniko-cart-search -->", "{% render 'uniko-cart-search' %}")
     body = body.replace('href="/cart"', 'href="{{ routes.cart_url }}"')
-    body = body.replace(
-        'href="/collections/all"',
-        'href="{{ routes.all_products_collection_url }}"',
+    body = re.sub(
+        r'href="/collections/all(#[^"]*)?"',
+        lambda match: 'href="{{ routes.all_products_collection_url }}' + (match.group(1) or "") + '"',
+        body,
     )
     body = body.replace(
         'aria-label="Cart, 0 items"',
