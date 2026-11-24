@@ -27,6 +27,42 @@
 
     <h2 data-i18n="returns_h_shipping">Free delivery</h2>
     <p data-i18n="returns_shipping">Delivery is free on orders over €95. If a partial return brings the order under €95, the delivery amount can be taken off the refund.</p>
+  {% elsif page.handle == 'terms-of-services' or page.handle == 'terms-of-service' or page.handle == 'terms' %}
+    <h1 data-i18n="terms_title">Terms of service</h1>
+    <p data-i18n="terms_updated">Last updated 25 November 2026.</p>
+    <p data-i18n="terms_intro">These terms cover shopping on the Uniko Beauties website. By placing an order, you agree to them.</p>
+
+    <h2 data-i18n="terms_h_store">The store</h2>
+    <p data-i18n="terms_store">Uniko Beauties sells botanical hair, face, beard and body products. Questions go to the email or WhatsApp below.</p>
+    <p class="uniko-policy-contact">
+      <a href="mailto:unikobeautie@gmail.com">unikobeautie@gmail.com</a>
+      <a href="https://wa.me/22390358545" target="_blank" rel="noopener">+223 90 35 85 45</a>
+    </p>
+
+    <h2 data-i18n="terms_h_orders">Orders</h2>
+    <p data-i18n="terms_orders">An order is confirmed when you receive the order email. We may cancel an order if a product is out of stock, the payment does not go through, or the details look incorrect. If we cancel, you are not charged, or any payment already taken is refunded.</p>
+
+    <h2 data-i18n="terms_h_prices">Prices and payment</h2>
+    <p data-i18n="terms_prices">The price on the product page is the price before checkout. The amount at checkout is the amount you pay, including any delivery fee shown there. We can change prices later, but a confirmed order keeps the price you paid. Payment is taken through the checkout on this website.</p>
+
+    <h2 data-i18n="terms_h_delivery">Delivery</h2>
+    <p data-i18n="terms_delivery">Delivery is free on orders over €95. Delivery times on the site are estimates, not a guaranteed date. Risk in the parcel passes to you when the carrier marks it delivered to the address you gave.</p>
+
+    <h2 data-i18n="terms_h_use">How to use the products</h2>
+    <p data-i18n="terms_use">Read the product page before use. These products are cosmetics, not medicine. Stop using a product if your skin reacts, and contact us. Queeny Lotion is not for pregnant women. Other products note who they are for on their page.</p>
+
+    <h2 data-i18n="terms_h_returns">Returns</h2>
+    <p data-i18n="terms_returns">Returns and refunds follow the returns page. Opened or used products are not taken back, except when the item arrives damaged, wrong or faulty.</p>
+    <p><a href="/pages/return-and-refund" data-i18n="footer_returns">Returns & refunds</a></p>
+
+    <h2 data-i18n="terms_h_account">Your account</h2>
+    <p data-i18n="terms_account">If you create an account, keep your login private. You are responsible for orders placed from your account.</p>
+
+    <h2 data-i18n="terms_h_site">The website</h2>
+    <p data-i18n="terms_site">Photos, text and the Uniko Beauties name on this site belong to us. You may not copy them for your own shop. We may update the site, a product, or these terms. The version on this page is the current one.</p>
+
+    <h2 data-i18n="terms_h_liability">Limits</h2>
+    <p data-i18n="terms_liability">We prepare products with care and describe them as accurately as we can. We are not responsible for results that depend on how a product is used, or for delays caused by the carrier. Nothing here removes rights you already have under the law where you live.</p>
   {% else %}
     <h1>{{ page.title }}</h1>
     <div class="uniko-policy-body rte">{{ page.content }}</div>
