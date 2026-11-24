@@ -63,6 +63,61 @@
 
     <h2 data-i18n="terms_h_liability">Limits</h2>
     <p data-i18n="terms_liability">We prepare products with care and describe them as accurately as we can. We are not responsible for results that depend on how a product is used, or for delays caused by the carrier. Nothing here removes rights you already have under the law where you live.</p>
+  {% elsif page.handle == 'contact' %}
+    <h1 data-i18n="contact_title">Contact</h1>
+    <p data-i18n="contact_intro">Write to us about an order, a product or a return. We reply by email.</p>
+    <p class="uniko-policy-contact">
+      <a href="mailto:unikobeautie@gmail.com">unikobeautie@gmail.com</a>
+      <a href="https://wa.me/22390358545" target="_blank" rel="noopener">+223 90 35 85 45</a>
+    </p>
+    {% form 'contact', class: 'uniko-contact-form' %}
+      {% if form.posted_successfully? %}
+        <p class="uniko-form-success" data-i18n="contact_success">Thank you. Your message has been sent.</p>
+      {% endif %}
+      {% if form.errors %}
+        <p class="uniko-form-error" data-i18n="contact_error">Please check the form and try again.</p>
+      {% endif %}
+      <label>
+        <span data-i18n="contact_name">Name</span>
+        <input type="text" name="contact[name]" value="{{ form.name }}" autocomplete="name" required>
+      </label>
+      <label>
+        <span data-i18n="contact_email">Email</span>
+        <input type="email" name="contact[email]" value="{{ form.email }}" autocomplete="email" required>
+      </label>
+      <label>
+        <span data-i18n="contact_phone">Phone</span>
+        <input type="tel" name="contact[phone]" value="{{ form.phone }}" autocomplete="tel">
+      </label>
+      <label>
+        <span data-i18n="contact_message">Message</span>
+        <textarea name="contact[body]" rows="6" required>{{ form.body }}</textarea>
+      </label>
+      <button type="submit" data-i18n="contact_send">Send</button>
+    {% endform %}
+  {% elsif page.handle == 'shipping' %}
+    <h1 data-i18n="shipping_title">Shipping</h1>
+    <p data-i18n="shipping_intro">We send Uniko Beauties orders to the address you enter at checkout.</p>
+
+    <h2 data-i18n="shipping_h_free">Free delivery</h2>
+    <p data-i18n="shipping_free">Delivery is free on orders over €95. Under €95, the delivery fee is shown at checkout before you pay.</p>
+
+    <h2 data-i18n="shipping_h_time">Delivery time</h2>
+    <p data-i18n="shipping_time">We prepare the order after payment is confirmed. The time shown at checkout is an estimate, not a guaranteed day. The carrier may take longer on weekends and public holidays.</p>
+
+    <h2 data-i18n="shipping_h_track">Tracking</h2>
+    <p data-i18n="shipping_track">When the carrier gives a tracking number, it is sent to the email on the order.</p>
+
+    <h2 data-i18n="shipping_h_address">Address</h2>
+    <p data-i18n="shipping_address">Check the name, phone and address before you pay. If a parcel comes back because the address was wrong, a new delivery fee can apply.</p>
+
+    <h2 data-i18n="shipping_h_problem">Damaged or missing</h2>
+    <p data-i18n="shipping_problem">If the parcel arrives damaged, leaking, or with the wrong product, contact us within 2 days with your order number and photos. We replace it or refund it.</p>
+    <p><a href="/pages/return-and-refund" data-i18n="footer_returns">Returns & refunds</a></p>
+    <p class="uniko-policy-contact">
+      <a href="mailto:unikobeautie@gmail.com">unikobeautie@gmail.com</a>
+      <a href="https://wa.me/22390358545" target="_blank" rel="noopener">+223 90 35 85 45</a>
+    </p>
   {% else %}
     <h1>{{ page.title }}</h1>
     <div class="uniko-policy-body rte">{{ page.content }}</div>
@@ -108,10 +163,57 @@
   }
 
   .uniko-policy-contact a,
-  .uniko-policy-body a {
+  .uniko-policy-body a,
+  .uniko-policy-page > p > a {
     color: #0d3d24;
     font-weight: 600;
   }
+
+  .uniko-contact-form {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .uniko-contact-form label {
+    display: grid;
+    gap: 6px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0d3d24;
+  }
+
+  .uniko-contact-form input,
+  .uniko-contact-form textarea {
+    width: 100%;
+    border: 1px solid #d9d3cc;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2c2c2c;
+    background: #fff;
+  }
+
+  .uniko-contact-form textarea { resize: vertical; }
+
+  .uniko-contact-form button {
+    justify-self: start;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 28px;
+    background: #0d3d24;
+    color: #fff;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .uniko-form-success { color: #0d3d24; font-weight: 600; }
+  .uniko-form-error { color: #8a2b2b; font-weight: 600; }
 {% endstylesheet %}
 
 {% schema %}
