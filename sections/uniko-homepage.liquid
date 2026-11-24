@@ -1162,39 +1162,40 @@
       const n = cards.length;
       let angle = 0;
       let last = performance.now();
-      let radiusX = 520;
-      let radiusY = 150;
-      const visEnd = 0.6;
-      const spread = 2.18;
+      let span = 720;
+      let sink = 360;
+      let maxTilt = 32;
+      let visEnd = 0.5;
 
       const measure = () => {
         const w = stage.clientWidth;
-        const h = stage.clientHeight;
-        const cardW = cards[0].offsetWidth || 236;
-        const visible = Math.max(2, n * visEnd);
-        const spacing = cardW - 26;
-        radiusX = Math.min(w * 0.52, (spacing * (visible - 1)) / spread);
-        radiusY = Math.min(h * 0.4, radiusX * 0.3);
+        const cardW = cards[0].offsetWidth || 210;
+        const cardH = cards[0].offsetHeight || 340;
+        const mobile = w < 701;
+        const slots = mobile ? 3 : 5;
+        visEnd = slots / n;
+        maxTilt = mobile ? 24 : 30;
+        const natural = (slots - 1) * cardW * 0.84;
+        span = Math.min(natural, w * 0.94);
+        sink = cardH + 12;
       };
 
       const paint = () => {
         cards.forEach((card, i) => {
-          let t = i / n - angle;
+          let t = i / n + angle;
           t -= Math.floor(t);
-          const onPath = t <= visEnd;
-          const u = onPath ? t / visEnd : 0;
-          const theta = (u - 0.5) * spread;
-          const x = Math.sin(theta) * radiusX;
-          const y = 22 + radiusY * (1 - Math.cos(theta));
-          const tilt = theta * (180 / Math.PI) * 0.92;
-          const yaw = theta * (180 / Math.PI) * 0.22;
-          const endFade = Math.min(u, 1 - u);
-          const opacity = !onPath ? 0 : endFade < 0.09 ? endFade / 0.09 : 1;
+          const waiting = t > visEnd;
+          const u = waiting ? 0 : t / visEnd;
+          const along = u - 0.5;
+          const drop = Math.pow(Math.abs(along) * 2, 2);
+          const x = along * span;
+          const y = drop * sink;
+          const tilt = along * 2 * maxTilt;
           card.style.transform =
-            "translate(-50%, 0) translateX(" + x + "px) translateY(" + y + "px) rotateZ(" + tilt + "deg) rotateY(" + yaw + "deg)";
-          card.style.opacity = String(opacity);
-          card.style.visibility = onPath ? "visible" : "hidden";
-          card.style.zIndex = String(Math.round(50 + (1 - Math.abs(u - 0.5) * 2) * 50));
+            "translate(" + x + "px, " + y + "px) rotate(" + tilt + "deg) translate(-50%, 0)";
+          card.style.opacity = "1";
+          card.style.visibility = "visible";
+          card.style.zIndex = String(20 + Math.round((1 - Math.abs(along) * 2) * 20));
         });
       };
 
@@ -1210,7 +1211,7 @@
       const tick = (now) => {
         const dt = Math.min(40, now - last);
         last = now;
-        angle += dt * 0.00005;
+        angle += dt * 0.000045;
         paint();
         requestAnimationFrame(tick);
       };
