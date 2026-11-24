@@ -1,0 +1,88 @@
+<section class="uniko-page uniko-policy-page">
+  {% if page.handle == 'return-and-refund' or page.handle == 'returns-and-refunds' or page.handle == 'return-refund' %}
+    <h1 data-i18n="returns_title">Returns & refunds</h1>
+    <p data-i18n="returns_intro">If an Uniko Beauties order is not right, you can ask for a return within the time below. Write to us before you send anything back.</p>
+
+    <h2 data-i18n="returns_h_window">Time limit</h2>
+    <p data-i18n="returns_window">You have 14 days from the day the order arrives to request a return.</p>
+
+    <h2 data-i18n="returns_h_eligible">What we accept</h2>
+    <p data-i18n="returns_eligible">The product must be unused and unopened, in its original packaging, with the seal intact. Include your order number.</p>
+
+    <h2 data-i18n="returns_h_not">What we cannot take back</h2>
+    <p data-i18n="returns_not">Opened or used hair, face, beard and body products cannot be returned, for hygiene. A product damaged by use after opening is not refunded.</p>
+
+    <h2 data-i18n="returns_h_damaged">Damaged or wrong item</h2>
+    <p data-i18n="returns_damaged">If the parcel arrives damaged or leaking, or the product is not what you ordered, contact us within 2 days with your order number and photos. We replace the item or refund it, and we cover the return.</p>
+
+    <h2 data-i18n="returns_h_how">How to ask for a return</h2>
+    <p data-i18n="returns_how">Send your order number by email or WhatsApp. We confirm whether the return is accepted and tell you the next step. Do not post the parcel until we confirm.</p>
+    <p class="uniko-policy-contact">
+      <a href="mailto:unikobeautie@gmail.com">unikobeautie@gmail.com</a>
+      <a href="https://wa.me/22390358545" target="_blank" rel="noopener">+223 90 35 85 45</a>
+    </p>
+
+    <h2 data-i18n="returns_h_refund">Refunds</h2>
+    <p data-i18n="returns_refund">After we receive and check the return, the refund goes back to the original payment method within 14 days. Delivery fees you paid are refunded only when the mistake is ours. Return postage is yours to pay, unless the item is damaged, wrong or faulty.</p>
+
+    <h2 data-i18n="returns_h_shipping">Free delivery</h2>
+    <p data-i18n="returns_shipping">Delivery is free on orders over €95. If a partial return brings the order under €95, the delivery amount can be taken off the refund.</p>
+  {% else %}
+    <h1>{{ page.title }}</h1>
+    <div class="uniko-policy-body rte">{{ page.content }}</div>
+  {% endif %}
+</section>
+
+{% stylesheet %}
+  .uniko-policy-page {
+    max-width: 760px;
+    padding: 48px 22px 88px;
+  }
+
+  .uniko-policy-page h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 600;
+    color: #0d3d24;
+    margin: 0 0 14px;
+  }
+
+  .uniko-policy-page h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0d3d24;
+    margin: 28px 0 8px;
+  }
+
+  .uniko-policy-page p,
+  .uniko-policy-body {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2c2c2c;
+  }
+
+  .uniko-policy-page p { margin: 0 0 12px; }
+
+  .uniko-policy-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .uniko-policy-contact a,
+  .uniko-policy-body a {
+    color: #0d3d24;
+    font-weight: 600;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Uniko page",
+  "tag": "section",
+  "class": "uniko-page-section",
+  "settings": []
+}
+{% endschema %}
