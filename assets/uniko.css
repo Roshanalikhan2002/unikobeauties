@@ -729,65 +729,67 @@
 
     @media (max-width: 900px) {
       .orbit-section { --orbit-radius: 280px; }
-      .orbit-copy { margin-bottom: 16px; }
+      .orbit-copy { margin-bottom: 8px; }
       .orbit-stage {
-        height: clamp(400px, 62vw, 480px);
-        margin-top: 4px;
+        height: 420px;
+        margin-top: 0;
       }
-      .orbit-wheel-anchor { top: 170%; }
+      .orbit-wheel-anchor { top: 155%; }
       .orbit-card {
         width: clamp(180px, 32vw, 230px);
-        height: clamp(300px, 54vw, 400px);
+        height: 340px;
         margin-left: calc(clamp(180px, 32vw, 230px) / -2);
-        margin-top: calc(clamp(300px, 54vw, 400px) * -0.94);
+        margin-top: calc(340px * -0.94);
       }
       .orbit-horizon {
-        height: 52px;
-        margin-top: -40px;
+        height: 48px;
+        margin-top: -36px;
       }
     }
 
     @media (max-width: 600px) {
       .orbit-section {
         --orbit-radius: 200px;
-        padding-top: 28px;
+        padding-top: 18px;
       }
       .orbit-title-line1 { font-size: clamp(18px, 6vw, 26px); }
-      .orbit-title-line2 { font-size: clamp(26px, 8.2vw, 34px); }
+      .orbit-title-line2 { font-size: clamp(22px, 7.2vw, 32px); }
       .orbit-copy {
-        margin-bottom: 20px;
+        margin-bottom: 6px;
         position: relative;
         z-index: 5;
         background: #f4efe6;
-        padding-bottom: 8px;
+        padding-bottom: 0;
       }
+      .orbit-social { margin: 12px 0 0; }
       .orbit-stage {
-        height: 580px;
+        height: 440px;
         margin-top: 0;
         overflow: hidden;
       }
       .orbit-wheel-anchor {
-        top: 175%;
+        top: 136%;
         left: 50%;
       }
       .orbit-card {
-        width: 70vw;
-        max-width: 280px;
+        width: 72vw;
+        max-width: 300px;
         height: 380px;
-        margin-left: calc(min(70vw, 280px) / -2);
+        margin-left: calc(min(72vw, 300px) / -2);
         margin-top: calc(380px * -0.96);
         transform-origin: center bottom;
       }
-      .orbit-card-face { border-radius: 24px; }
+      .orbit-card-face { border-radius: 26px; }
       .orbit-horizon {
-        height: 40px;
-        margin-top: -28px;
+        height: 42px;
+        margin-top: -30px;
         position: relative;
         z-index: 4;
       }
       .orbit-social a {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
       }
     }
 
