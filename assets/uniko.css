@@ -201,7 +201,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 36px;
+      gap: 28px;
+      flex-wrap: wrap;
       padding: 6px 24px 16px;
     }
 
