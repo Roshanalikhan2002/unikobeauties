@@ -1348,16 +1348,26 @@
     }
 
     .review-video-track {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      max-width: 1080px;
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 4px 18px 8px;
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 18px;
+      padding: 8px 18px 20px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .review-video-track::-webkit-scrollbar {
+      display: none;
+      height: 0;
     }
 
     .review-video-card {
+      flex: 0 0 min(68vw, 230px);
+      scroll-snap-align: center;
       border-radius: 12px;
       overflow: hidden;
       aspect-ratio: 3 / 4;
@@ -1374,9 +1384,13 @@
 
     @media (min-width: 901px) {
       .review-video-track {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
+        justify-content: center;
+        gap: 16px;
         padding-inline: 28px;
+      }
+
+      .review-video-card {
+        flex-basis: 220px;
       }
     }
 
@@ -1885,7 +1899,7 @@
       }
 
       .review-video-track {
-        gap: 8px;
+        justify-content: flex-start;
         padding-inline: 16px;
       }
 
