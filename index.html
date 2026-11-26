@@ -1364,82 +1364,35 @@
     }
 
     .review-video-track {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      scroll-padding-inline: 20px;
-      padding: 26px 20px 34px;
-      -webkit-overflow-scrolling: touch;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 4px 18px 8px;
     }
 
     .review-video-card {
-      flex: 0 0 min(68vw, 230px);
-      scroll-snap-align: center;
-      transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.38s ease;
-      border-radius: 4px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .review-video-link {
-      display: block;
-      position: relative;
-      border-radius: 4px;
+      border-radius: 12px;
       overflow: hidden;
-      aspect-ratio: 9 / 16;
-      background: #ddd4cb;
+      aspect-ratio: 3 / 4;
+      background: #efe8e1;
     }
 
-    .review-video-link img {
+    .review-video-card img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
       display: block;
     }
 
-    .review-video-link::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.22) 100%);
-      pointer-events: none;
-    }
-
-    .video-play {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      z-index: 1;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      color: #2b2b2b;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
-    }
-
     @media (min-width: 901px) {
-      .review-video-card {
-        flex-basis: 248px;
-      }
-
       .review-video-track {
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: nowrap;
-        padding-inline: 40px;
-      }
-
-      .review-video-card:hover,
-      .review-video-card:focus-within {
-        transform: scale(1.1);
-        z-index: 4;
-        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        padding-inline: 28px;
       }
     }
 
@@ -1948,8 +1901,8 @@
       }
 
       .review-video-track {
-        justify-content: flex-start;
-        padding-inline: 18px;
+        gap: 8px;
+        padding-inline: 16px;
       }
 
       .review-cards-carousel {
@@ -2896,47 +2849,19 @@
 
       <div class="reviews-videos-block" aria-labelledby="reviews-videos-heading">
         <p class="reviews-videos-tag" id="reviews-videos-heading">#unikobeauties</p>
-        <div class="review-video-track" tabindex="0" role="list" aria-label="Customer review videos">
-        <article class="review-video-card" role="listitem">
-          <a class="review-video-link" href="#avis-video-1" aria-label="Watch customer review video 1">
-            <img src="images/review-videos/01.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
-            <span class="video-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
-            </span>
-          </a>
-        </article>
-        <article class="review-video-card" role="listitem">
-          <a class="review-video-link" href="#avis-video-2" aria-label="Watch customer review video 2">
-            <img src="images/review-videos/02.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
-            <span class="video-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
-            </span>
-          </a>
-        </article>
-        <article class="review-video-card" role="listitem">
-          <a class="review-video-link" href="#avis-video-3" aria-label="Watch customer review video 3">
-            <img src="images/review-videos/03.jpg" alt="" width="480" height="854" loading="lazy" decoding="async">
-            <span class="video-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
-            </span>
-          </a>
-        </article>
-        <article class="review-video-card" role="listitem">
-          <a class="review-video-link" href="#avis-video-4" aria-label="Watch customer review video 4">
-            <img src="images/review-videos/04.jpg" alt="" width="600" height="1067" loading="lazy" decoding="async">
-            <span class="video-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
-            </span>
-          </a>
-        </article>
-        <article class="review-video-card" role="listitem">
-          <a class="review-video-link" href="#avis-video-5" aria-label="Watch customer review video 5">
-            <img src="images/review-videos/05.jpg" alt="" width="1600" height="800" loading="lazy" decoding="async">
-            <span class="video-play" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.8v10.4l8.4-5.2L4 2.8z"/></svg>
-            </span>
-          </a>
-        </article>
+        <div class="review-video-track" role="list" aria-label="Uniko Beauties product and botanical photos">
+        <figure class="review-video-card" role="listitem">
+          <img src="images/review-videos/01.jpg" alt="Uniko Beauties aloe vera shampoo" width="480" height="640" loading="lazy" decoding="async">
+        </figure>
+        <figure class="review-video-card" role="listitem">
+          <img src="images/review-videos/02.jpg" alt="Aloe, soap and botanical skincare on stone" width="480" height="640" loading="lazy" decoding="async">
+        </figure>
+        <figure class="review-video-card" role="listitem">
+          <img src="images/review-videos/03.jpg" alt="Shea butter and aloe slices" width="480" height="640" loading="lazy" decoding="async">
+        </figure>
+        <figure class="review-video-card" role="listitem">
+          <img src="images/review-videos/04.jpg" alt="Fresh aloe vera leaves" width="480" height="640" loading="lazy" decoding="async">
+        </figure>
         </div>
       </div>
     </section>
