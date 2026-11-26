@@ -265,6 +265,7 @@
       width: 100%;
       height: auto;
       max-width: 100%;
+      aspect-ratio: 1672 / 941;
       object-fit: contain;
       object-position: center center;
       vertical-align: top;
@@ -1817,6 +1818,10 @@
       }
 
       .hero-banner-img--desktop { display: none; }
+
+      .hero-banner-img {
+        aspect-ratio: 1024 / 1536;
+      }
 
       .hero-banner-img--mobile {
         display: block;

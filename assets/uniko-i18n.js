@@ -641,7 +641,7 @@
       menu_open: "Open menu",
       menu_close: "Close menu",
       hero_alt:
-        "Uniko Beauties \u2014 botanical care with aloe vera",
+        "Uniko Beauties \u2014 take care of yourself naturally",
       drawer_note: "Hair, face, beard and body",
       search_label: "Search",
       search_placeholder: "Search Uniko Beauties",
@@ -1298,7 +1298,7 @@
       menu_open: "Ouvrir le menu",
       menu_close: "Fermer le menu",
       hero_alt:
-        "Uniko Beauties \u2014 soins botaniques à l'aloe vera",
+        "Uniko Beauties \u2014 prenez soin de vous, naturellement",
       drawer_note: "Cheveux, visage, barbe et corps",
       search_label: "Recherche",
       search_placeholder: "Rechercher Uniko Beauties",
