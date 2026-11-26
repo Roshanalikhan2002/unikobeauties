@@ -23,6 +23,17 @@
       max-width: 100%;
     }
 
+    .orbit-section,
+    .trust-section,
+    .impact-section,
+    .home-compare-section,
+    .home-faq-section,
+    .reviews-section,
+    .site-footer {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 640px;
+    }
+
     body,
     body.uniko-body {
       font-family: "Montserrat", Arial, sans-serif;

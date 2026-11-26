@@ -81,23 +81,18 @@
 
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">
-      <img
-        class="hero-banner-img hero-banner-img--desktop"
-        src="{{ 'uniko-hero-banner-desktop.jpg' | asset_img_url: 'master' }}"
-        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1920"
-        height="700"
-        fetchpriority="high"
-        decoding="async"
-      >
-      <img
-        class="hero-banner-img hero-banner-img--mobile"
-        src="{{ 'uniko-hero-banner-mobile.jpg' | asset_img_url: 'master' }}"
-        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1080"
-        height="1620"
-        decoding="async"
-      >
+      <picture>
+        <source media="(max-width: 900px)" srcset="{{ 'uniko-hero-banner-mobile.jpg' | asset_img_url: 'master' }}">
+        <img
+          class="hero-banner-img"
+          src="{{ 'uniko-hero-banner-desktop.jpg' | asset_img_url: 'master' }}"
+          data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
+          width="1920"
+          height="700"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
     </section>
 
     <section class="category-section" id="boutique" aria-labelledby="category-title">
@@ -556,20 +551,20 @@
       <div class="orbit-stage" aria-hidden="true">
         <div class="orbit-wheel-anchor">
           <div class="orbit-wheel" style="--count: 14;">
-            <article class="orbit-card orbit-card--product" style="--i: 0;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-shampoo.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 0;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-shampoo.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 1;"><div class="orbit-card-face"><img src="{{ 'uniko-review-videos-02.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 2;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-spray.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card" style="--i: 3;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-aloe-garden.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 4;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-hair-milk.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 2;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-spray.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card" style="--i: 3;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-aloe-garden.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 4;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-hair-milk.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 5;"><div class="orbit-card-face"><img src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 6;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-balm.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 6;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-balm.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 7;"><div class="orbit-card-face"><img src="{{ 'uniko-sustainability-impact-hd.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 8;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-detangle.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 8;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-detangle.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 9;"><div class="orbit-card-face"><img src="{{ 'uniko-review-videos-04.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 10;"><div class="orbit-card-face"><img src="{{ 'uniko-review-videos-02.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 11;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-shampoo.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 11;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-shampoo.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 12;"><div class="orbit-card-face"><img src="{{ 'uniko-review-videos-03.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 13;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-spray.png' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 13;"><div class="orbit-card-face"><img src="{{ 'uniko-orbit-spray.jpg' | asset_img_url: 'master' }}" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
           </div>
         </div>
       </div>

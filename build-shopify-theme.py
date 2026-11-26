@@ -572,10 +572,12 @@ def main() -> None:
     mapping = copy_flat_theme_assets()
 
     def replace_img_src(match: re.Match[str]) -> str:
-        rel = match.group(1)
+        attr = match.group(1)
+        rel = match.group(2)
         if rel not in mapping:
             raise SystemExit(f"Missing theme asset for images/{rel}")
-        return liquid_src(rel, mapping)
+        flat = mapping[rel]
+        return f'{attr}="{{{{ \'{flat}\' | asset_img_url: \'master\' }}}}"'
 
     def replace_css_url(match: re.Match[str]) -> str:
         rel = match.group(1)
@@ -583,7 +585,7 @@ def main() -> None:
             raise SystemExit(f"Missing theme asset for images/{rel}")
         return liquid_css_url(rel, mapping)
 
-    body = re.sub(r'src="images/([^"]+)"', replace_img_src, body)
+    body = re.sub(r'(src|srcset)="images/([^"]+)"', replace_img_src, body)
     body = re.sub(r"url\('images/([^']+)'\)", replace_css_url, body)
 
     body = body.replace(

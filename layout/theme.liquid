@@ -15,6 +15,11 @@
     endif
   -%}
   <title>{{ tab_title }}</title>
+  {%- if page_description != blank -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- elsif template.name == 'index' -%}
+    <meta name="description" content="Uniko Beauties: botanical hair, face, beard and body care with aloe vera. YIRI Soap, Facial Spray, Rajel Beard Spray, Hair Milk and Moisturizing Balm.">
+  {%- endif -%}
   {{ content_for_header }}
   <link rel="icon" type="image/png" href="{{ 'uniko-brand-logo.png' | asset_url }}">
   <link rel="shortcut icon" type="image/png" href="{{ 'uniko-brand-logo.png' | asset_url }}">
@@ -22,7 +27,15 @@
   {{ 'uniko.css' | asset_url | stylesheet_tag }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="speculationrules">
+    {
+      "prerender": [{
+        "where": { "href_matches": "/*" },
+        "eagerness": "moderate"
+      }]
+    }
+  </script>
 </head>
 <body class="uniko-body">
   {{ content_for_layout }}

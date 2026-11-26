@@ -12,7 +12,7 @@
   <meta name="google" content="notranslate">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --green: #0d3d24;
@@ -37,6 +37,17 @@
       scroll-behavior: smooth;
       overflow-x: clip;
       max-width: 100%;
+    }
+
+    .orbit-section,
+    .trust-section,
+    .impact-section,
+    .home-compare-section,
+    .home-faq-section,
+    .reviews-section,
+    .site-footer {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 640px;
     }
 
     body,
@@ -2507,23 +2518,18 @@
 
   <main id="accueil">
     <section class="hero" id="accueil-hero" aria-label="Homepage banner">
-      <img
-        class="hero-banner-img hero-banner-img--desktop"
-        src="images/hero-banner-desktop.jpg"
-        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1920"
-        height="700"
-        fetchpriority="high"
-        decoding="async"
-      >
-      <img
-        class="hero-banner-img hero-banner-img--mobile"
-        src="images/hero-banner-mobile.jpg"
-        data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
-        width="1080"
-        height="1620"
-        decoding="async"
-      >
+      <picture>
+        <source media="(max-width: 900px)" srcset="images/hero-banner-mobile.jpg">
+        <img
+          class="hero-banner-img"
+          src="images/hero-banner-desktop.jpg"
+          data-i18n-alt="hero_alt" alt="Uniko Beauties — natural beauty and organic makeup"
+          width="1920"
+          height="700"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
     </section>
 
     <section class="category-section" id="boutique" aria-labelledby="category-title">
@@ -2704,20 +2710,20 @@
       <div class="orbit-stage" aria-hidden="true">
         <div class="orbit-wheel-anchor">
           <div class="orbit-wheel" style="--count: 14;">
-            <article class="orbit-card orbit-card--product" style="--i: 0;"><div class="orbit-card-face"><img src="images/orbit/shampoo.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 0;"><div class="orbit-card-face"><img src="images/orbit/shampoo.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 1;"><div class="orbit-card-face"><img src="images/review-videos/02.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 2;"><div class="orbit-card-face"><img src="images/orbit/spray.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card" style="--i: 3;"><div class="orbit-card-face"><img src="images/orbit/aloe-garden.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 4;"><div class="orbit-card-face"><img src="images/orbit/hair-milk.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 2;"><div class="orbit-card-face"><img src="images/orbit/spray.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card" style="--i: 3;"><div class="orbit-card-face"><img src="images/orbit/aloe-garden.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 4;"><div class="orbit-card-face"><img src="images/orbit/hair-milk.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 5;"><div class="orbit-card-face"><img src="images/review-videos/03.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 6;"><div class="orbit-card-face"><img src="images/orbit/balm.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 6;"><div class="orbit-card-face"><img src="images/orbit/balm.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 7;"><div class="orbit-card-face"><img src="images/sustainability-impact-hd.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 8;"><div class="orbit-card-face"><img src="images/orbit/detangle.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 8;"><div class="orbit-card-face"><img src="images/orbit/detangle.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 9;"><div class="orbit-card-face"><img src="images/review-videos/04.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 10;"><div class="orbit-card-face"><img src="images/review-videos/02.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 11;"><div class="orbit-card-face"><img src="images/orbit/shampoo.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 11;"><div class="orbit-card-face"><img src="images/orbit/shampoo.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
             <article class="orbit-card" style="--i: 12;"><div class="orbit-card-face"><img src="images/review-videos/03.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
-            <article class="orbit-card orbit-card--product" style="--i: 13;"><div class="orbit-card-face"><img src="images/orbit/spray.png" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
+            <article class="orbit-card orbit-card--product" style="--i: 13;"><div class="orbit-card-face"><img src="images/orbit/spray.jpg" alt="" width="700" height="900" loading="lazy" decoding="async"></div></article>
           </div>
         </div>
       </div>
