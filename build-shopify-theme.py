@@ -563,6 +563,11 @@ def main() -> None:
     if not style_match:
         raise SystemExit("No <style> block found in index.html")
     css = style_match.group(1).strip()
+    css = re.sub(
+        r"url\('images/([^']+)'\)",
+        lambda match: f"url('{image_rel_to_flat(match.group(1))}')",
+        css,
+    )
 
     body_match = re.search(r"<body>(.*?)</body>", html, re.DOTALL)
     if not body_match:

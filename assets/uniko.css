@@ -103,6 +103,8 @@
     }
 
     .logo {
+      position: relative;
+      overflow: hidden;
       text-align: center;
       color: var(--bronze);
       line-height: 0;
@@ -110,6 +112,33 @@
       align-items: center;
       justify-content: center;
       justify-self: center;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0) 8%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(255, 255, 255, 0) 92%
+      );
+      background-size: 240% 100%;
+      background-repeat: no-repeat;
+      -webkit-mask: url('uniko-brand-logo.png') center / contain no-repeat;
+      mask: url('uniko-brand-logo.png') center / contain no-repeat;
+      animation: logo-shine 2.8s ease-in-out infinite;
+    }
+
+    @keyframes logo-shine {
+      0%, 16% { background-position: 120% 0; }
+      58%, 100% { background-position: -20% 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo::after { animation: none; opacity: 0; }
     }
 
     .logo-img {
