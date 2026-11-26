@@ -474,7 +474,7 @@ HOMEPAGE_SCHEMA = """{% schema %}
       "type": "text",
       "id": "category_heading",
       "label": "Category row heading",
-      "default": "Shop by category"
+      "default": "Shop Natural products"
     }
   ],
   "blocks": [
@@ -608,7 +608,7 @@ def main() -> None:
         '<span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>',
     )
     body = body.replace(
-        '<h2 id="category-title" data-i18n="category_title">Shop the range</h2>',
+        '<h2 id="category-title" data-i18n="category_title">Shop Natural products</h2>',
         '<h2 id="category-title" data-i18n="category_title">{{ section.settings.category_heading }}</h2>',
     )
 

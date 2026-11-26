@@ -16,7 +16,7 @@
       nav_shipping: "Shipping",
       nav_contact: "Contact",
       nav_terms: "Terms",
-      category_title: "Shop the range",
+      category_title: "Shop Natural products",
       cat_face: "Face",
       cat_eyes: "Eyes",
       cat_lips: "Lips",
@@ -504,7 +504,7 @@
         "Aloe vera, basil, vegetable oils, natural scented water, sodium hydroxide, water.",
       pdp_ing_fr:
         "Aloe vera, basilique, huiles végétales, eau de senteur naturel, hydroxyde de sodium, eau.",
-      trust_title: "Certified botanical beauty",
+      trust_title: "Natural Organic beauty",
       impact_eyebrow: "Nature’s beauty, naturally yours",
       impact_title: "Botanical care for hair, face, beard and body",
       impact_text:
@@ -676,7 +676,7 @@
       nav_shipping: "Livraison",
       nav_contact: "Contact",
       nav_terms: "Conditions",
-      category_title: "Toute la gamme",
+      category_title: "Produits naturels",
       cat_face: "Visage",
       cat_eyes: "Yeux",
       cat_lips: "L\u00e8vres",
@@ -1159,7 +1159,7 @@
         "Aloe vera, basil, vegetable oils, natural scented water, sodium hydroxide, water.",
       pdp_ing_fr:
         "Aloe vera, basilique, huiles végétales, eau de senteur naturel, hydroxyde de sodium, eau.",
-      trust_title: "Beauté botanique certifiée",
+      trust_title: "Beauté naturelle et organique",
       impact_eyebrow: "La beauté de la nature, naturellement vôtre",
       impact_title: "Soins botaniques cheveux, visage, barbe et corps",
       impact_text:
