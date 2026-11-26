@@ -740,28 +740,34 @@
     }
 
     @media (max-width: 900px) {
-      .orbit-section { --orbit-radius: 400px; }
+      .orbit-section { --orbit-radius: 420px; }
       .orbit-copy { margin-bottom: 8px; }
       .orbit-stage {
-        height: 380px;
+        height: 300px;
         margin-top: 0;
       }
-      .orbit-wheel-anchor { top: 177%; }
+      .orbit-wheel-anchor { top: 220%; }
       .orbit-card {
-        width: 180px;
-        height: 270px;
-        margin-left: -90px;
-        margin-top: calc(270px * -0.94);
+        width: 168px;
+        height: 248px;
+        margin-left: -84px;
+        margin-top: calc(248px * -0.94);
+      }
+      .orbit-card-face img,
+      .orbit-card--product .orbit-card-face img {
+        object-fit: contain;
+        padding: 5%;
+        background: #fff;
       }
       .orbit-horizon {
         height: 48px;
-        margin-top: -36px;
+        margin-top: -44px;
       }
     }
 
     @media (max-width: 600px) {
       .orbit-section {
-        --orbit-radius: 340px;
+        --orbit-radius: 355px;
         padding-top: 18px;
       }
       .orbit-title-line1 { font-size: clamp(18px, 6vw, 26px); }
@@ -775,26 +781,32 @@
       }
       .orbit-social { margin: 12px 0 0; }
       .orbit-stage {
-        height: 320px;
+        height: 250px;
         margin-top: 0;
         overflow: hidden;
       }
       .orbit-wheel-anchor {
-        top: 180%;
+        top: 223%;
         left: 50%;
       }
       .orbit-card {
-        width: 156px;
-        max-width: 156px;
-        height: 236px;
-        margin-left: -78px;
-        margin-top: calc(236px * -0.94);
+        width: 142px;
+        max-width: 142px;
+        height: 208px;
+        margin-left: -71px;
+        margin-top: calc(208px * -0.94);
         transform-origin: center bottom;
       }
       .orbit-card-face { border-radius: 22px; }
+      .orbit-card-face img,
+      .orbit-card--product .orbit-card-face img {
+        object-fit: contain;
+        padding: 6%;
+        background: #fff;
+      }
       .orbit-horizon {
         height: 40px;
-        margin-top: -28px;
+        margin-top: -32px;
         position: relative;
         z-index: 4;
       }
